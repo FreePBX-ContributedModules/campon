@@ -1,24 +1,244 @@
 <?php
 //for translation only
 if (false) {
-_("Dictation");
-_("Perform dictation");
-_("Email completed dictation");
+_("Camp-On");
+_("Camp-On Request");
+_("Camp-On Cancel");
 }
 
-// Register Feature Code - Perform Dictation
-$fcc = new featurecode('dictate', 'dodictate');
-$fcc->setDescription('Perform dictation');
-$fcc->setDefault('*34');
+// Camp-On Request Feature Code
+$fcc = new featurecode('campon', 'request');
+$fcc->setDescription('Camp-On Request');
+$fcc->setDefault('*82');
 $fcc->update();
 unset($fcc);
 
-// Email dictation to user
-$fcc = new featurecode('dictate', 'senddictate');
-$fcc->setDescription('Email completed dictation');
-$fcc->setDefault('*35');
+// Camp-On Cancel Feature Code
+$fcc = new featurecode('campon', 'cancel');
+$fcc->setDescription('Camp-On Cancel');
+$fcc->setDefault('*83');
 $fcc->update();
 unset($fcc);
 
+$freepbx_conf =& freepbx_conf::create();
 
-?>
+// CC_NON_EXTENSION_POLICY
+//
+$set['value'] = 'never';
+$set['defaultval'] =& $set['value'];
+$set['options'] = array('never', 'generic', 'accept');
+$set['readonly'] = 0;
+$set['hidden'] = 0;
+$set['level'] = 1;
+$set['module'] = 'campon';
+$set['category'] = 'Camp-On Module';
+$set['emptyok'] = 0;
+$set['name'] = 'Non Extensions Callee Policy';
+$set['description'] = "If this is set to 'generic' or 'accept' then it will be possible to attempt call completion requests when dialing non-extensions such as ring groups and other possible destinations that could work with call completion. Setting this will bypass any Callee Policies and can result in inconsistent behavior. If set, 'generic' is the most common, 'accept' will attempt to use technology specific capabilities if the called extension uses a channel that supports that.";
+$set['type'] = CONF_TYPE_SELECT;
+$freepbx_conf->define_conf_setting('CC_NON_EXTENSION_POLICY',$set);
+
+// CC_FORCE_DEFAULTS
+//
+$set['value'] = false;
+$set['defaultval'] =& $set['value'];
+$set['readonly'] = 0;
+$set['hidden'] = 0;
+$set['level'] = 1;
+$set['module'] = 'campon';
+$set['category'] = 'Camp-On Module';
+$set['emptyok'] = 0;
+$set['name'] = 'Only Use Default Camp-On Settings';
+$set['description'] = 'You can force all extensions on a system to only used the default Camp-On settings. When in this mode, the individual settings will not be shown on the extension page. If there were unique settings previously configured, the data will be retained but not used unless you switch this back to false. With this set, the Caller Policy (cc_agent_policy) and Callee Policy (cc_monitor_policy) settings will still be configurable for each user so you can still enable/disable Call Camping ability on select extensions.';
+$set['type'] = CONF_TYPE_BOOL;
+$freepbx_conf->define_conf_setting('CC_FORCE_DEFAULTS',$set);
+
+// CC_AGENT_POLICY_DEFAULT
+//
+$set['value'] = 'generic';
+$set['defaultval'] =& $set['value'];
+$set['options'] = array('never', 'generic', 'native');
+$set['readonly'] = 0;
+$set['hidden'] = 0;
+$set['level'] = 1;
+$set['module'] = 'campon';
+$set['category'] = 'Camp-On Module';
+$set['emptyok'] = 0;
+$set['name'] = 'Caller Policy Default';
+$set['description'] = "Asterisk: cc_agent_policy. Used to enable Camp-On for a user and set the Technology Mode that will be used when engaging the feature. In most cases 'generic' should be chosen unless you have phones designed to work with channel specific capabilities.";
+$set['type'] = CONF_TYPE_SELECT;
+$freepbx_conf->define_conf_setting('CC_AGENT_POLICY_DEFAULT',$set);
+
+// CC_MONITOR_POLICY_DEFAULT
+//
+$set['value'] = 'generic';
+$set['defaultval'] =& $set['value'];
+$set['options'] = array('never', 'generic', 'native', 'accept');
+$set['readonly'] = 0;
+$set['hidden'] = 0;
+$set['level'] = 1;
+$set['module'] = 'campon';
+$set['category'] = 'Camp-On Module';
+$set['emptyok'] = 0;
+$set['name'] = 'Callee Policy Default';
+$set['description'] = "Asterisk: cc_monitor_policy. Used to control if other phones are allowed to Camp On to an extension. If so, it sets the technology mode used to monitor the availability of the extension. If no specific technology support is available then it should be set to a 'generic'. In this mode, a callback will be initiated to the extension when it changes from an InUse state to NotInUse. If it was busy when first attempted, this will be when the current call has eneded. If it simply did not answer, then this will be the next time this phone is used to make or answer a call and then hangs up. It is possible to set this to take advantage of 'native' technology support if available and automatically fallback to 'generic' whe not by setting it to 'accept'.";
+$set['type'] = CONF_TYPE_SELECT;
+$freepbx_conf->define_conf_setting('CC_MONITOR_POLICY_DEFAULT',$set);
+
+// CC_OFFER_TIMER_DEFAULT
+//
+$set['value'] = 'generic';
+$set['defaultval'] =& $set['value'];
+$set['options'] = array('20', '30', '45', '60', '120', '180', '240', '300', '600');
+$set['readonly'] = 0;
+$set['hidden'] = 0;
+$set['level'] = 1;
+$set['module'] = 'campon';
+$set['category'] = 'Camp-On Module';
+$set['emptyok'] = 0;
+$set['name'] = "Caller Timeout to Request Default";
+$set['description'] = "Asterisk: cc_offer_timer. How many seconds after dialing an extenion a user has to make a call completion request.";
+$set['type'] = CONF_TYPE_SELECT;
+$freepbx_conf->define_conf_setting('CC_OFFER_TIMER_DEFAULT',$set);
+
+// CCBS_AVAILABLE_TIMER_DEFAULT
+//
+$set['value'] = '4800';
+$set['defaultval'] =& $set['value'];
+$set['options'] = array('1200', '2400', '3600', '4800', '6000', '7200', '10800', '14400', '18000', '21600', '25200', '28800', '32400');
+$set['readonly'] = 0;
+$set['hidden'] = 0;
+$set['level'] = 1;
+$set['module'] = 'campon';
+$set['category'] = 'Camp-On Module';
+$set['emptyok'] = 0;
+$set['name'] = "Max Camp-On Life Busy Default";
+$set['description'] = "Asteirsk: ccbs_available_timer. How long a call completion request will remain active, in seconds, before expiring if the phone rang busy when first attempting the call.";
+$set['type'] = CONF_TYPE_SELECT;
+$freepbx_conf->define_conf_setting('CCBS_AVAILABLE_TIMER_DEFAULT',$set);
+
+// CCNR_AVAILABLE_TIMER_DEFAULT
+//
+$set['value'] = '7200';
+$set['defaultval'] =& $set['value'];
+$set['options'] = array('1200', '2400', '3600', '4800', '6000', '7200', '10800', '14400', '18000', '21600', '25200', '28800', '32400');
+$set['readonly'] = 0;
+$set['hidden'] = 0;
+$set['level'] = 1;
+$set['module'] = 'campon';
+$set['category'] = 'Camp-On Module';
+$set['emptyok'] = 0;
+$set['name'] = "Max Camp-On Life No Answer Default";
+$set['description'] = "Asteirsk: ccnr_available_timer. How long a call completion request will remain active, in seconds, before expiring if the phone was simply unanswered when first attempting the call.";
+$set['type'] = CONF_TYPE_SELECT;
+$freepbx_conf->define_conf_setting('CCNR_AVAILABLE_TIMER_DEFAULT',$set);
+
+// CC_RECALL_TIMER_DEFAULT
+//
+unset($options);
+for ($i=5;$i<=60;$i++) {
+  $options[] = $i;
+}
+$set['value'] = '5';
+$set['defaultval'] =& $set['value'];
+$set['options'] = $options;
+$set['readonly'] = 0;
+$set['hidden'] = 0;
+$set['level'] = 1;
+$set['module'] = 'campon';
+$set['category'] = 'Camp-On Module';
+$set['emptyok'] = 0;
+$set['name'] = "Default Time to Ring Back Caller";
+$set['description'] = "Asterisk: cc_recall_timer. How long in seconds to ring back a caller who's Caller Policy is set to 'Generic Device'. This has no affect if set to any other setting.";
+$set['type'] = CONF_TYPE_SELECT;
+$freepbx_conf->define_conf_setting('CC_RECALL_TIMER_DEFAULT',$set);
+
+// CC_MAX_AGENTS_DEFAULT
+//
+unset($options);
+for ($i=1;$i<=20;$i++) {
+  $options[] = $i;
+}
+$set['value'] = '5';
+$set['defaultval'] =& $set['value'];
+$set['options'] = $options;
+$set['readonly'] = 0;
+$set['hidden'] = 0;
+$set['level'] = 1;
+$set['module'] = 'campon';
+$set['category'] = 'Camp-On Module';
+$set['emptyok'] = 0;
+$set['name'] = "Default Max Camped-On Extensions";
+$set['description'] = "Asterisk: cc_max_agents. Only valid for when using 'native' technology support for Caller Policy. This is the number of outstanding Call Completion requests that can be pending to different extensions. With 'generic' device mode you can only have a single request outstanding and this will be ignored.";
+$set['type'] = CONF_TYPE_SELECT;
+$freepbx_conf->define_conf_setting('CC_MAX_AGENTS_DEFAULT',$set);
+
+// CC_AGENT_DIALSTRING_DEFAULT
+//
+$set['value'] = 'extension';
+$set['defaultval'] =& $set['value'];
+$set['options'] = array('', 'extension', 'internal');
+$set['readonly'] = 0;
+$set['hidden'] = 0;
+$set['level'] = 1;
+$set['module'] = 'campon';
+$set['category'] = 'Camp-On Module';
+$set['emptyok'] = 0;
+$set['name'] = "Default Caller Callback Mode";
+$set['description'] = "Affects Asterisk: cc_agent_dialstring. If not set a callback request will be dialed straight to the speciifc device that made the call. If using 'native' technology support this may be the peferred mode. The 'extension' (Callback Standard) option will intiate a call back to the caller just as if someone else on the system placed the call, which means the call can pursue Follow-Me. To avoid Follow-Me setting, choose 'extension' (Callback Extension).";
+$set['type'] = CONF_TYPE_SELECT;
+$freepbx_conf->define_conf_setting('CC_AGENT_DIALSTRING_DEFAULT',$set);
+
+// CC_MAX_MONITOR_DEFAULT
+//
+unset($options);
+for ($i=1;$i<=20;$i++) {
+  $options[] = $i;
+}
+$set['value'] = '5';
+$set['defaultval'] =& $set['value'];
+$set['options'] = $options;
+$set['readonly'] = 0;
+$set['hidden'] = 0;
+$set['level'] = 1;
+$set['module'] = 'campon';
+$set['category'] = 'Camp-On Module';
+$set['emptyok'] = 0;
+$set['name'] = "Default Max Queued Callers";
+$set['description'] = "Asterisk: cc_max_monitors. This is the maximum number of callers that are allowed to queue up call completion requests against this extension.";
+$set['type'] = CONF_TYPE_SELECT;
+$freepbx_conf->define_conf_setting('CC_MAX_MONITOR_DEFAULT',$set);
+
+// CC_ALERT_INFO_DEFAULT
+//
+$set['value'] = '';
+$set['defaultval'] =& $set['value'];
+$set['options'] = '';
+$set['readonly'] = 0;
+$set['hidden'] = 0;
+$set['level'] = 1;
+$set['module'] = 'campon';
+$set['category'] = 'Camp-On Module';
+$set['emptyok'] = 1;
+$set['name'] = "Default Callback Alert-Info";
+$set['description'] = "An optional Alert-Info setting that can be used when initiating a callback. Only valid when 'Caller Policy' is set to 'generic' device'";
+$set['type'] = CONF_TYPE_TEXT;
+$freepbx_conf->define_conf_setting('CC_ALERT_INFO_DEFAULT',$set);
+
+// CC_CID_PREPEND_DEFAULT
+//
+$set['value'] = '';
+$set['defaultval'] =& $set['value'];
+$set['options'] = '';
+$set['readonly'] = 0;
+$set['hidden'] = 0;
+$set['level'] = 1;
+$set['module'] = 'campon';
+$set['category'] = 'Camp-On Module';
+$set['emptyok'] = 1;
+$set['name'] = "Default Callback CID Prepend";
+$set['description'] = "An optional CID Prepend setting that can be used when initiating a callback. Only valid when 'Caller Policy' is set to a 'generic' device'";
+$set['type'] = CONF_TYPE_TEXT;
+$freepbx_conf->define_conf_setting('CC_CID_PREPEND_DEFAULT',$set);
+
+$freepbx_conf->commit_conf_settings();
