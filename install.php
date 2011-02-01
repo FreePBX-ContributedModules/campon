@@ -87,7 +87,7 @@ $freepbx_conf->define_conf_setting('CC_MONITOR_POLICY_DEFAULT',$set);
 
 // CC_OFFER_TIMER_DEFAULT
 //
-$set['value'] = 'generic';
+$set['value'] = '30';
 $set['defaultval'] =& $set['value'];
 $set['options'] = array('20', '30', '45', '60', '120', '180', '240', '300', '600');
 $set['readonly'] = 0;
@@ -139,7 +139,7 @@ unset($options);
 for ($i=5;$i<=60;$i++) {
   $options[] = $i;
 }
-$set['value'] = '5';
+$set['value'] = '15';
 $set['defaultval'] =& $set['value'];
 $set['options'] = $options;
 $set['readonly'] = 0;
@@ -189,7 +189,7 @@ $set['description'] = "Affects Asterisk: cc_agent_dialstring. If not set a callb
 $set['type'] = CONF_TYPE_SELECT;
 $freepbx_conf->define_conf_setting('CC_AGENT_DIALSTRING_DEFAULT',$set);
 
-// CC_MAX_MONITOR_DEFAULT
+// CC_MAX_MONITORS_DEFAULT
 //
 unset($options);
 for ($i=1;$i<=20;$i++) {
@@ -207,7 +207,7 @@ $set['emptyok'] = 0;
 $set['name'] = "Default Max Queued Callers";
 $set['description'] = "Asterisk: cc_max_monitors. This is the maximum number of callers that are allowed to queue up call completion requests against this extension.";
 $set['type'] = CONF_TYPE_SELECT;
-$freepbx_conf->define_conf_setting('CC_MAX_MONITOR_DEFAULT',$set);
+$freepbx_conf->define_conf_setting('CC_MAX_MONITORS_DEFAULT',$set);
 
 // CC_ALERT_INFO_DEFAULT
 //

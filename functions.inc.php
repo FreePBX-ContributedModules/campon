@@ -80,7 +80,7 @@ function campon_get_config($engine) {
       } else {
 			  $ext->add($mcontext,$exten,'', new ext_noop_trace('calling a non-extesnion, policy enabled , continuing',6));
 			  $ext->add($mcontext,$exten,'', new ext_set('CALLCOMPLETTION(cc_monitor_policy)', $amp_conf['CC_NON_EXTENSION_POLICY']));
-        $ext->add($mcontext,$exten,'', new ext_set('CALLCOMPLETTION(cc_max_monitors)', $amp_conf['CC_MAX_MONITOR_DEFAULT']));
+        $ext->add($mcontext,$exten,'', new ext_set('CALLCOMPLETTION(cc_max_monitors)', $amp_conf['CC_MAX_MONITORS_DEFAULT']));
       }
 			$ext->add($mcontext,$exten,'', new ext_return(''));
 
@@ -90,7 +90,7 @@ function campon_get_config($engine) {
       } else {
 			  $ext->add($mcontext,$exten,'is_exten', new ext_noop_trace('Callee has no settings and default enabled, continuing'));
 			  $ext->add($mcontext,$exten,'is_exten', new ext_set('CALLCOMPLETTION(cc_monitor_policy)', $amp_conf['CC_MONITOR_POLICY_DEFAULT']));
-        $ext->add($mcontext,$exten,'', new ext_set('CALLCOMPLETTION(cc_max_monitors)', $amp_conf['CC_MAX_MONITOR_DEFAULT']));
+        $ext->add($mcontext,$exten,'', new ext_set('CALLCOMPLETTION(cc_max_monitors)', $amp_conf['CC_MAX_MONITORS_DEFAULT']));
       }
 			$ext->add($mcontext,$exten,'', new ext_return(''));
 
@@ -144,6 +144,14 @@ function campon_get_config($engine) {
         }
       }
 			$ext->add($mcontext,$exten,'', new ext_return(''));
+
+      // TODO: Add from-ccss-extension
+
+      // TODO: Add from-ccss-internal
+
+      // TODO: Add something (SHARED(), current blkvm, to voicemail to block recall from going there
+
+      // TODO: Alert-Info and CID Prepend probably in macro but determin
 		break;
 	}
 }
@@ -317,14 +325,11 @@ function campon_configpageload() {
     $cc_monitor_policy_tt =    _("Asterisk: cc_monitor_policy. Used to control if other phones are allowed to Camp On to this extnesion. If so, it sets the technology mode used to monitor the availability of the extension. If no specific technology support is available then it should be set to a 'Generic Device'. In this mode, a callback will be initiated to this extension when it changes from an InUse state to NotInUse. If it was busy when first attempted, this will be when the current call has eneded. If it simply did not answer, then this will be the next time this phone is used to make or answer a call and then hangs up. It is possible to set this to take advantage of 'Native Technology Support' if availalbe and automatically fallback to the 'Generic Mode' whe not.");
 
 		$section = _('Call Camp-On Services');
-		$currentcomponent->addguielem($section, new gui_selectbox('cc_agent_policy', $currentcomponent->getoptlist('cc_agent_policy'), $cc_agent_policy_label, $cc_agent_policy_tt, '', false));
-		$currentcomponent->addguielem($section, new gui_selectbox('cc_monitor_policy', $currentcomponent->getoptlist('cc_monitor_policy'), $cc_monitor_policy_label, $cc_monitor_policy_tt, '', false));
-
     // If we are forcing defaults, don't bother showing other settings
     if ($amp_conf['CC_FORCE_DEFAULTS']) {
-      $cc_default_settings_label = _("Configured to force default settings");
-      $cc_default_settings_tt = "
-        <ul>
+      $cc_default_settings_label = _("Forcing default settings");
+      $cc_default_settings_tt = _("The following settings are being used for all extensions. To configure individually set 'Only Use Default Camp-On Settings' to false on the Advanced Settings page. Active settings:") . 
+       "<ul>
           <li>$cc_offer_timer_label: " . $amp_conf['CC_OFFER_TIMER_DEFAULT'] . "</li> 
           <li>$ccnr_available_timer_label: " . $amp_conf['CCNR_AVAILABLE_TIMER_DEFAULT'] . "</li>
           <li>$ccbs_available_timer_label: " . $amp_conf['CCBS_AVAILABLE_TIMER_DEFAULT'] . "</li>
@@ -335,9 +340,14 @@ function campon_configpageload() {
           <li>$cc_alert_info_label: " . $amp_conf['CC_ALERT_INFO_DEFAULT'] . "</li>
           <li>$cc_cid_prepend_label: " . $amp_conf['CC_CID_PREPEND_DEFAULT'] . "</li>
         </ul>";
-      $currentcomponent->addguielem($section, new gui_link_label('cc_default_settings', $cc_default_settings_label, $cc_default_settings_tt, true), 0);
+      $currentcomponent->addguielem($section, new gui_link_label('cc_default_settings', $cc_default_settings_label, $cc_default_settings_tt, true));
+    }
+		$currentcomponent->addguielem($section, new gui_selectbox('cc_agent_policy', $currentcomponent->getoptlist('cc_agent_policy'), $cc_agent_policy, $cc_agent_policy_label, $cc_agent_policy_tt, '', false));
+		$currentcomponent->addguielem($section, new gui_selectbox('cc_monitor_policy', $currentcomponent->getoptlist('cc_monitor_policy'), $cc_monitor_policy, $cc_monitor_policy_label, $cc_monitor_policy_tt, '', false));
+    if ($amp_conf['CC_FORCE_DEFAULTS']) {
       return;
     }
+
 
     $cc_offer_timer =       $ccss['cc_offer_timer'];
     $ccbs_available_timer = $ccss['ccbs_available_timer'];
@@ -364,13 +374,14 @@ function campon_configpageload() {
 		$msgInvalidAlertInfo = _('Please enter a valid Alert-Info');
 		$msgInvalidCIDPrefix = _('Please enter a valid CID Prefix');
 
-		$currentcomponent->addguielem($section, new gui_selectbox('cc_offer_timer', $currentcomponent->getoptlist('cc_offer_timer'), $cc_offer_timer_label, $cc_offer_timer_tt, '', false));
-		$currentcomponent->addguielem($section, new gui_selectbox('ccbs_available_timer', $currentcomponent->getoptlist('ccbs_available_timer'), $ccbs_available_timer_label, $ccbs_available_timer_tt, '', false));
-		$currentcomponent->addguielem($section, new gui_selectbox('ccnr_available_timer', $currentcomponent->getoptlist('ccnr_available_timer'), $ccnr_available_timer_label, $ccnr_available_timer_tt, '', false));
-		$currentcomponent->addguielem($section, new gui_selectbox('cc_recall_timer', $currentcomponent->getoptlist('cc_recall_timer'), $cc_recall_timer_label, $cc_recall_timer_tt, '', false));
-		$currentcomponent->addguielem($section, new gui_selectbox('cc_max_agents', $currentcomponent->getoptlist('cc_max_agents'), $cc_max_agents_label, $cc_max_agents_tt, '', false));
-		$currentcomponent->addguielem($section, new gui_selectbox('cc_agent_dialstring', $currentcomponent->getoptlist('cc_agent_dialstring'), $cc_agent_dialstring_label, $cc_agent_dialstring_tt, '', false));
-		$currentcomponent->addguielem($section, new gui_selectbox('cc_max_monitors', $currentcomponent->getoptlist('cc_max_monitors'), $cc_max_monitors_label, $cc_max_monitors_tt, '', false));
+
+		$currentcomponent->addguielem($section, new gui_selectbox('cc_offer_timer', $currentcomponent->getoptlist('cc_offer_timer'), $cc_offer_timer, $cc_offer_timer_label, $cc_offer_timer_tt, '', false));
+		$currentcomponent->addguielem($section, new gui_selectbox('ccbs_available_timer', $currentcomponent->getoptlist('ccbs_available_timer'), $ccbs_available_timer, $ccbs_available_timer_label, $ccbs_available_timer_tt, '', false));
+		$currentcomponent->addguielem($section, new gui_selectbox('ccnr_available_timer', $currentcomponent->getoptlist('ccnr_available_timer'), $ccnr_available_timer, $ccnr_available_timer_label, $ccnr_available_timer_tt, '', false));
+		$currentcomponent->addguielem($section, new gui_selectbox('cc_recall_timer', $currentcomponent->getoptlist('cc_recall_timer'), $cc_recall_timer, $cc_recall_timer_label, $cc_recall_timer_tt, '', false));
+		$currentcomponent->addguielem($section, new gui_selectbox('cc_max_agents', $currentcomponent->getoptlist('cc_max_agents'), $cc_max_agents, $cc_max_agents_label, $cc_max_agents_tt, '', false));
+		$currentcomponent->addguielem($section, new gui_selectbox('cc_agent_dialstring', $currentcomponent->getoptlist('cc_agent_dialstring'), $cc_agent_dialstring, $cc_agent_dialstring_label, $cc_agent_dialstring_tt, '', false));
+		$currentcomponent->addguielem($section, new gui_selectbox('cc_max_monitors', $currentcomponent->getoptlist('cc_max_monitors'), $cc_max_monitors, $cc_max_monitors_label, $cc_max_monitors_tt, '', false));
 
     //TODO: put in validation functions after the tt
 		$currentcomponent->addguielem($section, new gui_textbox('cc_alert_info', $cc_alert_info, $cc_alert_info_label, $cc_alert_info_tt, '', $msgInvalidAlertInfo, true));
@@ -395,7 +406,7 @@ function campon_configprocess() {
     $ccss['cc_max_agents'] =        isset($_REQUEST['cc_max_agents']) ? $_REQUEST['cc_max_agents'] : $amp_conf['CC_MAX_AGENTS_DEFAULT'];
     $ccss['cc_agent_dialstring'] =  isset($_REQUEST['cc_agent_dialstring']) ? $_REQUEST['cc_agent_dialstring'] : $amp_conf['CC_AGENT_DIALSTRING_DEFAULT'];
     $ccss['cc_monitor_policy'] =    isset($_REQUEST['cc_monitor_policy']) ? $_REQUEST['cc_monitor_policy'] : $amp_conf['CC_MONITOR_POLICY_DEFAULT'];
-    $ccss['cc_max_monitors'] =      isset($_REQUEST['cc_max_monitors']) ? $_REQUEST['cc_max_monitors'] : $amp_conf['CC_MAX_MONITOR_DEFAULT'];
+    $ccss['cc_max_monitors'] =      isset($_REQUEST['cc_max_monitors']) ? $_REQUEST['cc_max_monitors'] : $amp_conf['CC_MAX_MONITORS_DEFAULT'];
     $ccss['cc_alert_info'] =        isset($_REQUEST['cc_alert_info']) ? $_REQUEST['cc_alert_info'] : $amp_conf['CC_ALERT_INFO_DEFAULT'];
     $ccss['cc_cid_prepend'] =       isset($_REQUEST['cc_cid_prepend']) ? $_REQUEST['cc_cid_prepend'] : $amp_conf['CC_CID_PREPEND_DEFAULT'];
   }
@@ -451,7 +462,7 @@ function campon_get($xtn, $supply_overrides=false) {
       $ccss['cc_recall_timer'] =      $amp_conf['CC_RECALL_TIMER_DEFAULT'];
       $ccss['cc_max_agents'] =        $amp_conf['CC_MAX_AGENTS_DEFAULT'];
       $ccss['cc_agent_dialstring'] =  $amp_conf['CC_AGENT_DIALSTRING_DEFAULT'];
-      $ccss['cc_max_monitors'] =      $amp_conf['CC_MAX_MONITOR_DEFAULT'];
+      $ccss['cc_max_monitors'] =      $amp_conf['CC_MAX_MONITORS_DEFAULT'];
       $ccss['cc_alert_info'] =        $amp_conf['CC_ALERT_INFO_DEFAULT'];
       $ccss['cc_cid_prepend'] =       $amp_conf['CC_CID_PREPEND_DEFAULT'];
     }
