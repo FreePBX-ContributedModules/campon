@@ -7,7 +7,7 @@ function campon_hookGet_config($engine) {
   switch($engine) {
   case "asterisk":
     $priority = 'report';
-    $ext->splice('macro-user-callerid', 's', $priority,new ext_gosubif('$[${LEN(${DB(AMPUSER/${AMPUSER}/ccss/cc_agent_policy)})} & "${DB(AMPUSER/${AMPUSER}/ccss/cc_agent_policy)}" != "never"]', 'sub-ccss,s,1,${MACRO_CONTEXT},${MACRO_EXTEN}'));
+    $ext->splice('macro-user-callerid', 's', $priority,new ext_gosubif('$[${LEN(${DB(AMPUSER/${AMPUSER}/ccss/cc_agent_policy)})} & "${DB(AMPUSER/${AMPUSER}/ccss/cc_agent_policy)}" != "never"]', 'sub-ccss,s,1(${MACRO_CONTEXT},${CALLERID(dnid))}'));
   break;
   }
 }
@@ -44,9 +44,9 @@ function campon_get_config($engine) {
       $ext->add($mcontext,$exten,'', new ext_noop_trace('AMPUSER: ${AMPUSER} Calling ${ARG2}:${ARG1} checking if all happy'));
 			$ext->add($mcontext,$exten,'', new ext_execif('$[${LEN(${CCSS_SETUP})}]','Return'));
 			$ext->add($mcontext,$exten,'', new ext_set('CCSS_SETUP', 'TRUE'));
-      $ext->add($mcontext,$exten,'', new ext_gosubif('$[${LEN(${DB(AMPUSER/${ARG2}/ccss/cc_monitor_policy)})}]','monitor_config,1','monitor_default,1'));
-      $ext->add($mcontext,$exten,'', new ext_gosubif('$[${LEN(${DB(AMPUSER/${AMPUSER}/ccss/cc_agent_policy)})}]','agent_config,1','agent_default,1'));
-			$ext->add($mcontext,$exten,'', new ext_return(''));
+      $ext->add($mcontext,$exten,'monitor', new ext_gosubif('$[${LEN(${DB(AMPUSER/${ARG2}/ccss/cc_monitor_policy)})}]','monitor_config,1','monitor_default,1'));
+      $ext->add($mcontext,$exten,'agent', new ext_gosubif('$[${LEN(${DB(AMPUSER/${AMPUSER}/ccss/cc_agent_policy)})}]','agent_config,1','agent_default,1'));
+			$ext->add($mcontext,$exten,'', new ext_return('${GOSUB_RETVAL}'));
 
       /**
        * If we are in this subroutine, it has been confirmed user doesn't have 'never' as a policy, but they could
@@ -61,10 +61,10 @@ function campon_get_config($engine) {
       $ext->add($mcontext,$exten,'', new ext_gotoif('$["CALLCOMPLETION(cc_monitor_policy)" != "never"]','set_monitor'));
 			$ext->add($mcontext,$exten,'', new ext_noop_trace('Callee has no settings and default disabled, returning'));
 			$ext->add($mcontext,$exten,'', new ext_stackpop(''));
-			$ext->add($mcontext,$exten,'', new ext_return(''));
+			$ext->add($mcontext,$exten,'', new ext_return('FALSE'));
 
       $ext->add($mcontext,$exten,'set_monitor', new ext_set('CALLCOMPLETTION(cc_max_monitors)', '${DB(AMPUSER/${ARG2}/ccss/max_monitors)}'));
-			$ext->add($mcontext,$exten,'', new ext_return(''));
+			$ext->add($mcontext,$exten,'', new ext_return('TRUE'));
 
       /**
        * if we are here, there is either no monitor policy set for the destination extension, or it may not be an extension
@@ -77,22 +77,24 @@ function campon_get_config($engine) {
       If ($amp_conf['CC_NON_EXTENSION_POLICY'] == 'never') {
 			  $ext->add($mcontext,$exten,'', new ext_noop_trace('calling a non-extesnion, policy set to never, skipping',6));
 			  $ext->add($mcontext,$exten,'', new ext_stackpop(''));
+			  $ext->add($mcontext,$exten,'', new ext_return('FALSE'));
       } else {
 			  $ext->add($mcontext,$exten,'', new ext_noop_trace('calling a non-extesnion, policy enabled , continuing',6));
 			  $ext->add($mcontext,$exten,'', new ext_set('CALLCOMPLETTION(cc_monitor_policy)', $amp_conf['CC_NON_EXTENSION_POLICY']));
         $ext->add($mcontext,$exten,'', new ext_set('CALLCOMPLETTION(cc_max_monitors)', $amp_conf['CC_MAX_MONITORS_DEFAULT']));
+			  $ext->add($mcontext,$exten,'', new ext_return('TRUE'));
       }
-			$ext->add($mcontext,$exten,'', new ext_return(''));
 
       If ($amp_conf['CC_MONITOR_POLICY_DEFAULT'] == 'never') {
 			  $ext->add($mcontext,$exten,'is_exten', new ext_noop_trace('Callee has no settings and default is never so disabling'));
 			  $ext->add($mcontext,$exten,'is_exten', new ext_stackpop(''));
+			  $ext->add($mcontext,$exten,'', new ext_return('FALSE'));
       } else {
 			  $ext->add($mcontext,$exten,'is_exten', new ext_noop_trace('Callee has no settings and default enabled, continuing'));
 			  $ext->add($mcontext,$exten,'is_exten', new ext_set('CALLCOMPLETTION(cc_monitor_policy)', $amp_conf['CC_MONITOR_POLICY_DEFAULT']));
         $ext->add($mcontext,$exten,'', new ext_set('CALLCOMPLETTION(cc_max_monitors)', $amp_conf['CC_MAX_MONITORS_DEFAULT']));
+			  $ext->add($mcontext,$exten,'', new ext_return('TRUE'));
       }
-			$ext->add($mcontext,$exten,'', new ext_return(''));
 
       // subroutine(agent_config)
       $exten = 'agent_config';
@@ -101,17 +103,11 @@ function campon_get_config($engine) {
 			$ext->add($mcontext,$exten,'', new ext_set('CALLCOMPLETTION(ccbs_available_timer)', '${DB(AMPUSER/${ARG2}/ccss/ccbs_available_timer)}'));
 			$ext->add($mcontext,$exten,'', new ext_set('CALLCOMPLETTION(ccnr_available_timer)', '${DB(AMPUSER/${ARG2}/ccss/ccnr_available_timer)}'));
 
-      // TODO: need to decide implementation here. The though is when they set Alert-Info or CID-Prepend, then we generate a unique macro for
-      //       that user and in that macro we set the prepend info, alert-info stuff since unique to that user, or maybe no need to be unique
-      //       I know who the exten is, cause they just called back, I think. Hmm, it's late, not thinking straight, re-visit this later since
-      //       as mentioned, need to work out the details for this one.
-      //
-			$ext->add($mcontext,$exten,'', new ext_set('CALLCOMPLETTION(cc_callback_macro)', '${DB(AMPUSER/${ARG2}/ccss/cc_callback_macro)}'));
-
       $ext->add($mcontext, $exten, '', new ext_execif('$["${CALLCOMPLETTION(cc_agent_policy)}" = "generic"]', 'Set', 'CALLCOMPLETTION(cc_recall_timer)=${DB(AMPUSER/${AMPUSER}/ccss/cc_recall_timer)}'));
       $ext->add($mcontext, $exten, '', new ext_execif('$["${CALLCOMPLETTION(cc_agent_policy)}" = "generic"]', 'Set', 'CALLCOMPLETTION(cc_max_agents)=${DB(AMPUSER/${AMPUSER}/ccss/cc_max_agents)}'));
-      $ext->add($mcontext, $exten, '', new ext_execif('$["${DB(AMPUSER/${AMPUSER}/ccss/cc_agent_dialstring)}" = "internal"]', 'Set', 'CALLCOMPLETTION(cc_agent_dialstring)=Local/${AMPUSER}@from-ccss-internal'));
-      $ext->add($mcontext, $exten, '', new ext_execif('$["${DB(AMPUSER/${AMPUSER}/ccss/cc_agent_dialstring)}" = "extension"]', 'Set', 'CALLCOMPLETTION(cc_agent_dialstring)=Local/${AMPUSER}@from-ccss-extension'));
+      $ext->add($mcontext, $exten, '', new ext_execif('$["${DB(AMPUSER/${AMPUSER}/ccss/cc_agent_dialstring)}" = "internal"]', 'Set', 'CALLCOMPLETTION(cc_agent_dialstring)=Local/${AMPUSER}_${CALLERID(dnid)}@from-ccss-internal'));
+      $ext->add($mcontext, $exten, '', new ext_execif('$["${DB(AMPUSER/${AMPUSER}/ccss/cc_agent_dialstring)}" = "extension"]', 'Set', 'CALLCOMPLETTION(cc_agent_dialstring)=Local/${AMPUSER}_${CALLERID(dnid)}@from-ccss-extension'));
+      $ext->add($mcontext, $exten, '', new ext_execif('$[${LEN(${DB(AMPUSER/${AMPUSER}/ccss/cc_agent_dialstring)})}]', 'Set', 'CALLCOMPLETTION(cc_callback_macro)=ccss-default'));
 			$ext->add($mcontext,$exten,'', new ext_return(''));
 
       // subroutine(agent_default)
@@ -119,6 +115,7 @@ function campon_get_config($engine) {
       If ($amp_conf['CC_AGENT_POLICY_DEFAULT'] == 'never') {
 			  $ext->add($mcontext,$exten,'', new ext_noop_trace('Caller has no settings and default is never so disabling'));
 			  $ext->add($mcontext,$exten,'', new ext_stackpop(''));
+			  $ext->add($mcontext,$exten,'', new ext_return('FALSE'));
       } else {
         // TODO: is it possible we are not an extension calling here and we need more logic to safeguard?
 			  $ext->add($mcontext,$exten,'', new ext_noop_trace('Caller has no settings using default values since policy is enabled'));
@@ -134,29 +131,79 @@ function campon_get_config($engine) {
 
         If ($amp_conf['CC_AGENT_DIALSTRING_DEFAULT'] == 'extension') {
           $ext->add($mcontext, $exten, '', new ext_set('CALLCOMPLETTION(cc_agent_dialstring)','Local/${AMPUSER}@from-ccss-extension'));
+          $ext->add($mcontext, $exten, '', new ext_set('CALLCOMPLETTION(cc_callback_macro)','ccss-default'));
         } else If ($amp_conf['CC_AGENT_DIALSTRING_DEFAULT'] == 'internal') {
           $ext->add($mcontext, $exten, '', new ext_set('CALLCOMPLETTION(cc_agent_dialstring)','Local/${AMPUSER}@from-ccss-internal'));
-        }
-        // TODO: What about default cc_callback_macro, once we deterimine exactly how we use that, then we can see what condition
-        //       needs to set this and if it looks proper
-        if (false) {
           $ext->add($mcontext, $exten, '', new ext_set('CALLCOMPLETTION(cc_callback_macro)','ccss-default'));
         }
+			  $ext->add($mcontext,$exten,'', new ext_return('TRUE'));
       }
-			$ext->add($mcontext,$exten,'', new ext_return(''));
 
-      // TODO: Add from-ccss-extension
+      $cpp = $amp_conf['CC_FORCE_DEFAULTS'] ? $amp_conf['CC_MONITOR_CID_PREPEND_DEFAULT'] : '${DB(AMPUSER/${CALLBACK_NUM}/ccss/cc_monitor_cid_prepend)}';
 
-      // TODO: Add from-ccss-internal
+      $mcontext = 'macro-ccss-default';
+      $exten = 's';
 
-      // TODO: Add something (SHARED(), current blkvm, to voicemail to block recall from going there
+      if ($amp_conf['CC_FORCE_DEFAULTS'] && $amp_conf['CC_ANNOUNCE_MONITOR_DEFAULT']) {
+        $ext->add($mcontext,$exten,'', new ext_playback('beep&calling&extension'));
+        $ext->add($mcontext,$exten,'', new ext_saydigits('${CALLBACK_NUM}'));
+      } elseif ($amp_conf['CC_FORCE_DEFAULTS']) {
+        $ext->add($mcontext,$exten,'', new ext_answer(''));
+      } else {
+        $ext->add($mcontext,$exten,'', new ext_gotoif('$["${DB(AMPUSER/${AMPUSER}/ccss/cc_announce_monitor)}" = "silent"]','siprm'));
+        $ext->add($mcontext,$exten,'', new ext_playback('beep&calling&extension'));
+        $ext->add($mcontext,$exten,'', new ext_saydigits('${CALLBACK_NUM}'));
+      }
+      $ext->add($mcontext,$exten,'siprm', new ext_sipremoveheader('${CC_HEADER}'));
+		  $ext->add($mcontext,$exten,'', new ext_noop_trace('In ccmacro with: ${CC_INTERFACES} Header: ${CC_HEADER} Callback: ${CALLBACK_NUM}'));
 
-      // TODO: Alert-Info and CID Prepend probably in macro but determin
+      $ext->add($mcontext, $exten, '', new ext_set('CALLERID(name)',$cpp.'${CALLERIID(name)}'));
+      if ($amp_conf['CC_FORCE_DEFAULTS'] && $amp_conf['CC_MONITOR_ALERT_INFO_DEFAULT']) {
+        $ext->add($mcontext, $exten, '', new ext_alertinfo($amp_conf['CC_MONITOR_ALERT_INFO_DEFAULT']));
+      } elseif (!$amp_conf['CC_FORCE_DEFAULTS']) {
+        $ext->add($mcontext, $exten, '', new ext_execif('$[!${LEN(${DB(AMPUSER/${AMPUSER}/ccss/cc_monitor_alert_info)})}]','MacroExit'));
+        $ext->add($mcontext, $exten, '', new ext_alertinfo('${DB(AMPUSER/${CALLBACK_NUM}/ccss/cc_monitor_alert_info)}'));
+      }
+      $ext->add($mcontext,$exten,'', new ext_macroexit(''));
+
+
+      $context = 'from-ccss-internal';
+      $exten = '_X._X.';
+
+      $ext->add($context, $exten, '', new ext_gosub('sub-from-css,s,1(${CUT(EXTEN,_,2)})'));
+      $ext->add($context, $exten, 'no_alert', new ext_goto('1','${CUT(EXTEN,_,1)}','from-internal'));
+
+      $context = 'from-ccss-extension';
+      $exten = '_X._X.';
+
+      $ext->add($context, $exten, '', new ext_gosub('sub-from-css,s,1(${CUT(EXTEN,_,2)})'));
+      $ext->add($context, $exten, '', new ext_goto('1','${CUT(EXTEN,_,1)}','ext-local'));
+
+
+      $cpp = $amp_conf['CC_FORCE_DEFAULTS'] ? $amp_conf['CC_AGENT_CID_PREPEND_DEFAULT'] : '${DB(AMPUSER/${AMPUSER}/ccss/cc_agent_cid_prepend)}';
+
+      $mcontext = 'sub-from-ccss';
+      $exten = 's';
+      //$ext->add($context, $exten, '', new ext_set('FROM_CALL_COMPLETION','1'));
+      $ext->add($context, $exten, '', new ext_macro('blkvm-set'));
+      $ext->add($context, $exten, '', new ext_set('__CALLBACK_NUM','${ARG1}'));
+      $ext->add($context, $exten, '', new ext_set('CALLERID(name)','${IF($[${LEN(${DB(AMPUSER/${CALLBACK_NUM}/cidname)})}]?'.$cpp.'${DB(AMPUSER/${CALLBACK_NUM}/cidname)}:CALLBACK)}')); //TODO: Make this configurable
+      $ext->add($context, $exten, '', new ext_set('CALLERID(number)','${CALLBACK_NUM}'));
+      $ext->add($context, $exten, '', new ext_noop_trace('CID INFO: ${CALLERID(name)} ${CALLERID(num)} EXTEN: ${ARG1}',5));
+      if ($amp_conf['CC_FORCE_DEFAULTS'] && $amp_conf['CC_AGENT_ALERT_INFO_DEFAULT']) {
+        $ext->add($context, $exten, '', new ext_set('__CC_HEADER',$amp_conf['CC_AGENT_ALERT_INFO_DEFAULT']));
+      } elseif ($amp_conf['CC_FORCE_DEFAULTS']) {
+        $ext->add($context, $exten, '', new ext_return(''));
+      } else {
+        $ext->add($context, $exten, '', new ext_execif('$[!${LEN(${DB(AMPUSER/${AMPUSER}/ccss/cc_agent_alert_info)})}]','Return'));
+        $ext->add($context, $exten, '', new ext_set('__CC_HEADER','${DB(AMPUSER/${AMPUSER}/ccss/cc_agent_alert_info)}'));
+      }
+      $ext->add($context, $exten, '', new ext_alertinfo('${CC_HEADER}'));
+      $ext->add($context, $exten, '', new ext_return(''));
 		break;
 	}
 }
 
-// TODO: test response code to see if we can generate meaningful success/fail feedback
 function campon_request($c) {
 	global $ext;
   global $amp_conf;
@@ -165,14 +212,19 @@ function campon_request($c) {
 
 	$ext->addInclude('from-internal-additional', $id); // Add the include from from-internal
 	$ext->add($id, $c, '', new ext_answer(''));
+  $ext->add($id, $c, '', new ext_set('CCSS_SETUP', 'TRUE')); // keep from calling normal sub-ccss
 	$ext->add($id, $c, '', new ext_macro('user-callerid'));
+  $ext->add($id, $c, '', new ext_gosub('sub-ccss,s,agent'));
+  $ext->add($id, $c, '', new ext_noop_trace('GoSub(sub-ccss,s,agent) RETVAL: ${GOSUB_RETVAL}'));
+  // TODO: If they are not enabled, handle it here letting them know ${GOSUB_RETVAL}
+  //
+
 	$ext->add($id, $c, '', new ext_callcompletionrequest(''));
 	$ext->add($id, $c, '', new ext_noop_trace('CC_REQUEST_RESULT: ${CC_REQUEST_RESULT}'));
 	$ext->add($id, $c, '', new ext_playback('beep'));
 	$ext->add($id, $c, '', new ext_macro('hangupcall'));
 }
 
-// TODO: test response code to see if we can generate meaningful success/fail feedback
 function campon_cancel($c) {
 	global $ext;
   global $amp_conf;
@@ -180,7 +232,13 @@ function campon_cancel($c) {
 	$id = "app-campon-cancel"; // The context to be included
 	$ext->addInclude('from-internal-additional', $id); // Add the include from from-internal
 	$ext->add($id, $c, '', new ext_answer(''));
+  $ext->add($id, $c, '', new ext_set('CCSS_SETUP', 'TRUE')); // keep from calling normal sub-ccss
 	$ext->add($id, $c, '', new ext_macro('user-callerid'));
+  $ext->add($id, $c, '', new ext_gosub('sub-ccss,s,agent'));
+  $ext->add($id, $c, '', new ext_noop_trace('GoSub(sub-ccss,s,agent) RETVAL: ${GOSUB_RETVAL}'));
+  // TODO: If they are not enabled, handle it here letting them know ${GOSUB_RETVAL}
+  //
+
 	$ext->add($id, $c, '', new ext_callcompletioncancel(''));
 	$ext->add($id, $c, '', new ext_noop_trace('CC_REQUEST_RESULT: ${CC_REQUEST_RESULT}'));
 	$ext->add($id, $c, '', new ext_playback('beep'));
@@ -282,6 +340,10 @@ function campon_applyhooks() {
 	$currentcomponent->addoptlistitem('cc_monitor_policy', 'accept', _('Native Where Available'));
 	$currentcomponent->setoptlistopts('cc_monitor_policy', 'sort', false);
 
+	$currentcomponent->addoptlistitem('cc_announce_monitor', 'announce', _('Announce'));
+	$currentcomponent->addoptlistitem('cc_announce_monitor', 'silent', _('Silent'));
+	$currentcomponent->setoptlistopts('cc_announce_monitor', 'sort', false);
+
   for ($i=1;$i<=20;$i++) {
 	  $currentcomponent->addoptlistitem('cc_max_monitors', $i, sprintf(_('%s Incoming Requests'),$i));
   }
@@ -318,8 +380,11 @@ function campon_configpageload() {
     $cc_max_agents_label =        _("Max Camped-On Extensions");
     $cc_agent_dialstring_label =  _("Caller Callback Mode");
     $cc_max_monitors_label =      _("Max Queued Callers");
-    $cc_alert_info_label =        _("Callback Alert-Info");
-    $cc_cid_prepend_label =       _("Callback CID Prepend");
+    $cc_announce_monitor_label =  _("Announce Callback Extension");
+    $cc_agent_alert_info_label =        _("Callback Alert-Info");
+    $cc_agent_cid_prepend_label =       _("Callback CID Prepend");
+    $cc_monitor_alert_info_label =        _("Callee Alert-Info");
+    $cc_monitor_cid_prepend_label =       _("Callee CID Prepend");
 
     $cc_agent_policy_tt =      _("Asterisk: cc_agent_policy. Used to enable Camp-On for this user and set the Technology Mode that will be used when engaging the feature. In most cases 'Generic Device' should be chosen unless you have phones designed to work with channel specific capabilities.");
     $cc_monitor_policy_tt =    _("Asterisk: cc_monitor_policy. Used to control if other phones are allowed to Camp On to this extnesion. If so, it sets the technology mode used to monitor the availability of the extension. If no specific technology support is available then it should be set to a 'Generic Device'. In this mode, a callback will be initiated to this extension when it changes from an InUse state to NotInUse. If it was busy when first attempted, this will be when the current call has eneded. If it simply did not answer, then this will be the next time this phone is used to make or answer a call and then hangs up. It is possible to set this to take advantage of 'Native Technology Support' if availalbe and automatically fallback to the 'Generic Mode' whe not.");
@@ -337,8 +402,11 @@ function campon_configpageload() {
           <li>$cc_max_agents_label: " . $amp_conf['CC_MAX_AGENTS_DEFAULT'] . "</li>
           <li>$cc_agent_dialstring_label: " . $amp_conf['CC_AGENT_DIALSTRING_DEFAULT'] . "</li>
           <li>$cc_max_monitors_label: " . $amp_conf['CC_MAX_MONITORS_DEFAULT'] . "</li>
-          <li>$cc_alert_info_label: " . $amp_conf['CC_ALERT_INFO_DEFAULT'] . "</li>
-          <li>$cc_cid_prepend_label: " . $amp_conf['CC_CID_PREPEND_DEFAULT'] . "</li>
+          <li>$cc_announce_monitor_label: " . $amp_conf['CC_ANNOUNCE_MONITOR_DEFAULT'] . "</li>
+          <li>$cc_agent_alert_info_label: " . $amp_conf['CC_AGENT_ALERT_INFO_DEFAULT'] . "</li>
+          <li>$cc_agent_cid_prepend_label: " . $amp_conf['CC_AGENT_CID_PREPEND_DEFAULT'] . "</li>
+          <li>$cc_monitor_alert_info_label: " . $amp_conf['CC_MONITOR_ALERT_INFO_DEFAULT'] . "</li>
+          <li>$cc_monitor_cid_prepend_label: " . $amp_conf['CC_MONITOR_CID_PREPEND_DEFAULT'] . "</li>
         </ul>";
       $currentcomponent->addguielem($section, new gui_link_label('cc_default_settings', $cc_default_settings_label, $cc_default_settings_tt, true));
     }
@@ -349,15 +417,18 @@ function campon_configpageload() {
     }
 
 
-    $cc_offer_timer =       $ccss['cc_offer_timer'];
-    $ccbs_available_timer = $ccss['ccbs_available_timer'];
-    $ccnr_available_timer = $ccss['ccnr_available_timer'];
-    $cc_recall_timer =      $ccss['cc_recall_timer'];
-    $cc_max_agents =        $ccss['cc_max_agents'];
-    $cc_agent_dialstring =  $ccss['cc_agent_dialstring'];
-    $cc_max_monitors =      $ccss['cc_max_monitors'];
-    $cc_alert_info =        $ccss['cc_alert_info'];
-    $cc_cid_prepend =       $ccss['cc_cid_prepend'];
+    $cc_offer_timer =         $ccss['cc_offer_timer'];
+    $ccbs_available_timer =   $ccss['ccbs_available_timer'];
+    $ccnr_available_timer =   $ccss['ccnr_available_timer'];
+    $cc_recall_timer =        $ccss['cc_recall_timer'];
+    $cc_max_agents =          $ccss['cc_max_agents'];
+    $cc_agent_dialstring =    $ccss['cc_agent_dialstring'];
+    $cc_max_monitors =        $ccss['cc_max_monitors'];
+    $cc_announce_monitor =    $ccss['cc_announce_monitor'];
+    $cc_agent_alert_info =    $ccss['cc_agent_alert_info'];
+    $cc_agent_cid_prepend =   $ccss['cc_agent_cid_prepend'];
+    $cc_monitor_alert_info =  $ccss['cc_monitor_alert_info'];
+    $cc_monitor_cid_prepend = $ccss['cc_monitor_cid_prepend'];
 
     $cc_offer_timer_tt =       _("Asterisk: cc_offer_timer. How long after dialing an extenion a user has to make a call completion request.");
     $ccbs_available_timer_tt = _("Asteirsk: ccbs_available_timer. How long a call completion request will remain active before expiring if the phone rang busy when first attempting the call.");
@@ -368,8 +439,12 @@ function campon_configpageload() {
 
     $cc_max_monitors_tt =      _("Asterisk: cc_max_monitors. This is the maximum number of callers that are allowed to queue up call completion requests against this extension.");
 
-    $cc_alert_info_tt =        _("An optional Alert-Info setting that can be used when initiating a callback. Only valid when 'Caller Policy' is set to a 'Generic Device'");
-    $cc_cid_prepend_tt =       _("An optional CID Prepend setting that can be used when initiating a callback. Only valid when 'Caller Policy' is set to a 'Generic Device'");
+    $cc_announce_monitor_tt =        _("Whether or not to announce the extension that is being called back when the phone is picked up.");
+    $cc_agent_alert_info_tt =        _("An optional Alert-Info setting that can be used when initiating a callback. Only valid when 'Caller Policy' is set to a 'Generic Device'");
+    $cc_agent_cid_prepend_tt =       _("An optional CID Prepend setting that can be used when initiating a callback. Only valid when 'Caller Policy' is set to a 'Generic Device'");
+
+    $cc_monitor_alert_info_tt =        _("An optional Alert-Info setting that can be used to send to the extension being called back.");
+    $cc_monitor_cid_prepend_tt =       _("An optional CID Prepend setting that can be used to send to the extension being called back.");
 
 		$msgInvalidAlertInfo = _('Please enter a valid Alert-Info');
 		$msgInvalidCIDPrefix = _('Please enter a valid CID Prefix');
@@ -383,9 +458,14 @@ function campon_configpageload() {
 		$currentcomponent->addguielem($section, new gui_selectbox('cc_agent_dialstring', $currentcomponent->getoptlist('cc_agent_dialstring'), $cc_agent_dialstring, $cc_agent_dialstring_label, $cc_agent_dialstring_tt, '', false));
 		$currentcomponent->addguielem($section, new gui_selectbox('cc_max_monitors', $currentcomponent->getoptlist('cc_max_monitors'), $cc_max_monitors, $cc_max_monitors_label, $cc_max_monitors_tt, '', false));
 
+    $currentcomponent->addguielem($section, new gui_radio('cc_announce_monitor', $currentcomponent->getoptlist('cc_announce_monitor'), $cc_announce_monitor, $cc_announce_monitor_label, $cc_announce_monitor_tt, false));
+
     //TODO: put in validation functions after the tt
-		$currentcomponent->addguielem($section, new gui_textbox('cc_alert_info', $cc_alert_info, $cc_alert_info_label, $cc_alert_info_tt, '', $msgInvalidAlertInfo, true));
-		$currentcomponent->addguielem($section, new gui_textbox('cc_cid_prepend', $cc_cid_prepend, $cc_cid_prepend_label, $cc_cid_prepend_tt, '', $msgInvalidCIDPrefix, true));
+		$currentcomponent->addguielem($section, new gui_textbox('cc_agent_alert_info', $cc_agent_alert_info, $cc_agent_alert_info_label, $cc_agent_alert_info_tt, '', $msgInvalidAlertInfo, true));
+		$currentcomponent->addguielem($section, new gui_textbox('cc_agent_cid_prepend', $cc_agent_cid_prepend, $cc_agent_cid_prepend_label, $cc_agent_cid_prepend_tt, '', $msgInvalidCIDPrefix, true));
+
+		$currentcomponent->addguielem($section, new gui_textbox('cc_monitor_alert_info', $cc_monitor_alert_info, $cc_monitor_alert_info_label, $cc_monitor_alert_info_tt, '', $msgInvalidAlertInfo, true));
+		$currentcomponent->addguielem($section, new gui_textbox('cc_monitor_cid_prepend', $cc_monitor_cid_prepend, $cc_monitor_cid_prepend_label, $cc_monitor_cid_prepend_tt, '', $msgInvalidCIDPrefix, true));
 	}
 }
 
@@ -407,8 +487,10 @@ function campon_configprocess() {
     $ccss['cc_agent_dialstring'] =  isset($_REQUEST['cc_agent_dialstring']) ? $_REQUEST['cc_agent_dialstring'] : $amp_conf['CC_AGENT_DIALSTRING_DEFAULT'];
     $ccss['cc_monitor_policy'] =    isset($_REQUEST['cc_monitor_policy']) ? $_REQUEST['cc_monitor_policy'] : $amp_conf['CC_MONITOR_POLICY_DEFAULT'];
     $ccss['cc_max_monitors'] =      isset($_REQUEST['cc_max_monitors']) ? $_REQUEST['cc_max_monitors'] : $amp_conf['CC_MAX_MONITORS_DEFAULT'];
-    $ccss['cc_alert_info'] =        isset($_REQUEST['cc_alert_info']) ? $_REQUEST['cc_alert_info'] : $amp_conf['CC_ALERT_INFO_DEFAULT'];
-    $ccss['cc_cid_prepend'] =       isset($_REQUEST['cc_cid_prepend']) ? $_REQUEST['cc_cid_prepend'] : $amp_conf['CC_CID_PREPEND_DEFAULT'];
+    $ccss['cc_agent_alert_info'] =        isset($_REQUEST['cc_agent_alert_info']) ? $_REQUEST['cc_agent_alert_info'] : $amp_conf['CC_AGENT_ALERT_INFO_DEFAULT'];
+    $ccss['cc_agent_cid_prepend'] =       isset($_REQUEST['cc_agent_cid_prepend']) ? $_REQUEST['cc_agent_cid_prepend'] : $amp_conf['CC_AGENT_CID_PREPEND_DEFAULT'];
+    $ccss['cc_monitor_alert_info'] =        isset($_REQUEST['cc_monitor_alert_info']) ? $_REQUEST['cc_monitor_alert_info'] : $amp_conf['CC_AGENT_ALERT_INFO_DEFAULT'];
+    $ccss['cc_monitor_cid_prepend'] =       isset($_REQUEST['cc_monitor_cid_prepend']) ? $_REQUEST['cc_monitor_cid_prepend'] : $amp_conf['CC_AGENT_CID_PREPEND_DEFAULT'];
   }
 
 	if ($ext==='') { 
@@ -453,18 +535,27 @@ function campon_get($xtn, $supply_overrides=false) {
       $ccss['cc_max_agents'] = $astman->database_get("AMPUSER",$xtn."/ccss/cc_max_agents");
       $ccss['cc_agent_dialstring'] = $astman->database_get("AMPUSER",$xtn."/ccss/cc_agent_dialstring");
       $ccss['cc_max_monitors'] = $astman->database_get("AMPUSER",$xtn."/ccss/cc_max_monitors");
-      $ccss['cc_alert_info'] = $astman->database_get("AMPUSER",$xtn."/ccss/cc_alert_info");
-      $ccss['cc_cid_prepend'] = $astman->database_get("AMPUSER",$xtn."/ccss/cc_cid_prepend");
+      $ccss['cc_announce_monitor'] = $astman->database_get("AMPUSER",$xtn."/ccss/cc_announce_monitor");
+      if (!$ccss['cc_announce_monitor']) {
+        $ccss['cc_announce_monitor'] = $amp_conf['CC_ANNOUNCE_MONITOR_DEFAULT'] ? 'announce' : 'silent';
+      }
+      $ccss['cc_agent_alert_info'] = $astman->database_get("AMPUSER",$xtn."/ccss/cc_agent_alert_info");
+      $ccss['cc_agent_cid_prepend'] = $astman->database_get("AMPUSER",$xtn."/ccss/cc_agent_cid_prepend");
+      $ccss['cc_monitor_alert_info'] = $astman->database_get("AMPUSER",$xtn."/ccss/cc_monitor_alert_info");
+      $ccss['cc_monitor_cid_prepend'] = $astman->database_get("AMPUSER",$xtn."/ccss/cc_monitor_cid_prepend");
     } else {
-      $ccss['cc_offer_timer'] =       $amp_conf['CC_OFFER_TIMER_DEFAULT'];
-      $ccss['ccbs_available_timer'] = $amp_conf['CCBS_AVAILABLE_TIMER_DEFAULT'];
-      $ccss['ccnr_available_timer'] = $amp_conf['CCNR_AVAILABLE_TIMER_DEFAULT'];
-      $ccss['cc_recall_timer'] =      $amp_conf['CC_RECALL_TIMER_DEFAULT'];
-      $ccss['cc_max_agents'] =        $amp_conf['CC_MAX_AGENTS_DEFAULT'];
-      $ccss['cc_agent_dialstring'] =  $amp_conf['CC_AGENT_DIALSTRING_DEFAULT'];
-      $ccss['cc_max_monitors'] =      $amp_conf['CC_MAX_MONITORS_DEFAULT'];
-      $ccss['cc_alert_info'] =        $amp_conf['CC_ALERT_INFO_DEFAULT'];
-      $ccss['cc_cid_prepend'] =       $amp_conf['CC_CID_PREPEND_DEFAULT'];
+      $ccss['cc_offer_timer'] =         $amp_conf['CC_OFFER_TIMER_DEFAULT'];
+      $ccss['ccbs_available_timer'] =   $amp_conf['CCBS_AVAILABLE_TIMER_DEFAULT'];
+      $ccss['ccnr_available_timer'] =   $amp_conf['CCNR_AVAILABLE_TIMER_DEFAULT'];
+      $ccss['cc_recall_timer'] =        $amp_conf['CC_RECALL_TIMER_DEFAULT'];
+      $ccss['cc_max_agents'] =          $amp_conf['CC_MAX_AGENTS_DEFAULT'];
+      $ccss['cc_agent_dialstring'] =    $amp_conf['CC_AGENT_DIALSTRING_DEFAULT'];
+      $ccss['cc_max_monitors'] =        $amp_conf['CC_MAX_MONITORS_DEFAULT'];
+      $ccss['cc_announce_monitor'] =    $amp_conf['CC_ANNOUNCE_MONITOR_DEFAULT'] ? 'announce' : 'silent';
+      $ccss['cc_agent_alert_info'] =    $amp_conf['CC_AGENT_ALERT_INFO_DEFAULT'];
+      $ccss['cc_agent_cid_prepend'] =   $amp_conf['CC_AGENT_CID_PREPEND_DEFAULT'];
+      $ccss['cc_monitor_alert_info'] =  $amp_conf['CC_MONITOR_ALERT_INFO_DEFAULT'];
+      $ccss['cc_monitor_cid_prepend'] = $amp_conf['CC_MONITOR_CID_PREPEND_DEFAULT'];
     }
 	} else {
 		fatal("Cannot connect to Asterisk Manager with ".$amp_conf["AMPMGRUSER"]."/".$amp_conf["AMPMGRPASS"]);
@@ -497,3 +588,14 @@ function campon_del($ext) {
   }
 }
 
+/* TODO: NOTES/ISSUES
+ *
+ * CallCompletionRequest
+ * CallCompletionCancel
+ *
+ * These simply fail if request can't be made or canceled. Can't have any intellignent dialplan to deal with it, really
+ * bad!
+ * 
+ * It would be useful to put some information in channel variables when using the dialplan mode, who called, to avoid the
+ * ugly hoops of XXX_XXX format we are doing to retain the information.
+ */

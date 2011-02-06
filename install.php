@@ -53,6 +53,21 @@ $set['description'] = 'You can force all extensions on a system to only used the
 $set['type'] = CONF_TYPE_BOOL;
 $freepbx_conf->define_conf_setting('CC_FORCE_DEFAULTS',$set);
 
+// CC_ANNOUNCE_MONITOR_DEFAULT
+//
+$set['value'] = true;
+$set['defaultval'] =& $set['value'];
+$set['readonly'] = 0;
+$set['hidden'] = 0;
+$set['level'] = 1;
+$set['module'] = 'campon';
+$set['category'] = 'Camp-On Module';
+$set['emptyok'] = 0;
+$set['name'] = 'Announce the Callee Extension';
+$set['description'] = 'When set to true the target extension being called will be announced upone answering the Callback prior to ringing the extension. Setting this to false will go directly to ringing the extension, the CID information will still reflect who is being called back.';
+$set['type'] = CONF_TYPE_BOOL;
+$freepbx_conf->define_conf_setting('CC_ANNOUNCE_MONITOR_DEFAULT',$set);
+
 // CC_AGENT_POLICY_DEFAULT
 //
 $set['value'] = 'generic';
@@ -209,7 +224,7 @@ $set['description'] = "Asterisk: cc_max_monitors. This is the maximum number of 
 $set['type'] = CONF_TYPE_SELECT;
 $freepbx_conf->define_conf_setting('CC_MAX_MONITORS_DEFAULT',$set);
 
-// CC_ALERT_INFO_DEFAULT
+// CC_AGENT_ALERT_INFO_DEFAULT
 //
 $set['value'] = '';
 $set['defaultval'] =& $set['value'];
@@ -223,9 +238,9 @@ $set['emptyok'] = 1;
 $set['name'] = "Default Callback Alert-Info";
 $set['description'] = "An optional Alert-Info setting that can be used when initiating a callback. Only valid when 'Caller Policy' is set to 'generic' device'";
 $set['type'] = CONF_TYPE_TEXT;
-$freepbx_conf->define_conf_setting('CC_ALERT_INFO_DEFAULT',$set);
+$freepbx_conf->define_conf_setting('CC_AGENT_ALERT_INFO_DEFAULT',$set);
 
-// CC_CID_PREPEND_DEFAULT
+// CC_AGENT_CID_PREPEND_DEFAULT
 //
 $set['value'] = '';
 $set['defaultval'] =& $set['value'];
@@ -239,6 +254,38 @@ $set['emptyok'] = 1;
 $set['name'] = "Default Callback CID Prepend";
 $set['description'] = "An optional CID Prepend setting that can be used when initiating a callback. Only valid when 'Caller Policy' is set to a 'generic' device'";
 $set['type'] = CONF_TYPE_TEXT;
-$freepbx_conf->define_conf_setting('CC_CID_PREPEND_DEFAULT',$set);
+$freepbx_conf->define_conf_setting('CC_AGENT_CID_PREPEND_DEFAULT',$set);
+
+// CC_MONITOR_ALERT_INFO_DEFAULT
+//
+$set['value'] = '';
+$set['defaultval'] =& $set['value'];
+$set['options'] = '';
+$set['readonly'] = 0;
+$set['hidden'] = 0;
+$set['level'] = 1;
+$set['module'] = 'campon';
+$set['category'] = 'Camp-On Module';
+$set['emptyok'] = 1;
+$set['name'] = "Default Callee Alert-Info";
+$set['description'] = "An optional Alert-Info setting that can be used to send to the extension being called back.";
+$set['type'] = CONF_TYPE_TEXT;
+$freepbx_conf->define_conf_setting('CC_MONITOR_ALERT_INFO_DEFAULT',$set);
+
+// CC_MONITOR_CID_PREPEND_DEFAULT
+//
+$set['value'] = '';
+$set['defaultval'] =& $set['value'];
+$set['options'] = '';
+$set['readonly'] = 0;
+$set['hidden'] = 0;
+$set['level'] = 1;
+$set['module'] = 'campon';
+$set['category'] = 'Camp-On Module';
+$set['emptyok'] = 1;
+$set['name'] = "Default Callee CID Prepend";
+$set['description'] = "An optional CID Prepend setting that can be used to send to the extension being called back.'";
+$set['type'] = CONF_TYPE_TEXT;
+$freepbx_conf->define_conf_setting('CC_MONITOR_CID_PREPEND_DEFAULT',$set);
 
 $freepbx_conf->commit_conf_settings();
