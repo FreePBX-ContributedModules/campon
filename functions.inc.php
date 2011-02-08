@@ -17,7 +17,7 @@ function campon_get_config($engine) {
 	
 	// This generates the dialplan
 	global $ext;  
-	global $asterisk_conf;
+	global $amp_conf;
 	switch($engine) {
 		case "asterisk":
 			if (is_array($featurelist = featurecodes_getModuleFeatures($modulename))) {
@@ -44,8 +44,8 @@ function campon_get_config($engine) {
 			$ext->add($mcontext,$exten,'', new ext_execif('$[${LEN(${CCSS_SETUP})}]','Return'));
 			$ext->add($mcontext,$exten,'', new ext_set('CCSS_SETUP', 'TRUE'));
       $ext->add($mcontext,$exten,'', new ext_noop_trace('AMPUSER: ${AMPUSER} Calling ${ARG2}:${ARG1} checking if all happy'));
-      $ext->add($mcontext,$exten,'monitor', new ext_gosubif('$[${LEN(${DB(AMPUSER/${ARG2}/ccss/cc_monitor_policy)})}]','monitor_config,1','monitor_default,1'));
-      $ext->add($mcontext,$exten,'agent', new ext_gosubif('$[${LEN(${DB(AMPUSER/${AMPUSER}/ccss/cc_agent_policy)})}]','agent_config,1','agent_default,1'));
+      $ext->add($mcontext,$exten,'monitor', new ext_gosubif('$[${LEN(${DB(AMPUSER/${ARG2}/ccss/cc_monitor_policy)})}]','monitor_config,1(${ARG1},${ARG2}','monitor_default,1(${ARG1},${ARG2}'));
+      $ext->add($mcontext,$exten,'agent', new ext_gosubif('$[${LEN(${DB(AMPUSER/${AMPUSER}/ccss/cc_agent_policy)})}]','agent_config,1(${ARG1},${ARG2}','agent_default,1(${ARG1},${ARG2}'));
 			$ext->add($mcontext,$exten,'', new ext_return('${GOSUB_RETVAL}'));
 
       /**
