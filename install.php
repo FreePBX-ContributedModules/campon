@@ -26,7 +26,7 @@ $freepbx_conf =& freepbx_conf::create();
 //
 $set['value'] = 'never';
 $set['defaultval'] =& $set['value'];
-$set['options'] = array('never', 'generic', 'accept');
+$set['options'] = array('never', 'generic', 'always');
 $set['readonly'] = 0;
 $set['hidden'] = 0;
 $set['level'] = 1;
@@ -34,7 +34,7 @@ $set['module'] = 'campon';
 $set['category'] = 'Camp-On Module';
 $set['emptyok'] = 0;
 $set['name'] = 'Non Extensions Callee Policy';
-$set['description'] = "If this is set to 'generic' or 'accept' then it will be possible to attempt call completion requests when dialing non-extensions such as ring groups and other possible destinations that could work with call completion. Setting this will bypass any Callee Policies and can result in inconsistent behavior. If set, 'generic' is the most common, 'accept' will attempt to use technology specific capabilities if the called extension uses a channel that supports that.";
+$set['description'] = "If this is set to 'generic' or 'always' then it will be possible to attempt call completion requests when dialing non-extensions such as ring groups and other possible destinations that could work with call completion. Setting this will bypass any Callee Policies and can result in inconsistent behavior. If set, 'generic' is the most common, 'always' will attempt to use technology specific capabilities if the called extension uses a channel that supports that.";
 $set['type'] = CONF_TYPE_SELECT;
 $freepbx_conf->define_conf_setting('CC_NON_EXTENSION_POLICY',$set);
 
@@ -88,7 +88,7 @@ $freepbx_conf->define_conf_setting('CC_AGENT_POLICY_DEFAULT',$set);
 //
 $set['value'] = 'generic';
 $set['defaultval'] =& $set['value'];
-$set['options'] = array('never', 'generic', 'native', 'accept');
+$set['options'] = array('never', 'generic', 'native', 'always');
 $set['readonly'] = 0;
 $set['hidden'] = 0;
 $set['level'] = 1;
@@ -96,7 +96,7 @@ $set['module'] = 'campon';
 $set['category'] = 'Camp-On Module';
 $set['emptyok'] = 0;
 $set['name'] = 'Callee Policy Default';
-$set['description'] = "Asterisk: cc_monitor_policy. Used to control if other phones are allowed to Camp On to an extension. If so, it sets the technology mode used to monitor the availability of the extension. If no specific technology support is available then it should be set to a 'generic'. In this mode, a callback will be initiated to the extension when it changes from an InUse state to NotInUse. If it was busy when first attempted, this will be when the current call has eneded. If it simply did not answer, then this will be the next time this phone is used to make or answer a call and then hangs up. It is possible to set this to take advantage of 'native' technology support if available and automatically fallback to 'generic' whe not by setting it to 'accept'.";
+$set['description'] = "Asterisk: cc_monitor_policy. Used to control if other phones are allowed to Camp On to an extension. If so, it sets the technology mode used to monitor the availability of the extension. If no specific technology support is available then it should be set to a 'generic'. In this mode, a callback will be initiated to the extension when it changes from an InUse state to NotInUse. If it was busy when first attempted, this will be when the current call has eneded. If it simply did not answer, then this will be the next time this phone is used to make or answer a call and then hangs up. It is possible to set this to take advantage of 'native' technology support if available and automatically fallback to 'generic' whe not by setting it to 'always'.";
 $set['type'] = CONF_TYPE_SELECT;
 $freepbx_conf->define_conf_setting('CC_MONITOR_POLICY_DEFAULT',$set);
 

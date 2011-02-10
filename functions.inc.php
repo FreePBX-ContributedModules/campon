@@ -327,7 +327,7 @@ function campon_applyhooks() {
 	$currentcomponent->addoptlistitem('cc_monitor_policy', 'never', _('Disable Camp-On'));
 	$currentcomponent->addoptlistitem('cc_monitor_policy', 'generic', _('Generic Device'));
 	$currentcomponent->addoptlistitem('cc_monitor_policy', 'native', _('Native Technology Support'));
-	$currentcomponent->addoptlistitem('cc_monitor_policy', 'accept', _('Native Where Available'));
+	$currentcomponent->addoptlistitem('cc_monitor_policy', 'always', _('Native Where Available'));
 	$currentcomponent->setoptlistopts('cc_monitor_policy', 'sort', false);
 
 	$currentcomponent->addoptlistitem('cc_announce_monitor', 'announce', _('Announce'));
