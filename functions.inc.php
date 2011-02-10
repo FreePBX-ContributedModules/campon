@@ -45,7 +45,7 @@ function campon_get_config($engine) {
 			$ext->add($mcontext,$exten,'', new ext_set('CCSS_SETUP', 'TRUE'));
       $ext->add($mcontext,$exten,'', new ext_noop_trace('AMPUSER: ${AMPUSER} Calling ${ARG2}:${ARG1} checking if all happy'));
       $ext->add($mcontext,$exten,'monitor', new ext_gosubif('$[${LEN(${DB(AMPUSER/${ARG2}/ccss/cc_monitor_policy)})}]','monitor_config,1(${ARG1},${ARG2})','monitor_default,1(${ARG1},${ARG2})'));
-      $ext->add($mcontext,$exten,'agent', new ext_gosubif('$[${LEN(${DB(AMPUSER/${AMPUSER}/ccss/cc_agent_policy)})}]','agent_config,1(${ARG1},${ARG2})','agent_default,1(${ARG1},${ARG2})'));
+      $ext->add($mcontext,$exten,'agent', new ext_gosubif('$[${LEN(${DB(AMPUSER/${AMPUSER}/ccss/cc_agent_policy)})}]','agent_config,1','agent_default,1'));
 			$ext->add($mcontext,$exten,'', new ext_return('${GOSUB_RETVAL}'));
 
       /**
@@ -98,10 +98,10 @@ function campon_get_config($engine) {
 
       // subroutine(agent_config)
       $exten = 'agent_config';
-			$ext->add($mcontext,$exten,'', new ext_set('CALLCOMPLETION(cc_agent_policy)', '${DB(AMPUSER/${ARG2}/ccss/cc_agent_policy)}'));
-			$ext->add($mcontext,$exten,'', new ext_set('CALLCOMPLETION(cc_offer_timer)', '${DB(AMPUSER/${ARG2}/ccss/cc_offer_timer)}'));
-			$ext->add($mcontext,$exten,'', new ext_set('CALLCOMPLETION(ccbs_available_timer)', '${DB(AMPUSER/${ARG2}/ccss/ccbs_available_timer)}'));
-			$ext->add($mcontext,$exten,'', new ext_set('CALLCOMPLETION(ccnr_available_timer)', '${DB(AMPUSER/${ARG2}/ccss/ccnr_available_timer)}'));
+			$ext->add($mcontext,$exten,'', new ext_set('CALLCOMPLETION(cc_agent_policy)', '${DB(AMPUSER/${AMPUSER}/ccss/cc_agent_policy)}'));
+			$ext->add($mcontext,$exten,'', new ext_set('CALLCOMPLETION(cc_offer_timer)', '${DB(AMPUSER/${AMPUSER}/ccss/cc_offer_timer)}'));
+			$ext->add($mcontext,$exten,'', new ext_set('CALLCOMPLETION(ccbs_available_timer)', '${DB(AMPUSER/${AMPUSER}/ccss/ccbs_available_timer)}'));
+			$ext->add($mcontext,$exten,'', new ext_set('CALLCOMPLETION(ccnr_available_timer)', '${DB(AMPUSER/${AMPUSER}/ccss/ccnr_available_timer)}'));
       $ext->add($mcontext,$exten,'', new ext_set('CALLCOMPLETION(cc_callback_macro)', 'ccss-default'));
       $ext->add($mcontext, $exten,'', new ext_execif('$["${CALLCOMPLETION(cc_agent_policy)}" = "generic"]', 'Set', 'CALLCOMPLETION(cc_recall_timer)=${DB(AMPUSER/${AMPUSER}/ccss/cc_recall_timer)}'));
       $ext->add($mcontext, $exten,'', new ext_execif('$["${CALLCOMPLETION(cc_agent_policy)}" = "generic"]', 'Set', 'CALLCOMPLETION(cc_max_agents)=${DB(AMPUSER/${AMPUSER}/ccss/cc_max_agents)}'));
