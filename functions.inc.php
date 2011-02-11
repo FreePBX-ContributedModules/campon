@@ -235,6 +235,40 @@ function campon_cancel($c) {
 	$ext->add($id, $c, '', new ext_macro('hangupcall'));
 }
 
+function campon_toggle($c) {
+	global $ext;
+  global $amp_conf;
+
+	$id = "app-campon-toggle"; // The context to be included
+  $hint_context = 'ext-local';
+
+	$ext->addInclude('from-internal-additional', $id); // Add the include from from-internal
+	$ext->add($id, $c, '', new ext_answer(''));
+  $ext->add($id, $c, '', new ext_set('CCSS_SETUP', 'TRUE')); // keep from calling normal sub-ccss
+	$ext->add($id, $c, '', new ext_macro('user-callerid'));
+	$ext->add($id, $c, '', new ext_execif('$["${EXTENSION_STATE(' . $c . '${AMPUSER}@' . $hint_context . ')}" = "INUSE"]','CallCompletionCancel','','CallCompletionRequest',''));
+	$ext->add($id, $c, '', new ext_noop_trace('CC_REQUEST_RESULT: ${CC_REQUEST_RESULT} CC_REQUEST_REASON: ${CC_REQUEST_REASON}'));
+	$ext->add($id, $c, '', new ext_noop_trace('CC_CANCEL_RESULT: ${CC_CANCEL_RESULT} CC_CANCEL_REASON: ${CC_CANCEL_REASON}'));
+	$ext->add($id, $c, '', new ext_playback('beep'));
+	$ext->add($id, $c, '', new ext_macro('hangupcall'));
+
+  $ext->addGlobal('CAMPONTOGGLE',$c);
+
+  $userlist = core_users_list();
+  if (is_array($userlist)) {
+    foreach($userlist as $item) {
+      $hint_code = $c.$item[0];
+      $ext->add($hint_context, $hint_code, '', new ext_goto('1',$c,$id));
+      if (!$amp_conf['DYNAMICHINTS']) {
+        $devices = core_hint_get($item[0]);
+        $dev_arr = explode('&',$devices);
+        $hint_val = 'ccss:'.implode('&ccss:',$dev_arr);
+        $ext->addHint($hint_context, $hint_code, $hint_val);
+      }
+    }
+  }
+}
+
 function campon_configpageinit($pagename) {
 	global $currentcomponent;
 

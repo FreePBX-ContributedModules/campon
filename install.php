@@ -20,6 +20,15 @@ $fcc->setDefault('*83');
 $fcc->update();
 unset($fcc);
 
+// TODO: do I make this dependant on a patch
+//
+// Camp-On Toggle Feature Code
+$fcc = new featurecode('campon', 'toggle');
+$fcc->setDescription('Camp-On Toggle');
+$fcc->setDefault('*84');
+$fcc->update();
+unset($fcc);
+
 $freepbx_conf =& freepbx_conf::create();
 
 // CC_NON_EXTENSION_POLICY
