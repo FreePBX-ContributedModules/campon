@@ -46,6 +46,9 @@ function campon_get_config($engine) {
       $ext->add($mcontext,$exten,'', new ext_noop_trace('AMPUSER: ${AMPUSER} Calling ${ARG2}:${ARG1} checking if all happy'));
       $ext->add($mcontext,$exten,'monitor', new ext_gosubif('$[${LEN(${DB(AMPUSER/${ARG2}/ccss/cc_monitor_policy)})}]','monitor_config,1(${ARG1},${ARG2})','monitor_default,1(${ARG1},${ARG2})'));
       $ext->add($mcontext,$exten,'agent', new ext_gosubif('$[${LEN(${DB(AMPUSER/${AMPUSER}/ccss/cc_agent_policy)})}]','agent_config,1','agent_default,1'));
+      // If we got this far (vs. an early StackPop) then we save the number we are calling to play back as the callback
+      //
+			$ext->add($mcontext,$exten,'', new ext_set('DB(AMPUSER/${AMPUSER}/ccss/last_number)', '${ARG2}'));
 			$ext->add($mcontext,$exten,'', new ext_return('${GOSUB_RETVAL}'));
 
       /**
@@ -215,7 +218,7 @@ function campon_request($c) {
   $ext->add($id, $c, '', new ext_set('CCSS_SETUP', 'TRUE')); // keep from calling normal sub-ccss
 	$ext->add($id, $c, '', new ext_macro('user-callerid'));
 	$ext->add($id, $c, '', new ext_callcompletionrequest(''));
-	$ext->add($id, $c, '', new ext_noop_trace('CC_REQUEST_RESULT: ${CC_REQUEST_RESULT} CC_REQUEST_REASON: ${CC_REQUEST_REASON}'));
+	$ext->add($id, $c, '', new ext_noop_trace('CC_REQUEST_RESULT: ${CC_REQUEST_RESULT} CC_REQUEST_REASON: ${CC_REQUEST_REASON} LastNumber: ${DB(AMPUSER/${AMPUSER}/ccss/last_number)}'));
 	$ext->add($id, $c, '', new ext_playback('beep'));
 	$ext->add($id, $c, '', new ext_macro('hangupcall'));
 }
@@ -247,7 +250,7 @@ function campon_toggle($c) {
   $ext->add($id, $c, '', new ext_set('CCSS_SETUP', 'TRUE')); // keep from calling normal sub-ccss
 	$ext->add($id, $c, '', new ext_macro('user-callerid'));
 	$ext->add($id, $c, '', new ext_execif('$["${EXTENSION_STATE(' . $c . '${AMPUSER}@' . $hint_context . ')}" = "INUSE"]','CallCompletionCancel','','CallCompletionRequest',''));
-	$ext->add($id, $c, '', new ext_noop_trace('CC_REQUEST_RESULT: ${CC_REQUEST_RESULT} CC_REQUEST_REASON: ${CC_REQUEST_REASON}'));
+	$ext->add($id, $c, '', new ext_noop_trace('CC_REQUEST_RESULT: ${CC_REQUEST_RESULT} CC_REQUEST_REASON: ${CC_REQUEST_REASON} LastNumber: ${DB(AMPUSER/${AMPUSER}/ccss/last_number)}'));
 	$ext->add($id, $c, '', new ext_noop_trace('CC_CANCEL_RESULT: ${CC_CANCEL_RESULT} CC_CANCEL_REASON: ${CC_CANCEL_REASON}'));
 	$ext->add($id, $c, '', new ext_playback('beep'));
 	$ext->add($id, $c, '', new ext_macro('hangupcall'));
