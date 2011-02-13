@@ -315,7 +315,7 @@ $freepbx_conf->define_conf_setting('CC_MAX_REQUESTS_GLOBAL',$set);
 
 $options = array('NOT_INUSE', 'INUSE', 'BUSY', 'UNAVAILABLE', 'RINGING', 'RINGINUSE', 'ONHOLD');
 
-// CC_OFFERED
+// CC_BLF_OFFERED
 // Used for: cc_available, cc_offered, cc_caller_requested
 //
 $set['value'] = 'NOT_INUSE';
@@ -327,12 +327,12 @@ $set['level'] = 1;
 $set['module'] = 'campon';
 $set['category'] = 'Camp-On Module';
 $set['emptyok'] = 0;
-$set['name'] = "Camp-On Available BLF State";
+$set['name'] = "BLF Camp-On Available State";
 $set['description'] = "This is the state that will be set for BLF subscriptions after attempting a call while it is still possible to Camp-On to the last called number, prior to the offer_timer expiring. Restart Asterisk for changes to take effect.";
 $set['type'] = CONF_TYPE_SELECT;
-$freepbx_conf->define_conf_setting('CC_OFFERED',$set);
+$freepbx_conf->define_conf_setting('CC_BLF_OFFERED',$set);
 
-// CC_PENDING
+// CC_BLF_PENDING
 // Used for: cc_active, cc_callee_ready
 //
 $set['value'] = 'INUSE';
@@ -344,12 +344,12 @@ $set['level'] = 1;
 $set['module'] = 'campon';
 $set['category'] = 'Camp-On Module';
 $set['emptyok'] = 0;
-$set['name'] = "Camp-On Pending BLF State";
+$set['name'] = "BLF Camp-On Pending State";
 $set['description'] = "This is the state that will be set for BLF subscriptions upon a successful Camp-On request, pending a callback when the party becomes available. Restart Asterisk for changes to take effect.";
 $set['type'] = CONF_TYPE_SELECT;
-$freepbx_conf->define_conf_setting('CC_PENDING',$set);
+$freepbx_conf->define_conf_setting('CC_BLF_PENDING',$set);
 
-// CC_CALLER_BUSY
+// CC_BLF_CALLER_BUSY
 // Used for: cc_caller_busy
 //
 $set['value'] = 'ONHOLD';
@@ -361,12 +361,12 @@ $set['level'] = 1;
 $set['module'] = 'campon';
 $set['category'] = 'Camp-On Module';
 $set['emptyok'] = 0;
-$set['name'] = "Camp-On Busy Caller BLF State";
+$set['name'] = "BLF Camp-On Busy Caller State";
 $set['description'] = "This is the state that will be set for BLF subscriptions once the callee becomes available if the caller is not busy. Restart Asterisk for changes to take effect.";
 $set['type'] = CONF_TYPE_SELECT;
-$freepbx_conf->define_conf_setting('CC_CALLER_BUSY',$set);
+$freepbx_conf->define_conf_setting('CC_BLF_CALLER_BUSY',$set);
 
-// CC_RECALL
+// CC_BLF_RECALL
 // Used for: cc_recalling
 //
 $set['value'] = 'RINGING';
@@ -378,9 +378,9 @@ $set['level'] = 1;
 $set['module'] = 'campon';
 $set['category'] = 'Camp-On Module';
 $set['emptyok'] = 0;
-$set['name'] = "Camp-On Recalling BLF State";
+$set['name'] = "BLF Camp-On Recalling State";
 $set['description'] = "This is the state that will be set for BLF subscriptions once the callee becomes available if the caller is not busy. Restart Asterisk for changes to take effect.";
 $set['type'] = CONF_TYPE_SELECT;
-$freepbx_conf->define_conf_setting('CC_RECALL',$set);
+$freepbx_conf->define_conf_setting('CC_BLF_RECALL',$set);
 
 $freepbx_conf->commit_conf_settings();
