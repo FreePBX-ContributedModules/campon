@@ -220,6 +220,7 @@ function campon_get_config($engine) {
       $cpp = $amp_conf['CC_FORCE_DEFAULTS'] ? $amp_conf['CC_AGENT_CID_PREPEND_DEFAULT'] : '${DB(AMPUSER/${AMPUSER}/ccss/cc_agent_cid_prepend)}';
 
       $ext->add($mcontext, $exten, '', new ext_macro('blkvm-set'));
+      $ext->add($mcontext, $exten, '', new ext_set('__CC_RECALL','1'));
       $ext->add($mcontext, $exten, '', new ext_set('CALLERID(name)','${IF($[${LEN(${DB(AMPUSER/${ARG1}/cidname)})}]?'.$cpp.'${DB(AMPUSER/${ARG1}/cidname)}:CALLBACK)}')); //TODO: Make this configurable
       $ext->add($mcontext, $exten, '', new ext_set('CALLERID(number)','${ARG1}'));
       $ext->add($mcontext, $exten, '', new ext_noop_trace('CID INFO: ${CALLERID(name)} ${CALLERID(num)} EXTEN: ${ARG1}',5));
