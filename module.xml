@@ -15,6 +15,6 @@
 	<depends>
 		<engine>asterisk 1.8</engine>
 	</depends>
-	<location>release/2.9/campon-2.9.0alpha1.0.tgz</location>
-	<md5sum>6d279f1cbdefe3a06cfc0be54b7831a6</md5sum>
+	<location>release/2.9/campon-2.9.0beta1.0.tgz</location>
+	<md5sum>108db97efeebe5f62e051ff07554ce21</md5sum>
 </module>
