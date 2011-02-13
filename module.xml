@@ -2,13 +2,13 @@
 	<rawname>campon</rawname>
 	<repo>standard</repo>
 	<name>Camp-On</name>
-	<version>2.9.0alpha1.1</version>
+	<version>2.9.0beta1.0</version>
 	<publisher>FreePBX</publisher>
 	<license>GPLv2+</license>
 	<type>setup</type>
 	<category>Internal Options &amp; Configuration</category>
 	<changelog>
-		*2.9.0alpha1.0* #778 initial implenentation Camp On using built in CCSS
+		*2.9.0beta1.0* #778 Camp-On implenentation using CCSS, beta release requires Asterisk patch 18788 for full functionality
 	</changelog>
 	<description>This module implements the Call Completion Supplemental Services (CCSS) often referred to as Call Camping or Camp-On. It allows a caller to request the system call them back when a busy or non-responding extension becomes available. Requires Asterisk 1.8 or higher.
 	</description>
