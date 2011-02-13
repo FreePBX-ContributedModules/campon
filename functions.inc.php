@@ -40,15 +40,15 @@ function campon_get_config($engine) {
 	switch($engine) {
 		case "asterisk":
 
-      $campon_conf->addGeneralSettings('cc_max_requests',$amp_conf['CC_MAX_REQUESTS_GLOBAL']);
+      $campon_conf->addGeneralSetting('cc_max_requests',$amp_conf['CC_MAX_REQUESTS_GLOBAL']);
 
-      $campon_conf->addGeneralSettings('cc_available_devstate',$amp_conf['CC_OFFERED']);
-      $campon_conf->addGeneralSettings('cc_offered_devstate',$amp_conf['CC_OFFERED']);
-      $campon_conf->addGeneralSettings('cc_caller_requested_devstate',$amp_conf['CC_OFFERED']);
-      $campon_conf->addGeneralSettings('cc_active_devstate',$amp_conf['CC_PENDING']);
-      $campon_conf->addGeneralSettings('cc_callee_ready_devstate',$amp_conf['CC_PENDING']);
-      $campon_conf->addGeneralSettings('cc_caller_busy_devstate',$amp_conf['CC_CALLER_BUSY']);
-      $campon_conf->addGeneralSettings('cc_recalling_devstate',$amp_conf['CC_RECALL']);
+      $campon_conf->addGeneralSetting('cc_available_devstate',$amp_conf['CC_OFFERED']);
+      $campon_conf->addGeneralSetting('cc_offered_devstate',$amp_conf['CC_OFFERED']);
+      $campon_conf->addGeneralSetting('cc_caller_requested_devstate',$amp_conf['CC_OFFERED']);
+      $campon_conf->addGeneralSetting('cc_active_devstate',$amp_conf['CC_PENDING']);
+      $campon_conf->addGeneralSetting('cc_callee_ready_devstate',$amp_conf['CC_PENDING']);
+      $campon_conf->addGeneralSetting('cc_caller_busy_devstate',$amp_conf['CC_CALLER_BUSY']);
+      $campon_conf->addGeneralSetting('cc_recalling_devstate',$amp_conf['CC_RECALL']);
 
 			if (is_array($featurelist = featurecodes_getModuleFeatures($modulename))) {
 				foreach($featurelist as $item) {
