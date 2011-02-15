@@ -220,7 +220,7 @@ $set['category'] = 'Camp-On Module';
 $set['emptyok'] = 0;
 $set['sortorder'] = 100;
 $set['name'] = "Default Caller Callback Mode";
-$set['description'] = "Affects Asterisk: cc_agent_dialstring. If not set a callback request will be dialed straight to the speciifc device that made the call. If using 'native' technology support this may be the peferred mode. The 'extension' (Callback Standard) option will intiate a call back to the caller just as if someone else on the system placed the call, which means the call can pursue Follow-Me. To avoid Follow-Me setting, choose 'extension' (Callback Extension).";
+$set['description'] = "Affects Asterisk: cc_agent_dialstring. If not set a callback request will be dialed straight to the speciifc device that made the call. If using 'native' technology support this may be the peferred mode. The 'internal' (Callback Standard) option will intiate a call back to the caller just as if someone else on the system placed the call, which means the call can pursue Follow-Me. To avoid Follow-Me setting, choose 'extension' (Callback Extension).";
 $set['type'] = CONF_TYPE_SELECT;
 $freepbx_conf->define_conf_setting('CC_AGENT_DIALSTRING_DEFAULT',$set);
 
