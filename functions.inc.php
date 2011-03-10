@@ -445,7 +445,7 @@ function campon_configpageload() {
     $cc_monitor_cid_prepend_label =       _("Callee CID Prepend");
 
     $cc_agent_policy_tt =      _("Asterisk: cc_agent_policy. Used to enable Camp-On for this user and set the Technology Mode that will be used when engaging the feature. In most cases 'Generic Device' should be chosen unless you have phones designed to work with channel specific capabilities.");
-    $cc_monitor_policy_tt =    _("Asterisk: cc_monitor_policy. Used to control if other phones are allowed to Camp On to this extnesion. If so, it sets the technology mode used to monitor the availability of the extension. If no specific technology support is available then it should be set to a 'Generic Device'. In this mode, a callback will be initiated to this extension when it changes from an InUse state to NotInUse. If it was busy when first attempted, this will be when the current call has eneded. If it simply did not answer, then this will be the next time this phone is used to make or answer a call and then hangs up. It is possible to set this to take advantage of 'Native Technology Support' if available and automatically fallback to the 'Generic Mode' whe not.");
+    $cc_monitor_policy_tt =    _("Asterisk: cc_monitor_policy. Used to control if other phones are allowed to Camp On to this extension. If so, it sets the technology mode used to monitor the availability of the extension. If no specific technology support is available then it should be set to a 'Generic Device'. In this mode, a callback will be initiated to this extension when it changes from an InUse state to NotInUse. If it was busy when first attempted, this will be when the current call has ended. If it simply did not answer, then this will be the next time this phone is used to make or answer a call and then hangs up. It is possible to set this to take advantage of 'Native Technology Support' if available and automatically fallback to the 'Generic Mode' when not.");
 
 		$section = _('Call Camp-On Services');
     // If we are forcing defaults, don't bother showing other settings
@@ -488,12 +488,12 @@ function campon_configpageload() {
     $cc_monitor_alert_info =  $ccss['cc_monitor_alert_info'];
     $cc_monitor_cid_prepend = $ccss['cc_monitor_cid_prepend'];
 
-    $cc_offer_timer_tt =       _("Asterisk: cc_offer_timer. How long after dialing an extenion a user has to make a call completion request.");
-    $ccbs_available_timer_tt = _("Asteirsk: ccbs_available_timer. How long a call completion request will remain active before expiring if the phone rang busy when first attempting the call.");
-    $ccnr_available_timer_tt = _("Asteirsk: ccnr_available_timer. How long a call completion request will remain active before expiring if the phone was simply unanswered when first attempting the call.");
+    $cc_offer_timer_tt =       _("Asterisk: cc_offer_timer. How long after dialing an extension a user has to make a call completion request.");
+    $ccbs_available_timer_tt = _("Asterisk: ccbs_available_timer. How long a call completion request will remain active before expiring if the phone rang busy when first attempting the call.");
+    $ccnr_available_timer_tt = _("Asterisk: ccnr_available_timer. How long a call completion request will remain active before expiring if the phone was simply unanswered when first attempting the call.");
     $cc_recall_timer_tt =      _("Asterisk: cc_recall_timer. How long to ring back a caller who's Caller Policy is set to 'Generic Device'. This has no affect if to any other setting.");
     $cc_max_agents_tt =        _("Asterisk: cc_max_agents. Only valid for when using 'Native Technology Support' for Caller Policy. This is the number of outstanding Call Completion requests that can be pending to different extensions. With 'Generic Device' mode you can only have a single request outstanding and this will be ignored.");
-    $cc_agent_dialstring_tt =  _("Affects Asterisk: cc_agent_dialstring. With 'Callback Device Directly' a callback request will be dialed straight to the speciifc device that made the call. If using 'Native Technology Support' this may be the peferred mode. The 'Callback Standard' option will intiate a call back to the caller just as if someone else on the system placed the call, which means the call can pursue Follow-Me. To avoid Follow-Me setting, choose 'Callback Extension'.");
+    $cc_agent_dialstring_tt =  _("Affects Asterisk: cc_agent_dialstring. With 'Callback Device Directly' a callback request will be dialed straight to the specific device that made the call. If using 'Native Technology Support' this may be the preferred mode. The 'Callback Standard' option will initiate a call back to the caller just as if someone else on the system placed the call, which means the call can pursue Follow-Me. To avoid Follow-Me setting, choose 'Callback Extension'.");
 
     $cc_max_monitors_tt =      _("Asterisk: cc_max_monitors. This is the maximum number of callers that are allowed to queue up call completion requests against this extension.");
 
