@@ -25,7 +25,7 @@ function campon_hookGet_config($engine) {
   switch($engine) {
   case "asterisk":
     $priority = 'report';
-    $ext->splice('macro-user-callerid', 's', $priority,new ext_gosubif('$[${LEN(${DB(AMPUSER/${AMPUSER}/ccss/cc_agent_policy)})} & "${DB(AMPUSER/${AMPUSER}/ccss/cc_agent_policy)}" != "never"]', 'sub-ccss,s,1(${MACRO_CONTEXT},${CALLERID(dnid)})'));
+    $ext->splice('macro-user-callerid', 's', $priority,new ext_gosubif('$[${LEN(${DB(AMPUSER/${AMPUSER}/ccss/cc_agent_policy)})} & "${DB(AMPUSER/${AMPUSER}/ccss/cc_agent_policy)}" != "never"]', 'sub-ccss,s,1',false,'${MACRO_CONTEXT},${CALLERID(dnid)}'));
   break;
   }
 }
@@ -74,7 +74,7 @@ function campon_get_config($engine) {
 			$ext->add($mcontext,$exten,'', new ext_execif('$[${LEN(${CCSS_SETUP})}]','Return'));
 			$ext->add($mcontext,$exten,'', new ext_set('CCSS_SETUP', 'TRUE'));
       $ext->add($mcontext,$exten,'', new ext_noop_trace('AMPUSER: ${AMPUSER} Calling ${ARG2}:${ARG1} checking if all happy'));
-      $ext->add($mcontext,$exten,'monitor', new ext_gosubif('$[${LEN(${DB(AMPUSER/${ARG2}/ccss/cc_monitor_policy)})}]','monitor_config,1(${ARG1},${ARG2})','monitor_default,1(${ARG1},${ARG2})'));
+      $ext->add($mcontext,$exten,'monitor', new ext_gosubif('$[${LEN(${DB(AMPUSER/${ARG2}/ccss/cc_monitor_policy)})}]','monitor_config,1','monitor_default,1','${ARG1},${ARG2}','${ARG1},${ARG2}'));
       $ext->add($mcontext,$exten,'agent', new ext_gosubif('$[${LEN(${DB(AMPUSER/${AMPUSER}/ccss/cc_agent_policy)})}]','agent_config,1','agent_default,1'));
       // If we got this far (vs. an early StackPop) then we save the number we are calling to play back as the callback
       //
