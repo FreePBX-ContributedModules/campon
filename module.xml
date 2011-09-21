@@ -2,11 +2,12 @@
 	<rawname>campon</rawname>
 	<repo>standard</repo>
 	<name>Camp-On</name>
-	<version>2.9.0.0</version>
+	<version>2.10.0.0</version>
 	<publisher>FreePBX</publisher>
 	<license>GPLv2+</license>
 	<category>Settings</category>
 	<changelog>
+		*2.10.0.0* new version changes
 		*2.9.0.0* spelling, cosmetics
 		*2.9.0beta1.0* #778 Camp-On implenentation using CCSS, beta release requires Asterisk patch 18788 for full functionality
 	</changelog>
@@ -15,6 +16,6 @@
 	<depends>
 		<engine>asterisk 1.8</engine>
 	</depends>
-	<location>release/2.9/campon-2.9.0.0.tgz</location>
-	<md5sum>54ece0da5ca7824753bf66455fdd4929</md5sum>
+	<location>release/2.10/campon-2.10.0.0.tgz</location>
+	<md5sum>ca3d7047ce48f68bda892665eb7edfe1</md5sum>
 </module>
