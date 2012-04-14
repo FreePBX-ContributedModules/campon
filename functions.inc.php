@@ -206,13 +206,13 @@ function campon_get_config($engine) {
       $context = 'from-ccss-internal';
       $exten = '_X._X.';
 
-      $ext->add($context, $exten, '', new ext_gosub('sub-from-ccss,s,1(${CUT(EXTEN,_,2)})'));
+      $ext->add($context, $exten, '', new ext_gosub(1,'s','sub-from-ccss','${CUT(EXTEN,_,2)}'));
       $ext->add($context, $exten, 'no_alert', new ext_goto('1','${CUT(EXTEN,_,1)}','from-internal'));
 
       $context = 'from-ccss-extension';
       $exten = '_X._X.';
 
-      $ext->add($context, $exten, '', new ext_gosub('sub-from-ccss,s,1(${CUT(EXTEN,_,2)})'));
+      $ext->add($context, $exten, '', new ext_gosub(1,'s','sub-from-ccss','${CUT(EXTEN,_,2)}'));
       $ext->add($context, $exten, '', new ext_goto('1','${CUT(EXTEN,_,1)}','ext-local'));
 
       $mcontext = 'sub-from-ccss';
@@ -538,7 +538,7 @@ function campon_configprocess() {
   $ccss['cc_agent_policy'] =      isset($_REQUEST['cc_agent_policy']) ? $_REQUEST['cc_agent_policy'] : $amp_conf['CC_AGENT_POLICY_DEFAULT'];
   $ccss['cc_offer_timer'] =       isset($_REQUEST['cc_offer_timer']) ? $_REQUEST['cc_offer_timer'] : $amp_conf['CC_OFFER_TIMER_DEFAULT'];
 
-  if ($action == 'add' || $action == 'edit' && !$amp_conf['CC_FORCE_DEFAULTS']) {
+  if (($action == 'add' || $action == 'edit') && !$amp_conf['CC_FORCE_DEFAULTS']) {
     $ccss['ccbs_available_timer'] = isset($_REQUEST['ccbs_available_timer']) ? $_REQUEST['ccbs_available_timer'] : $amp_conf['CCBS_AVAILABLE_TIMER_DEFAULT'];
     $ccss['ccnr_available_timer'] = isset($_REQUEST['ccnr_available_timer']) ? $_REQUEST['ccnr_available_timer'] : $amp_conf['CCNR_AVAILABLE_TIMER_DEFAULT'];
     $ccss['cc_recall_timer'] =      isset($_REQUEST['cc_recall_timer']) ? $_REQUEST['cc_recall_timer'] : $amp_conf['CC_RECALL_TIMER_DEFAULT'];
