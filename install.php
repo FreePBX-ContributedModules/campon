@@ -2,9 +2,10 @@
 if (!defined('FREEPBX_IS_AUTH')) { die('No direct script access allowed'); }
 //for translation only
 if (false) {
-_("Camp-On");
-_("Camp-On Request");
-_("Camp-On Cancel");
+	_("Camp-On");
+	_("Camp-On Request");
+	_("Camp-On Cancel");
+	_("Camp-On Toggle");
 }
 
 // Camp-On Request Feature Code
