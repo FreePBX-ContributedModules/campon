@@ -19,4 +19,4 @@
 	</depends>
 	<location>release/2.10/campon-2.10.0.1.tgz</location>
 	<md5sum>ba1815146e116e5ee82705733e0d4544</md5sum>
-</module>
+<supported><version>2.10</version></supported></module>
