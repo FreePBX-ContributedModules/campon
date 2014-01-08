@@ -2,11 +2,12 @@
 	<rawname>campon</rawname>
 	<repo>standard</repo>
 	<name>Camp-On</name>
-	<version>2.11.0.0</version>
+	<version>2.11.0.1</version>
 	<publisher>FreePBX</publisher>
 	<license>GPLv2+</license>
 	<category>Settings</category>
 	<changelog>
+		*2.11.0.1* #6876
 		*2.11.0.0* bump version
 		*2.10.0.2* #5705, #5710
 		*2.10.0.1* #5478 
@@ -19,6 +20,9 @@
 	<depends>
 		<engine>asterisk 1.8</engine>
 	</depends>
+	<supported>
+		<version>2.9</version>
+	</supported>
 	<location>release/2.11/campon-2.11.0.0.tgz</location>
 	<md5sum>630aee4ee195fb838c0e352f4e9138c1</md5sum>
 </module>
