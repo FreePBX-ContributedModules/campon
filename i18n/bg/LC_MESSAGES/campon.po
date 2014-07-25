@@ -21,18 +21,22 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2011-09-23 09:52+0000\n"
-"PO-Revision-Date: 2011-09-23 09:52+0000\n"
-"Last-Translator: Automatically generated\n"
-"Language-Team: none\n"
+"PO-Revision-Date: 2014-07-25 21:40+0200\n"
+"Last-Translator: Chavdar <chavdar_75@yahoo.com>\n"
+"Language-Team: Bulgarian <http://git.freepbx.org/projects/freepbx/campon/bg/>"
+"\n"
+"Language: bg\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 1.10-dev\n"
 
 msgid "Camp-On"
-msgstr ""
+msgstr "Camp-On"
 
 msgid "Settings"
-msgstr ""
+msgstr "Настройки"
 
 msgid ""
 "This module implements the Call Completion Supplemental Services (CCSS) "
@@ -45,7 +49,7 @@ msgid "Maximum Active Camp-On Requests"
 msgstr ""
 
 msgid "Camp-On Module"
-msgstr ""
+msgstr "Модул Camp-On"
 
 msgid ""
 "System wide maximum number of outstanding Camp-On requests that can be "
@@ -246,80 +250,80 @@ msgid "BLF Camp-On Recalling State"
 msgstr ""
 
 msgid "Disable Camp-On"
-msgstr ""
+msgstr "Изключи Camp-On"
 
 msgid "Generic Device"
-msgstr ""
+msgstr "Общо Устройство"
 
 msgid "Native Technology Support"
 msgstr ""
 
 msgid "20 sec"
-msgstr ""
+msgstr "20 сек"
 
 msgid "30 sec"
-msgstr ""
+msgstr "30 сек"
 
 msgid "45 sec"
-msgstr ""
+msgstr "45 сек"
 
 msgid "1 min"
-msgstr ""
+msgstr "1 мин"
 
 msgid "2 min"
-msgstr ""
+msgstr "2 мин"
 
 msgid "3 min"
-msgstr ""
+msgstr "3 мин"
 
 msgid "4 min"
-msgstr ""
+msgstr "4 мин"
 
 msgid "5 min"
-msgstr ""
+msgstr "5 мин"
 
 msgid "10 min"
-msgstr ""
+msgstr "10 мин"
 
 msgid "20 min"
-msgstr ""
+msgstr "20 мин"
 
 msgid "40 min"
-msgstr ""
+msgstr "40 мин"
 
 msgid "60 min"
-msgstr ""
+msgstr "60 мин"
 
 msgid "80 min"
-msgstr ""
+msgstr "80 мин"
 
 msgid "100 min"
-msgstr ""
+msgstr "100 мин"
 
 msgid "2 hrs"
-msgstr ""
+msgstr "2 часа"
 
 msgid "3 hrs"
-msgstr ""
+msgstr "3 часа"
 
 msgid "4 hrs"
-msgstr ""
+msgstr "4 часа"
 
 msgid "5 hrs"
-msgstr ""
+msgstr "5 часа"
 
 msgid "6 hrs"
-msgstr ""
+msgstr "6 часа"
 
 msgid "7 hrs"
-msgstr ""
+msgstr "7 часа"
 
 msgid "8 hrs"
-msgstr ""
+msgstr "8 часа"
 
 #, php-format
 msgid "%s sec"
-msgstr ""
+msgstr "%s сек"
 
 #, php-format
 msgid "%s Outgoing Requests"
@@ -338,7 +342,7 @@ msgid "Native Where Available"
 msgstr ""
 
 msgid "Announce"
-msgstr ""
+msgstr "Съобщение"
 
 msgid "Silent"
 msgstr ""
@@ -491,7 +495,7 @@ msgid "Please enter a valid CID Prefix"
 msgstr ""
 
 msgid "Camp-On Request"
-msgstr ""
+msgstr "Заяви Camp-On"
 
 msgid "Camp-On Cancel"
-msgstr ""
+msgstr "Отмени Camp-On"
