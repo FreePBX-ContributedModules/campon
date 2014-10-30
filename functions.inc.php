@@ -36,9 +36,9 @@ function campon_hookGet_config($engine) {
 
 function campon_get_config($engine) {
 	$modulename = 'campon';
-	
+
 	// This generates the dialplan
-	global $ext;  
+	global $ext;
 	global $amp_conf;
 	global $campon_conf;
 	switch($engine) {
@@ -62,13 +62,13 @@ function campon_get_config($engine) {
 						$fcc = new featurecode($modulename, $featurename);
 						$fc = $fcc->getCodeActive();
 						unset($fcc);
-						
+
 						if ($fc != '') {
 							$fname($fc);
             }
 					} else {
 						$ext->add('from-internal-additional', 'debug', '', new ext_noop($modulename.": No func $fname"));
-					}	
+					}
 				}
 			}
 
@@ -89,7 +89,7 @@ function campon_get_config($engine) {
        * If we are in this subroutine, it has been confirmed user doesn't have 'never' as a policy, but they could
        * have it empty, just need to TODO: double check that this couldn't be called if they are not a user, check spot
        * in the macro-user-callerid
-       * 
+       *
        * if the called party does not allow monitoring, then we 'StackPop' and don't end up setting any agent settings
       **/
       // subroutine(monitor_config)
@@ -316,7 +316,7 @@ function campon_configpageinit($pagename) {
 	$tech_hardware = isset($_REQUEST['tech_hardware'])?$_REQUEST['tech_hardware']:null;
 
 	// We only want to hook 'users' or 'extensions' pages.
-	if ($pagename != 'users' && $pagename != 'extensions') 
+	if ($pagename != 'users' && $pagename != 'extensions')
 		return true;
 	// On a 'new' user, 'tech_hardware' is set, and there's no extension. Hook into the page.
 	if ($tech_hardware != null || $pagename == 'users') {
@@ -411,7 +411,7 @@ function campon_applyhooks() {
   }
 	$currentcomponent->setoptlistopts('cc_max_monitors', 'sort', false);
 
-	// Add the 'process' function - this gets called when the page is loaded, to hook into 
+	// Add the 'process' function - this gets called when the page is loaded, to hook into
 	// displaying stuff on the page.
 	$currentcomponent->addguifunc('campon_configpageload');
 }
@@ -424,7 +424,7 @@ function campon_configpageload() {
 	// Init vars from $_REQUEST[]
 	$action = isset($_REQUEST['action'])?$_REQUEST['action']:null;
 	$extdisplay = isset($_REQUEST['extdisplay'])?$_REQUEST['extdisplay']:null;
-	
+
 	// Don't display this stuff it it's on a 'This xtn has been deleted' page.
 	if ($action != 'del') {
 		$ccss = campon_get($extdisplay);
@@ -455,9 +455,9 @@ function campon_configpageload() {
     // If we are forcing defaults, don't bother showing other settings
     if ($amp_conf['CC_FORCE_DEFAULTS']) {
       $cc_default_settings_label = _("Forcing default settings");
-      $cc_default_settings_tt = _("The following settings are being used for all extensions. To configure individually set 'Only Use Default Camp-On Settings' to false on the Advanced Settings page. Active settings:") . 
+      $cc_default_settings_tt = _("The following settings are being used for all extensions. To configure individually set 'Only Use Default Camp-On Settings' to false on the Advanced Settings page. Active settings:") .
        "<ul>
-          <li>$cc_offer_timer_label: " . $amp_conf['CC_OFFER_TIMER_DEFAULT'] . "</li> 
+          <li>$cc_offer_timer_label: " . $amp_conf['CC_OFFER_TIMER_DEFAULT'] . "</li>
           <li>$ccnr_available_timer_label: " . $amp_conf['CCNR_AVAILABLE_TIMER_DEFAULT'] . "</li>
           <li>$ccbs_available_timer_label: " . $amp_conf['CCBS_AVAILABLE_TIMER_DEFAULT'] . "</li>
           <li>$cc_recall_timer_label: " . $amp_conf['CC_RECALL_TIMER_DEFAULT'] . "</li>
@@ -470,10 +470,10 @@ function campon_configpageload() {
           <li>$cc_monitor_alert_info_label: " . $amp_conf['CC_MONITOR_ALERT_INFO_DEFAULT'] . "</li>
           <li>$cc_monitor_cid_prepend_label: " . $amp_conf['CC_MONITOR_CID_PREPEND_DEFAULT'] . "</li>
         </ul>";
-      $currentcomponent->addguielem($section, new gui_link_label('cc_default_settings', $cc_default_settings_label, $cc_default_settings_tt, true));
+      $currentcomponent->addguielem($section, new gui_link_label('cc_default_settings', $cc_default_settings_label, $cc_default_settings_tt, true),"Advanced");
     }
-		$currentcomponent->addguielem($section, new gui_selectbox('cc_agent_policy', $currentcomponent->getoptlist('cc_agent_policy'), $cc_agent_policy, $cc_agent_policy_label, $cc_agent_policy_tt, '', false));
-		$currentcomponent->addguielem($section, new gui_selectbox('cc_monitor_policy', $currentcomponent->getoptlist('cc_monitor_policy'), $cc_monitor_policy, $cc_monitor_policy_label, $cc_monitor_policy_tt, '', false));
+		$currentcomponent->addguielem($section, new gui_selectbox('cc_agent_policy', $currentcomponent->getoptlist('cc_agent_policy'), $cc_agent_policy, $cc_agent_policy_label, $cc_agent_policy_tt, '', false),"Advanced");
+		$currentcomponent->addguielem($section, new gui_selectbox('cc_monitor_policy', $currentcomponent->getoptlist('cc_monitor_policy'), $cc_monitor_policy, $cc_monitor_policy_label, $cc_monitor_policy_tt, '', false),"Advanced");
     if ($amp_conf['CC_FORCE_DEFAULTS']) {
       return;
     }
@@ -555,11 +555,11 @@ function campon_configprocess() {
     $ccss['cc_monitor_cid_prepend'] =       isset($_REQUEST['cc_monitor_cid_prepend']) ? $_REQUEST['cc_monitor_cid_prepend'] : $amp_conf['CC_AGENT_CID_PREPEND_DEFAULT'];
   }
 
-	if ($ext==='') { 
-		$extdisplay = $extn; 
+	if ($ext==='') {
+		$extdisplay = $extn;
 	} else {
 		$extdisplay = $ext;
-	} 
+	}
 
 	if ($action == "add" || $action == "edit") {
 		if (!isset($GLOBALS['abort']) || $GLOBALS['abort'] !== true) {
@@ -657,7 +657,7 @@ function campon_del($ext) {
  *
  * These simply fail if request can't be made or canceled. Can't have any intellignent dialplan to deal with it, really
  * bad!
- * 
+ *
  * It would be useful to put some information in channel variables when using the dialplan mode, who called, to avoid the
  * ugly hoops of XXX_XXX format we are doing to retain the information.
  */
