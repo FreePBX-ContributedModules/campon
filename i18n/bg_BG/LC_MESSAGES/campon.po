@@ -29,10 +29,10 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 msgid "Camp-On"
-msgstr ""
+msgstr "Camp-On"
 
 msgid "Settings"
-msgstr ""
+msgstr "Настройки"
 
 msgid ""
 "This module implements the Call Completion Supplemental Services (CCSS) "
@@ -45,7 +45,7 @@ msgid "Maximum Active Camp-On Requests"
 msgstr ""
 
 msgid "Camp-On Module"
-msgstr ""
+msgstr "Модул Camp-On"
 
 msgid ""
 "System wide maximum number of outstanding Camp-On requests that can be "
@@ -82,7 +82,7 @@ msgid ""
 msgstr ""
 
 msgid "Caller Policy Default"
-msgstr ""
+msgstr "Политика за Обаждащ се По-Подразбиране"
 
 msgid ""
 "Asterisk: cc_agent_policy. Used to enable Camp-On for a user and set the "
@@ -92,7 +92,7 @@ msgid ""
 msgstr ""
 
 msgid "Callee Policy Default"
-msgstr ""
+msgstr "Политика за Търсения По-Подразбиране"
 
 msgid ""
 "Asterisk: cc_monitor_policy. Used to control if other phones are allowed to "
@@ -246,84 +246,84 @@ msgid "BLF Camp-On Recalling State"
 msgstr ""
 
 msgid "Disable Camp-On"
-msgstr ""
+msgstr "Изключи Camp-On"
 
 msgid "Generic Device"
-msgstr ""
+msgstr "Общо Устройство"
 
 msgid "Native Technology Support"
 msgstr ""
 
 msgid "20 sec"
-msgstr ""
+msgstr "20 сек"
 
 msgid "30 sec"
-msgstr ""
+msgstr "30 сек"
 
 msgid "45 sec"
-msgstr ""
+msgstr "45 сек"
 
 msgid "1 min"
-msgstr ""
+msgstr "1 мин"
 
 msgid "2 min"
-msgstr ""
+msgstr "2 мин"
 
 msgid "3 min"
-msgstr ""
+msgstr "3 мин"
 
 msgid "4 min"
-msgstr ""
+msgstr "4 мин"
 
 msgid "5 min"
-msgstr ""
+msgstr "5 мин"
 
 msgid "10 min"
-msgstr ""
+msgstr "10 мин"
 
 msgid "20 min"
-msgstr ""
+msgstr "20 мин"
 
 msgid "40 min"
-msgstr ""
+msgstr "40 мин"
 
 msgid "60 min"
-msgstr ""
+msgstr "60 мин"
 
 msgid "80 min"
-msgstr ""
+msgstr "80 мин"
 
 msgid "100 min"
-msgstr ""
+msgstr "100 мин"
 
 msgid "2 hrs"
-msgstr ""
+msgstr "2 часа"
 
 msgid "3 hrs"
-msgstr ""
+msgstr "3 часа"
 
 msgid "4 hrs"
-msgstr ""
+msgstr "4 часа"
 
 msgid "5 hrs"
-msgstr ""
+msgstr "5 часа"
 
 msgid "6 hrs"
-msgstr ""
+msgstr "6 часа"
 
 msgid "7 hrs"
-msgstr ""
+msgstr "7 часа"
 
 msgid "8 hrs"
-msgstr ""
+msgstr "8 часа"
 
 #, php-format
 msgid "%s sec"
-msgstr ""
+msgstr "%s сек"
 
 #, php-format
 msgid "%s Outgoing Requests"
-msgstr ""
+msgstr "%s  Изходящи Заявки"
 
 msgid "Callback Device Directly"
 msgstr ""
@@ -338,20 +338,20 @@ msgid "Native Where Available"
 msgstr ""
 
 msgid "Announce"
-msgstr ""
+msgstr "Предупреди"
 
 msgid "Silent"
-msgstr ""
+msgstr "Не предупреждавай"
 
 #, php-format
 msgid "%s Incoming Requests"
-msgstr ""
+msgstr "%s Входящи Заявки"
 
 msgid "Caller Policy"
-msgstr ""
+msgstr "Политика за Обаждащ се"
 
 msgid "Callee Policy"
-msgstr ""
+msgstr "Политика за Търсения"
 
 msgid "Caller Timeout to Request"
 msgstr ""
@@ -491,7 +491,7 @@ msgid "Please enter a valid CID Prefix"
 msgstr ""
 
 msgid "Camp-On Request"
-msgstr ""
+msgstr "Заяви Camp-On"
 
 msgid "Camp-On Cancel"
-msgstr ""
+msgstr "Отмени Camp-On"
