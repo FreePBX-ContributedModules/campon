@@ -13,6 +13,7 @@ msgstr ""
 "PO-Revision-Date: 2015-02-20 19:05-0500\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
+"Language: zh_CN\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -366,7 +367,7 @@ msgstr ""
 
 #: functions.inc.php:436
 msgid "Callee Policy"
-msgstr ""
+msgstr "被叫策略"
 
 #: campon.i18n.php:31
 msgid "Callee Policy Default"
@@ -378,11 +379,11 @@ msgstr ""
 
 #: functions.inc.php:435
 msgid "Caller Policy"
-msgstr ""
+msgstr "主叫策略"
 
 #: campon.i18n.php:27
 msgid "Caller Policy Default"
-msgstr ""
+msgstr "默认呼叫方策略"
 
 #: functions.inc.php:438
 msgid "Caller Timeout to Request"
@@ -402,7 +403,7 @@ msgstr ""
 
 #: campon.i18n.php:15
 msgid "Camp-On Module"
-msgstr ""
+msgstr "Camp-On 模块"
 
 #: install.php:7
 msgid "Camp-On Request"
@@ -422,7 +423,7 @@ msgstr ""
 
 #: campon.i18n.php:71
 msgid "Default Callee Alert-Info"
-msgstr ""
+msgstr "默认被叫 Alert-Info"
 
 #: campon.i18n.php:75
 msgid "Default Callee CID Prepend"
@@ -454,7 +455,7 @@ msgstr ""
 
 #: functions.inc.php:339 functions.inc.php:400
 msgid "Generic Device"
-msgstr ""
+msgstr "标准设备"
 
 #: campon.i18n.php:21
 msgid ""
@@ -493,11 +494,11 @@ msgstr ""
 
 #: campon.i18n.php:13
 msgid "Maximum Active Camp-On Requests"
-msgstr ""
+msgstr "最大激活的Camp-On请求"
 
 #: functions.inc.php:340 functions.inc.php:401
 msgid "Native Technology Support"
-msgstr ""
+msgstr "默认通信接口支持"
 
 #: functions.inc.php:402
 msgid "Native Where Available"
@@ -521,7 +522,7 @@ msgstr ""
 
 #: campon.i18n.php:4 campon.i18n.php:9
 msgid "Settings"
-msgstr ""
+msgstr "设置"
 
 #: functions.inc.php:406
 msgid "Silent"
