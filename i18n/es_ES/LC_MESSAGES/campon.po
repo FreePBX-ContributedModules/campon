@@ -200,7 +200,7 @@ msgid ""
 "being called back.'"
 msgstr ""
 "Una configuración opcional Prefijo CID que se puede utilizar para enviar a "
-"la extensión que se llamó de nuevo."
+"la extensión que se llamó de nuevo"
 
 #: functions.inc.php:506
 msgid ""
