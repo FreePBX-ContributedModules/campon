@@ -2,12 +2,13 @@
 	<rawname>campon</rawname>
 	<repo>standard</repo>
 	<name>Camp-On</name>
-	<version>2.11.0.2</version>
+	<version>13.0.1alpha1</version>
 	<publisher>Schmooze Com Inc</publisher>
 	<license>GPLv3+</license>
 	<licenselink>http://www.gnu.org/licenses/gpl-3.0.txt</licenselink>
 	<category>Settings</category>
 	<changelog>
+		*13.0.1alpha1* 
 		*2.11.0.3* Update license file
 		*2.11.0.1* #6876
 		*2.11.0.0* bump version
@@ -23,7 +24,7 @@
 		<engine>asterisk 1.8</engine>
 	</depends>
 	<supported>
-		<version>2.9</version>
+		<version>13.0</version>
 	</supported>
 	<location>release/2.11/campon-2.11.0.0.tgz</location>
 	<md5sum>630aee4ee195fb838c0e352f4e9138c1</md5sum>

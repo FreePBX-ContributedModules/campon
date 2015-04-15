@@ -20,7 +20,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-02-20 19:05-0500\n"
+"POT-Creation-Date: 2015-04-14 20:33-0400\n"
 "PO-Revision-Date: 2015-02-04 00:39+0200\n"
 "Last-Translator: Rafael <rafael@ibinetwork.com.br>\n"
 "Language-Team: Portuguese (Brazil) <http://git.freepbx.org/projects/freepbx/"
@@ -132,7 +132,7 @@ msgstr ""
 msgid "80 min"
 msgstr ""
 
-#: campon.i18n.php:53
+#: campon.i18n.php:50
 msgid ""
 "Affects Asterisk: cc_agent_dialstring. If not set a callback request will be "
 "dialed straight to the speciifc device that made the call. If using 'native' "
@@ -153,13 +153,13 @@ msgid ""
 "Extension'."
 msgstr ""
 
-#: campon.i18n.php:73 functions.inc.php:508
+#: campon.i18n.php:70 functions.inc.php:508
 msgid ""
 "An optional Alert-Info setting that can be used to send to the extension "
 "being called back."
 msgstr ""
 
-#: campon.i18n.php:61
+#: campon.i18n.php:58
 msgid ""
 "An optional Alert-Info setting that can be used when initiating a callback. "
 "Only valid when 'Caller Policy' is set to 'generic' device'"
@@ -178,7 +178,7 @@ msgid ""
 "being called back."
 msgstr ""
 
-#: campon.i18n.php:77
+#: campon.i18n.php:74
 msgid ""
 "An optional CID Prepend setting that can be used to send to the extension "
 "being called back.'"
@@ -191,7 +191,7 @@ msgid ""
 "Callback Mode' is not set to 'Callback Device Directly'."
 msgstr ""
 
-#: campon.i18n.php:65
+#: campon.i18n.php:62
 msgid ""
 "An optional CID Prepend setting that can be used when initiating a callback. "
 "Only valid when 'Caller Policy' is set to a 'generic' device'"
@@ -205,25 +205,25 @@ msgstr ""
 msgid "Announce Callback Extension"
 msgstr ""
 
-#: campon.i18n.php:67
+#: campon.i18n.php:64
 msgid "Announce the Callee Extension"
 msgstr ""
 
-#: campon.i18n.php:41
+#: campon.i18n.php:38
 msgid ""
 "Asteirsk: ccbs_available_timer. How long a call completion request will "
 "remain active, in seconds, before expiring if the phone rang busy when first "
 "attempting the call."
 msgstr ""
 
-#: campon.i18n.php:45
+#: campon.i18n.php:42
 msgid ""
 "Asteirsk: ccnr_available_timer. How long a call completion request will "
 "remain active, in seconds, before expiring if the phone was simply "
 "unanswered when first attempting the call."
 msgstr ""
 
-#: campon.i18n.php:29
+#: campon.i18n.php:26
 msgid ""
 "Asterisk: cc_agent_policy. Used to enable Camp-On for a user and set the "
 "Technology Mode that will be used when engaging the feature. In most cases "
@@ -248,7 +248,7 @@ msgid ""
 "this will be ignored."
 msgstr ""
 
-#: campon.i18n.php:57
+#: campon.i18n.php:54
 msgid ""
 "Asterisk: cc_max_agents. Only valid for when using 'native' technology "
 "support for Caller Policy. This is the number of outstanding Call Completion "
@@ -256,13 +256,13 @@ msgid ""
 "mode you can only have a single request outstanding and this will be ignored."
 msgstr ""
 
-#: campon.i18n.php:81 functions.inc.php:502
+#: campon.i18n.php:78 functions.inc.php:502
 msgid ""
 "Asterisk: cc_max_monitors. This is the maximum number of callers that are "
 "allowed to queue up call completion requests against this extension."
 msgstr ""
 
-#: campon.i18n.php:33
+#: campon.i18n.php:30
 msgid ""
 "Asterisk: cc_monitor_policy. Used to control if other phones are allowed to "
 "Camp On to an extension. If so, it sets the technology mode used to monitor "
@@ -297,13 +297,13 @@ msgid ""
 "make a call completion request."
 msgstr ""
 
-#: campon.i18n.php:37
+#: campon.i18n.php:34
 msgid ""
 "Asterisk: cc_offer_timer. How many seconds after dialing an extenion a user "
 "has to make a call completion request."
 msgstr ""
 
-#: campon.i18n.php:49
+#: campon.i18n.php:46
 msgid ""
 "Asterisk: cc_recall_timer. How long in seconds to ring back a caller who's "
 "Caller Policy is set to 'Generic Device'. This has no affect if set to any "
@@ -331,19 +331,19 @@ msgid ""
 "attempting the call."
 msgstr ""
 
-#: campon.i18n.php:83
+#: campon.i18n.php:80
 msgid "BLF Camp-On Available State"
 msgstr ""
 
-#: campon.i18n.php:91
+#: campon.i18n.php:88
 msgid "BLF Camp-On Busy Caller State"
 msgstr ""
 
-#: campon.i18n.php:87
+#: campon.i18n.php:84
 msgid "BLF Camp-On Pending State"
 msgstr ""
 
-#: campon.i18n.php:95
+#: campon.i18n.php:92
 msgid "BLF Camp-On Recalling State"
 msgstr ""
 
@@ -383,7 +383,7 @@ msgstr ""
 msgid "Callee Policy"
 msgstr ""
 
-#: campon.i18n.php:31
+#: campon.i18n.php:28
 msgid "Callee Policy Default"
 msgstr ""
 
@@ -395,7 +395,7 @@ msgstr ""
 msgid "Caller Policy"
 msgstr ""
 
-#: campon.i18n.php:27
+#: campon.i18n.php:24
 msgid "Caller Policy Default"
 msgstr ""
 
@@ -403,11 +403,11 @@ msgstr ""
 msgid "Caller Timeout to Request"
 msgstr ""
 
-#: campon.i18n.php:35
+#: campon.i18n.php:32
 msgid "Caller Timeout to Request Default"
 msgstr ""
 
-#: campon.i18n.php:3 campon.i18n.php:7 install.php:6
+#: campon.i18n.php:4 install.php:6
 msgid "Camp-On"
 msgstr ""
 
@@ -415,7 +415,7 @@ msgstr ""
 msgid "Camp-On Cancel"
 msgstr ""
 
-#: campon.i18n.php:15
+#: campon.i18n.php:12
 msgid "Camp-On Module"
 msgstr ""
 
@@ -427,35 +427,35 @@ msgstr ""
 msgid "Camp-On Toggle"
 msgstr ""
 
-#: campon.i18n.php:59
+#: campon.i18n.php:56
 msgid "Default Callback Alert-Info"
 msgstr ""
 
-#: campon.i18n.php:63
+#: campon.i18n.php:60
 msgid "Default Callback CID Prepend"
 msgstr ""
 
-#: campon.i18n.php:71
+#: campon.i18n.php:68
 msgid "Default Callee Alert-Info"
 msgstr ""
 
-#: campon.i18n.php:75
+#: campon.i18n.php:72
 msgid "Default Callee CID Prepend"
 msgstr ""
 
-#: campon.i18n.php:51
+#: campon.i18n.php:48
 msgid "Default Caller Callback Mode"
 msgstr ""
 
-#: campon.i18n.php:55
+#: campon.i18n.php:52
 msgid "Default Max Camped-On Extensions"
 msgstr ""
 
-#: campon.i18n.php:79
+#: campon.i18n.php:76
 msgid "Default Max Queued Callers"
 msgstr ""
 
-#: campon.i18n.php:47
+#: campon.i18n.php:44
 msgid "Default Time to Ring Back Caller"
 msgstr ""
 
@@ -471,7 +471,7 @@ msgstr ""
 msgid "Generic Device"
 msgstr ""
 
-#: campon.i18n.php:21
+#: campon.i18n.php:18
 msgid ""
 "If this is set to 'generic' or 'always' then it will be possible to attempt "
 "call completion requests when dialing non-extensions such as ring groups and "
@@ -486,7 +486,7 @@ msgstr ""
 msgid "Max Camp-On Life Busy"
 msgstr ""
 
-#: campon.i18n.php:39
+#: campon.i18n.php:36
 msgid "Max Camp-On Life Busy Default"
 msgstr ""
 
@@ -494,7 +494,7 @@ msgstr ""
 msgid "Max Camp-On Life No Answer"
 msgstr ""
 
-#: campon.i18n.php:43
+#: campon.i18n.php:40
 msgid "Max Camp-On Life No Answer Default"
 msgstr ""
 
@@ -506,7 +506,7 @@ msgstr ""
 msgid "Max Queued Callers"
 msgstr ""
 
-#: campon.i18n.php:13
+#: campon.i18n.php:10
 msgid "Maximum Active Camp-On Requests"
 msgstr ""
 
@@ -518,11 +518,11 @@ msgstr ""
 msgid "Native Where Available"
 msgstr ""
 
-#: campon.i18n.php:19
+#: campon.i18n.php:16
 msgid "Non Extensions Callee Policy"
 msgstr ""
 
-#: campon.i18n.php:23
+#: campon.i18n.php:20
 msgid "Only Use Default Camp-On Settings"
 msgstr ""
 
@@ -534,7 +534,7 @@ msgstr ""
 msgid "Please enter a valid CID Prefix"
 msgstr ""
 
-#: campon.i18n.php:4 campon.i18n.php:9
+#: campon.i18n.php:6
 msgid "Settings"
 msgstr "Configurações"
 
@@ -542,7 +542,7 @@ msgstr "Configurações"
 msgid "Silent"
 msgstr ""
 
-#: campon.i18n.php:17
+#: campon.i18n.php:14
 msgid ""
 "System wide maximum number of outstanding Camp-On requests that can be "
 "active. This limit is useful on a system that may have memory constraints "
@@ -558,28 +558,28 @@ msgid ""
 "Advanced Settings page. Active settings:"
 msgstr ""
 
-#: campon.i18n.php:85
+#: campon.i18n.php:82
 msgid ""
 "This is the state that will be set for BLF subscriptions after attempting a "
 "call while it is still possible to Camp-On to the last called number, prior "
 "to the offer_timer expiring. Restart Asterisk for changes to take effect."
 msgstr ""
 
-#: campon.i18n.php:93
+#: campon.i18n.php:90
 msgid ""
 "This is the state that will be set for BLF subscriptions once the callee "
 "becomes available if the caller is not busy. Restart Asterisk for changes to "
 "take effect."
 msgstr ""
 
-#: campon.i18n.php:89
+#: campon.i18n.php:86
 msgid ""
 "This is the state that will be set for BLF subscriptions upon a successful "
 "Camp-On request, pending a callback when the party becomes available. "
 "Restart Asterisk for changes to take effect."
 msgstr ""
 
-#: campon.i18n.php:5 campon.i18n.php:11
+#: campon.i18n.php:8
 msgid ""
 "This module implements the Call Completion Supplemental Services (CCSS) "
 "often referred to as Call Camping or Camp-On. It allows a caller to request "
@@ -591,7 +591,7 @@ msgstr ""
 msgid "Time to Ring Back Caller"
 msgstr ""
 
-#: campon.i18n.php:69
+#: campon.i18n.php:66
 msgid ""
 "When set to true the target extension being called will be announced upone "
 "answering the Callback prior to ringing the extension. Setting this to false "
@@ -605,7 +605,7 @@ msgid ""
 "phone is picked up."
 msgstr ""
 
-#: campon.i18n.php:25
+#: campon.i18n.php:22
 msgid ""
 "You can force all extensions on a system to only used the default Camp-On "
 "settings. When in this mode, the individual settings will not be shown on "
