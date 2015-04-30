@@ -26,6 +26,10 @@ class campon_conf {
 function campon_hookGet_config($engine) {
   global $ext;
   global $version;
+  global $amp_conf;
+  if(!$amp_conf['CC_ENABLED']){
+    return true;
+  }
   switch($engine) {
   case "asterisk":
     $priority = 'report';
@@ -42,6 +46,9 @@ function campon_get_config($engine) {
 	global $amp_conf;
 	global $campon_conf;
 	switch($engine) {
+    if(!$amp_conf['CC_ENABLED']){
+      return true;
+    }
 		case "asterisk":
 
       $campon_conf->addGeneralSetting('cc_max_requests',$amp_conf['CC_MAX_REQUESTS_GLOBAL']);
@@ -245,7 +252,9 @@ function campon_get_config($engine) {
 function campon_request($c) {
 	global $ext;
   global $amp_conf;
-
+    if(!$amp_conf['CC_ENABLED']){
+      return true;
+    }
 	$id = "app-campon-request"; // The context to be included
 
 	$ext->addInclude('from-internal-additional', $id); // Add the include from from-internal
@@ -261,7 +270,9 @@ function campon_request($c) {
 function campon_cancel($c) {
 	global $ext;
   global $amp_conf;
-
+  if(!$amp_conf['CC_ENABLED']){
+    return true;
+  }
 	$id = "app-campon-cancel"; // The context to be included
 	$ext->addInclude('from-internal-additional', $id); // Add the include from from-internal
 	$ext->add($id, $c, '', new ext_answer(''));
@@ -276,7 +287,9 @@ function campon_cancel($c) {
 function campon_toggle($c) {
 	global $ext;
   global $amp_conf;
-
+  if(!$amp_conf['CC_ENABLED']){
+    return true;
+  }
 	$id = "app-campon-toggle"; // The context to be included
   $hint_context = 'ext-local';
 
@@ -309,7 +322,10 @@ function campon_toggle($c) {
 
 function campon_configpageinit($pagename) {
 	global $currentcomponent;
-
+  global $amp_conf;
+  if(!$amp_conf['CC_ENABLED']){
+    return true;
+  }
 	$action = isset($_REQUEST['action'])?$_REQUEST['action']:null;
 	$extdisplay = isset($_REQUEST['extdisplay'])?$_REQUEST['extdisplay']:null;
 	$extension = isset($_REQUEST['extension'])?$_REQUEST['extension']:null;
@@ -334,7 +350,10 @@ function campon_configpageinit($pagename) {
 
 function campon_applyhooks() {
 	global $currentcomponent;
-
+  global $amp_conf;
+  if(!$amp_conf['CC_ENABLED']){
+    return true;
+  }
 	$currentcomponent->addoptlistitem('cc_agent_policy', 'never', _('Disable Camp-On'));
 	$currentcomponent->addoptlistitem('cc_agent_policy', 'generic', _('Generic Device'));
 	$currentcomponent->addoptlistitem('cc_agent_policy', 'native', _('Native Technology Support'));
@@ -420,7 +439,9 @@ function campon_applyhooks() {
 function campon_configpageload() {
   global $amp_conf;
 	global $currentcomponent;
-
+  if(!$amp_conf['CC_ENABLED']){
+    return true;
+  }
 	// Init vars from $_REQUEST[]
 	$action = isset($_REQUEST['action'])?$_REQUEST['action']:null;
 	$extdisplay = isset($_REQUEST['extdisplay'])?$_REQUEST['extdisplay']:null;
@@ -533,7 +554,9 @@ function campon_configpageload() {
 
 function campon_configprocess() {
   global $amp_conf;
-
+  if(!$amp_conf['CC_ENABLED']){
+    return true;
+  }
 	$action = isset($_REQUEST['action'])?$_REQUEST['action']:null;
 	$ext = isset($_REQUEST['extdisplay'])?$_REQUEST['extdisplay']:null;
 	$extn = isset($_REQUEST['extension'])?$_REQUEST['extension']:null;

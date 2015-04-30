@@ -34,6 +34,22 @@ unset($fcc);
 
 $freepbx_conf =& freepbx_conf::create();
 
+// CC_ENABLE
+//
+$set['value'] = false;
+$set['defaultval'] =& $set['value'];
+$set['readonly'] = 0;
+$set['hidden'] = 0;
+$set['level'] = 1;
+$set['module'] = 'campon';
+$set['category'] = _('Camp-On Module');
+$set['emptyok'] = 0;
+$set['sortorder'] = 1;
+$set['name'] = _('Enable Camp-On functionality');
+$set['description'] = _('With this set to no, none of the hints or dialplan will generate for Camp-On');
+$set['type'] = CONF_TYPE_BOOL;
+$freepbx_conf->define_conf_setting('CC_ENABLE',$set);
+
 // CC_NON_EXTENSION_POLICY
 //
 $set['value'] = 'never';

@@ -8,7 +8,7 @@
 	<licenselink>http://www.gnu.org/licenses/gpl-3.0.txt</licenselink>
 	<category>Settings</category>
 	<changelog>
-		*13.0.1alpha1* 
+		*13.0.1alpha1* Disable by default
 		*2.11.0.3* Update license file
 		*2.11.0.1* #6876
 		*2.11.0.0* bump version
