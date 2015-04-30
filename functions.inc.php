@@ -45,10 +45,10 @@ function campon_get_config($engine) {
 	global $ext;
 	global $amp_conf;
 	global $campon_conf;
+  if(!$amp_conf['CC_ENABLED']){
+    return true;
+  }
 	switch($engine) {
-    if(!$amp_conf['CC_ENABLED']){
-      return true;
-    }
 		case "asterisk":
 
       $campon_conf->addGeneralSetting('cc_max_requests',$amp_conf['CC_MAX_REQUESTS_GLOBAL']);
