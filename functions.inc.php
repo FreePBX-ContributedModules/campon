@@ -27,7 +27,7 @@ function campon_hookGet_config($engine) {
   global $ext;
   global $version;
   global $amp_conf;
-  if(!$amp_conf['CC_ENABLED']){
+  if(!$amp_conf['CC_ENABLE']){
     return true;
   }
   switch($engine) {
@@ -45,7 +45,7 @@ function campon_get_config($engine) {
 	global $ext;
 	global $amp_conf;
 	global $campon_conf;
-  if(!$amp_conf['CC_ENABLED']){
+  if(!$amp_conf['CC_ENABLE']){
     return true;
   }
 	switch($engine) {
@@ -252,7 +252,7 @@ function campon_get_config($engine) {
 function campon_request($c) {
 	global $ext;
   global $amp_conf;
-    if(!$amp_conf['CC_ENABLED']){
+    if(!$amp_conf['CC_ENABLE']){
       return true;
     }
 	$id = "app-campon-request"; // The context to be included
@@ -270,7 +270,7 @@ function campon_request($c) {
 function campon_cancel($c) {
 	global $ext;
   global $amp_conf;
-  if(!$amp_conf['CC_ENABLED']){
+  if(!$amp_conf['CC_ENABLE']){
     return true;
   }
 	$id = "app-campon-cancel"; // The context to be included
@@ -287,7 +287,7 @@ function campon_cancel($c) {
 function campon_toggle($c) {
 	global $ext;
   global $amp_conf;
-  if(!$amp_conf['CC_ENABLED']){
+  if(!$amp_conf['CC_ENABLE']){
     return true;
   }
 	$id = "app-campon-toggle"; // The context to be included
@@ -323,7 +323,7 @@ function campon_toggle($c) {
 function campon_configpageinit($pagename) {
 	global $currentcomponent;
   global $amp_conf;
-  if(!$amp_conf['CC_ENABLED']){
+  if(!$amp_conf['CC_ENABLE']){
     return true;
   }
 	$action = isset($_REQUEST['action'])?$_REQUEST['action']:null;
@@ -351,7 +351,7 @@ function campon_configpageinit($pagename) {
 function campon_applyhooks() {
 	global $currentcomponent;
   global $amp_conf;
-  if(!$amp_conf['CC_ENABLED']){
+  if(!$amp_conf['CC_ENABLE']){
     return true;
   }
 	$currentcomponent->addoptlistitem('cc_agent_policy', 'never', _('Disable Camp-On'));
@@ -439,7 +439,7 @@ function campon_applyhooks() {
 function campon_configpageload() {
   global $amp_conf;
 	global $currentcomponent;
-  if(!$amp_conf['CC_ENABLED']){
+  if(!$amp_conf['CC_ENABLE']){
     return true;
   }
 	// Init vars from $_REQUEST[]
@@ -554,7 +554,7 @@ function campon_configpageload() {
 
 function campon_configprocess() {
   global $amp_conf;
-  if(!$amp_conf['CC_ENABLED']){
+  if(!$amp_conf['CC_ENABLE']){
     return true;
   }
 	$action = isset($_REQUEST['action'])?$_REQUEST['action']:null;

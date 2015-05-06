@@ -1,8 +1,8 @@
 <module>
 	<rawname>campon</rawname>
-	<repo>standard</repo>
+	<repo>unsupported</repo>
 	<name>Camp-On</name>
-	<version>13.0.1alpha1</version>
+	<version>13.0.1alpha2</version>
 	<publisher>Schmooze Com Inc</publisher>
 	<license>GPLv3+</license>
 	<licenselink>http://www.gnu.org/licenses/gpl-3.0.txt</licenselink>
@@ -13,7 +13,7 @@
 		*2.11.0.1* #6876
 		*2.11.0.0* bump version
 		*2.10.0.2* #5705, #5710
-		*2.10.0.1* #5478 
+		*2.10.0.1* #5478
 		*2.10.0.0* new version changes
 		*2.9.0.0* spelling, cosmetics
 		*2.9.0beta1.0* #778 Camp-On implenentation using CCSS, beta release requires Asterisk patch 18788 for full functionality
