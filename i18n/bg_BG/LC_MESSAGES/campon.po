@@ -21,7 +21,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-02-20 19:05-0500\n"
-"PO-Revision-Date: 2015-07-14 15:22+0200\n"
+"PO-Revision-Date: 2015-07-14 16:35+0200\n"
 "Last-Translator: Chavdar <chavdar_75@yahoo.com>\n"
 "Language-Team: Bulgarian "
 "<http://weblate.freepbx.org/projects/freepbx/campon/bg_BG/>\n"
@@ -389,7 +389,7 @@ msgstr "Политика за Търсения По-Подразбиране"
 
 #: functions.inc.php:443
 msgid "Caller Callback Mode"
-msgstr ""
+msgstr "Режим на Обратно Обаждане за Обаждащ се"
 
 #: functions.inc.php:435
 msgid "Caller Policy"
@@ -425,7 +425,7 @@ msgstr "Заяви Camp-On"
 
 #: install.php:9
 msgid "Camp-On Toggle"
-msgstr ""
+msgstr "Camp-On Превключи"
 
 #: campon.i18n.php:59
 msgid "Default Callback Alert-Info"
