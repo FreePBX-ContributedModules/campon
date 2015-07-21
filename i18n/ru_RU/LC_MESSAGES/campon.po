@@ -23,7 +23,7 @@ msgstr ""
 "Project-Id-Version: 1.4\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-02-20 19:05-0500\n"
-"PO-Revision-Date: 2015-04-22 20:30+0200\n"
+"PO-Revision-Date: 2015-07-21 17:00+0200\n"
 "Last-Translator: Yuriy <alliancesko@gmail.com>\n"
 "Language-Team: Russian "
 "<http://weblate.freepbx.org/projects/freepbx/campon/ru_RU/>\n"
@@ -503,7 +503,7 @@ msgstr "Таймаут по умолчанию для запроса вызыв�
 
 #: campon.i18n.php:3 campon.i18n.php:7 install.php:6
 msgid "Camp-On"
-msgstr ""
+msgstr "Сamp-Оn"
 
 #: install.php:8
 msgid "Camp-On Cancel"
