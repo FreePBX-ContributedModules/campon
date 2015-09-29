@@ -119,11 +119,11 @@ function campon_get_config($engine) {
       $ext->add($mcontext,$exten,'', new ext_gotoif('$["${DB(AMPUSER/${ARG2}/cidname)}" != ""]','is_exten'));
 
       If ($amp_conf['CC_NON_EXTENSION_POLICY'] == 'never') {
-			  $ext->add($mcontext,$exten,'', new ext_noop_trace('calling a non-extesnion: [${ARG2} / ${DB(AMPUSER/${ARG2}/cidname)}], policy enabled , continuing',6));
+			  $ext->add($mcontext,$exten,'', new ext_noop_trace('calling a non-extension: [${ARG2} / ${DB(AMPUSER/${ARG2}/cidname)}], policy enabled , continuing',6));
 			  $ext->add($mcontext,$exten,'', new ext_stackpop(''));
 			  $ext->add($mcontext,$exten,'', new ext_return('FALSE'));
       } else {
-			  $ext->add($mcontext,$exten,'', new ext_noop_trace('calling a non-extesnion: [${ARG2} / ${DB(AMPUSER/${ARG2}/cidname)}], policy enabled , continuing',6));
+			  $ext->add($mcontext,$exten,'', new ext_noop_trace('calling a non-extension: [${ARG2} / ${DB(AMPUSER/${ARG2}/cidname)}], policy enabled , continuing',6));
 			  $ext->add($mcontext,$exten,'', new ext_set('CALLCOMPLETION(cc_monitor_policy)', $amp_conf['CC_NON_EXTENSION_POLICY']));
         $ext->add($mcontext,$exten,'', new ext_set('CALLCOMPLETION(cc_max_monitors)', $amp_conf['CC_MAX_MONITORS_DEFAULT']));
 			  $ext->add($mcontext,$exten,'', new ext_return('TRUE'));
