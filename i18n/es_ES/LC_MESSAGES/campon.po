@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-04-14 20:33-0400\n"
+"POT-Creation-Date: 2015-09-29 12:34-0700\n"
 "PO-Revision-Date: 2015-03-30 22:35+0200\n"
 "Last-Translator: Ernesto <ecasas@sangoma.com>\n"
 "Language-Team: Spanish <http://weblate.freepbx.org/projects/freepbx/campon/"
@@ -21,125 +21,107 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Weblate 2.2-dev\n"
 
-#: functions.inc.php:410
+#: functions.inc.php:429
 #, php-format
 msgid "%s Incoming Requests"
 msgstr "%s Solicitudes Entrantes"
 
-#: functions.inc.php:390
+#: functions.inc.php:409
 #, php-format
 msgid "%s Outgoing Requests"
 msgstr "%s Solicitudes Salida"
 
-#: functions.inc.php:385
+#: functions.inc.php:404
 #, php-format
 msgid "%s sec"
 msgstr "%s seg"
 
-#: functions.inc.php:346
+#: functions.inc.php:365
 msgid "1 min"
 msgstr "1 Min"
 
-#: functions.inc.php:351
+#: functions.inc.php:370
 msgid "10 min"
 msgstr "10 Min"
 
-#: functions.inc.php:358 functions.inc.php:373
+#: functions.inc.php:377 functions.inc.php:392
 msgid "100 min"
 msgstr "100 Min"
 
-#: functions.inc.php:359 functions.inc.php:374
+#: functions.inc.php:378 functions.inc.php:393
 msgid "2 hrs"
 msgstr "2 horas"
 
-#: functions.inc.php:347
+#: functions.inc.php:366
 msgid "2 min"
 msgstr "2 Min"
 
-#: functions.inc.php:354 functions.inc.php:369
+#: functions.inc.php:373 functions.inc.php:388
 msgid "20 min"
 msgstr "20 Min"
 
-#: functions.inc.php:343
+#: functions.inc.php:362
 msgid "20 sec"
 msgstr "20 seg"
 
-#: functions.inc.php:360 functions.inc.php:375
+#: functions.inc.php:379 functions.inc.php:394
 msgid "3 hrs"
 msgstr "3 horas"
 
-#: functions.inc.php:348
+#: functions.inc.php:367
 msgid "3 min"
 msgstr "3 Min"
 
-#: functions.inc.php:344
+#: functions.inc.php:363
 msgid "30 sec"
 msgstr "30 seg"
 
-#: functions.inc.php:361 functions.inc.php:376
+#: functions.inc.php:380 functions.inc.php:395
 msgid "4 hrs"
 msgstr "4 horas"
 
-#: functions.inc.php:349
+#: functions.inc.php:368
 msgid "4 min"
 msgstr "4 Min"
 
-#: functions.inc.php:355 functions.inc.php:370
+#: functions.inc.php:374 functions.inc.php:389
 msgid "40 min"
 msgstr "40 Min"
 
-#: functions.inc.php:345
+#: functions.inc.php:364
 msgid "45 sec"
 msgstr "45 seg"
 
-#: functions.inc.php:362 functions.inc.php:363 functions.inc.php:377
-#: functions.inc.php:378
+#: functions.inc.php:381 functions.inc.php:382 functions.inc.php:396
+#: functions.inc.php:397
 msgid "5 hrs"
 msgstr "5 horas"
 
-#: functions.inc.php:350
+#: functions.inc.php:369
 msgid "5 min"
 msgstr "5 Min"
 
-#: functions.inc.php:364 functions.inc.php:379
+#: functions.inc.php:383 functions.inc.php:398
 msgid "6 hrs"
 msgstr "6 horas"
 
-#: functions.inc.php:356 functions.inc.php:371
+#: functions.inc.php:375 functions.inc.php:390
 msgid "60 min"
 msgstr "60 Min"
 
-#: functions.inc.php:365 functions.inc.php:380
+#: functions.inc.php:384 functions.inc.php:399
 msgid "7 hrs"
 msgstr "7 horas"
 
-#: functions.inc.php:366 functions.inc.php:381
+#: functions.inc.php:385 functions.inc.php:400
 msgid "8 hrs"
 msgstr "8 horas"
 
-#: functions.inc.php:357 functions.inc.php:372
+#: functions.inc.php:376 functions.inc.php:391
 msgid "80 min"
 msgstr "8 Min"
 
-#: campon.i18n.php:50
-msgid ""
-"Affects Asterisk: cc_agent_dialstring. If not set a callback request will be "
-"dialed straight to the speciifc device that made the call. If using 'native' "
-"technology support this may be the peferred mode. The 'internal' (Callback "
-"Standard) option will intiate a call back to the caller just as if someone "
-"else on the system placed the call, which means the call can pursue Follow-"
-"Me. To avoid Follow-Me setting, choose 'extension' (Callback Extension)."
-msgstr ""
-"Afecta a Asterisk: cc_agent_dialstring. Si no se establece una solicitud de "
-"devolución de llamada se marcará directamente al dispositivo que hizo la "
-"llamada. Si se utiliza tecnología 'nativo' esto puede ser el modo "
-"predeterminado. La opción 'internal' (Devolución de llamada estándar) inicia "
-"una llamada a la persona que llama como si alguien más en el sistema hizo la "
-"llamada, lo que significa que la llamada puede perseguir a un Sígueme. Para "
-"evitar configuraciones Sígueme, seleccione 'extensión' (extensión de "
-"devolución de llamada)."
-
-#: functions.inc.php:500
+#: functions.inc.php:521
 msgid ""
 "Affects Asterisk: cc_agent_dialstring. With 'Callback Device Directly' a "
 "callback request will be dialed straight to the specific device that made "
@@ -158,7 +140,7 @@ msgstr ""
 "que significa que la llamada puede seguir Sigue-Me. Para evitar los valores "
 "de Sígue-Me, seleccione 'Extensión de devolución de llamada'."
 
-#: campon.i18n.php:70 functions.inc.php:508
+#: functions.inc.php:529
 msgid ""
 "An optional Alert-Info setting that can be used to send to the extension "
 "being called back."
@@ -166,16 +148,7 @@ msgstr ""
 "Una opción Alerta-Info que se puede utilizar para enviar a la extensión que "
 "le devuelven la llamada."
 
-#: campon.i18n.php:58
-msgid ""
-"An optional Alert-Info setting that can be used when initiating a callback. "
-"Only valid when 'Caller Policy' is set to 'generic' device'"
-msgstr ""
-"Una opción Alerta-Info que se puede utilizar cuando se inicia una devolución "
-"de llamada. Sólo es válido cuando la Política de la persona que llama está "
-"establecida en dispositivo 'genérico'"
-
-#: functions.inc.php:505
+#: functions.inc.php:526
 msgid ""
 "An optional Alert-Info setting that can be used when initiating a callback. "
 "Only valid when 'Caller Policy' is set to a 'Generic Device' and 'Caller "
@@ -186,7 +159,7 @@ msgstr ""
 "encuentra en un \"Dispositivo Genérico\" y \"Modo de devolución de llamada "
 "al llamante 'no está en' Devolución de llamada directamente a dispositivo'."
 
-#: functions.inc.php:509
+#: functions.inc.php:530
 msgid ""
 "An optional CID Prepend setting that can be used to send to the extension "
 "being called back."
@@ -194,15 +167,7 @@ msgstr ""
 "Una configuración CID Opcional para Anteponer y que se puede utilizar para "
 "enviar a la extensión que se llamó."
 
-#: campon.i18n.php:74
-msgid ""
-"An optional CID Prepend setting that can be used to send to the extension "
-"being called back.'"
-msgstr ""
-"Una configuración opcional Prefijo CID que se puede utilizar para enviar a "
-"la extensión que se llamó de nuevo"
-
-#: functions.inc.php:506
+#: functions.inc.php:527
 msgid ""
 "An optional CID Prepend setting that can be used when initiating a callback. "
 "Only valid when 'Caller Policy' is set to a 'Generic Device' and 'Caller "
@@ -214,61 +179,15 @@ msgstr ""
 "del llamante\" no está en \"Devolución de llamada directamente a dispositivo"
 "\"."
 
-#: campon.i18n.php:62
-msgid ""
-"An optional CID Prepend setting that can be used when initiating a callback. "
-"Only valid when 'Caller Policy' is set to a 'generic' device'"
-msgstr ""
-"Una configuración opcional Prefijo CID que se puede utilizar cuando se "
-"inicia una devolución de llamada.Sólo es válido cuando la Política de la "
-"persona que llama se establece en dispositivo 'genérico'"
-
-#: functions.inc.php:405
+#: functions.inc.php:424
 msgid "Announce"
 msgstr "Anuncio"
 
-#: functions.inc.php:445
+#: functions.inc.php:466
 msgid "Announce Callback Extension"
 msgstr "Anuncio Devolución Extensión"
 
-#: campon.i18n.php:64
-msgid "Announce the Callee Extension"
-msgstr "Anuncio la Extensión llamada"
-
-#: campon.i18n.php:38
-msgid ""
-"Asteirsk: ccbs_available_timer. How long a call completion request will "
-"remain active, in seconds, before expiring if the phone rang busy when first "
-"attempting the call."
-msgstr ""
-"Asterisk: ccbs_available_timer. Por cuánto tiempo una solicitud de "
-"devolución de llamada permanecerá activa, en segundos, antes de expirar si "
-"el teléfono sonó ocupado la primera vez que intentó la llamada."
-
-#: campon.i18n.php:42
-msgid ""
-"Asteirsk: ccnr_available_timer. How long a call completion request will "
-"remain active, in seconds, before expiring if the phone was simply "
-"unanswered when first attempting the call."
-msgstr ""
-"Asteirsk: ccnr_available_timer. Por cuánto tiempo una solicitud de "
-"devolución de llamada permanecerá activa, en segundos, antes de expirar si "
-"en el teléfono era simplemente la primera vez que intentaba contestar la "
-"llamada."
-
-#: campon.i18n.php:26
-msgid ""
-"Asterisk: cc_agent_policy. Used to enable Camp-On for a user and set the "
-"Technology Mode that will be used when engaging the feature. In most cases "
-"'generic' should be chosen unless you have phones designed to work with "
-"channel specific capabilities."
-msgstr ""
-"Asterisk: cc_agent_policy. Se utiliza para habilitar la Camp-on para un "
-"usuario y establecer el modo de la tecnología que se utiliza. En la mayoría "
-"de los casos 'genérico' debe ser elegido a menos que tenga los teléfonos "
-"diseñados para trabajar con capacidades específicas de los canales."
-
-#: functions.inc.php:451
+#: functions.inc.php:472
 msgid ""
 "Asterisk: cc_agent_policy. Used to enable Camp-On for this user and set the "
 "Technology Mode that will be used when engaging the feature. In most cases "
@@ -281,7 +200,7 @@ msgstr ""
 "a menos que tenga teléfonos diseñados para trabajar con las capacidades "
 "específicas de canal."
 
-#: functions.inc.php:499
+#: functions.inc.php:520
 msgid ""
 "Asterisk: cc_max_agents. Only valid for when using 'Native Technology "
 "Support' for Caller Policy. This is the number of outstanding Call "
@@ -296,20 +215,7 @@ msgstr ""
 "que sólo puede tener una única solicitud pendiente y por tanto esto será "
 "ignorado."
 
-#: campon.i18n.php:54
-msgid ""
-"Asterisk: cc_max_agents. Only valid for when using 'native' technology "
-"support for Caller Policy. This is the number of outstanding Call Completion "
-"requests that can be pending to different extensions. With 'generic' device "
-"mode you can only have a single request outstanding and this will be ignored."
-msgstr ""
-"Asterisk: cc_max_agents. Sólo válido para cuando se utiliza tecnología "
-"'nativo'. Este es el número de solicitudes pendientes de devolución de "
-"llamadas que pueden estar pendientes de diferentes extensiones. Con el modo "
-"dispositivo 'genérico' sólo puede tener una sola solicitud pendiente y esta "
-"será ignorada."
-
-#: campon.i18n.php:78 functions.inc.php:502
+#: functions.inc.php:523
 msgid ""
 "Asterisk: cc_max_monitors. This is the maximum number of callers that are "
 "allowed to queue up call completion requests against this extension."
@@ -318,34 +224,7 @@ msgstr ""
 "les permite poner en cola las solicitudes de devolución de llamadas en esta "
 "extensión."
 
-#: campon.i18n.php:30
-msgid ""
-"Asterisk: cc_monitor_policy. Used to control if other phones are allowed to "
-"Camp On to an extension. If so, it sets the technology mode used to monitor "
-"the availability of the extension. If no specific technology support is "
-"available then it should be set to a 'generic'. In this mode, a callback "
-"will be initiated to the extension when it changes from an InUse state to "
-"NotInUse. If it was busy when first attempted, this will be when the current "
-"call has eneded. If it simply did not answer, then this will be the next "
-"time this phone is used to make or answer a call and then hangs up. It is "
-"possible to set this to take advantage of 'native' technology support if "
-"available and automatically fallback to 'generic' whe not by setting it to "
-"'always'."
-msgstr ""
-"Asterisk: cc_monitor_policy. Se utiliza para controlar si otros teléfonos "
-"pueden devolver a una extensión. Si es así, ajusta el modo de la tecnología "
-"utilizada para monitorear la disponibilidad de la extensión. Si no hay apoyo "
-"tecnológico específico disponible, entonces se debe establecer en "
-"'genérico'. En este modo, una devolución de llamada se pondrá en marcha a la "
-"extensión cuando se cambia de un estado de InUse a NotInUse. Si estaba "
-"ocupado cuando se intentó por primera vez, esto generará la llamada en "
-"curso. Si simplemente no obtuvo respuesta, entonces esto será la próxima vez "
-"que se usa este teléfono para llamar o contestar una llamada y luego cuelga. "
-"Es posible establecer que se trata de aprovechar el soporte 'nativo' de "
-"tecnología si está disponible y automáticamente se reserva para 'genérico' "
-"cuando no se establece en 'siempre'."
-
-#: functions.inc.php:452
+#: functions.inc.php:473
 msgid ""
 "Asterisk: cc_monitor_policy. Used to control if other phones are allowed to "
 "Camp On to this extension. If so, it sets the technology mode used to "
@@ -371,7 +250,7 @@ msgstr ""
 "nativo' si está disponible y automáticamente volver a  'Modo genérico \" "
 "cuando no."
 
-#: functions.inc.php:495
+#: functions.inc.php:516
 msgid ""
 "Asterisk: cc_offer_timer. How long after dialing an extension a user has to "
 "make a call completion request."
@@ -379,25 +258,7 @@ msgstr ""
 "Asterisk: cc_offer_timer. Cuánto tiempo después de marcar una extensión de "
 "un usuario tiene que hacer una solicitud de terminación de llamadas."
 
-#: campon.i18n.php:34
-msgid ""
-"Asterisk: cc_offer_timer. How many seconds after dialing an extenion a user "
-"has to make a call completion request."
-msgstr ""
-"Asterisk: cc_offer_timer. ¿Cuántos segundos después de marcar un extensión "
-"un usuario tiene que hacer una solicitud de devolución de llamadas."
-
-#: campon.i18n.php:46
-msgid ""
-"Asterisk: cc_recall_timer. How long in seconds to ring back a caller who's "
-"Caller Policy is set to 'Generic Device'. This has no affect if set to any "
-"other setting."
-msgstr ""
-"Asterisk: cc_recall_timer. ¿Cuánto tiempo en segundos para llamar a un "
-"interlocutor que está directiva establece en 'Dispositivo genérico'. Esto no "
-"tiene ningún efecto si se establece en cualquier otro entorno."
-
-#: functions.inc.php:498
+#: functions.inc.php:519
 msgid ""
 "Asterisk: cc_recall_timer. How long to ring back a caller who's Caller "
 "Policy is set to 'Generic Device'. This has no affect if to any other "
@@ -407,7 +268,7 @@ msgstr ""
 "llamante cuya  Políticas de llamadas está establecido en \"Dispositivo "
 "Genérico\". Esto no tiene ningún efecto sobre cualquier otro ajuste."
 
-#: functions.inc.php:496
+#: functions.inc.php:517
 msgid ""
 "Asterisk: ccbs_available_timer. How long a call completion request will "
 "remain active before expiring if the phone rang busy when first attempting "
@@ -417,7 +278,7 @@ msgstr ""
 "llamada permanecerá activa antes de expirar si el teléfono sonó ocupado "
 "cuando primero se intento la llamada."
 
-#: functions.inc.php:497
+#: functions.inc.php:518
 msgid ""
 "Asterisk: ccnr_available_timer. How long a call completion request will "
 "remain active before expiring if the phone was simply unanswered when first "
@@ -427,83 +288,55 @@ msgstr ""
 "llamada permanecerá activa antes de expirar si el teléfono dio simplemente "
 "sin respuesta cuando se intento la primera llamada."
 
-#: campon.i18n.php:80
-msgid "BLF Camp-On Available State"
-msgstr "Estado Disponible BLF Devolución"
-
-#: campon.i18n.php:88
-msgid "BLF Camp-On Busy Caller State"
-msgstr "Estado Ocupado BLF Devolución"
-
-#: campon.i18n.php:84
-msgid "BLF Camp-On Pending State"
-msgstr "Estado Pendiente BLF Devolución"
-
-#: campon.i18n.php:92
-msgid "BLF Camp-On Recalling State"
-msgstr "Estado Rellamada BLF Devolución"
-
-#: functions.inc.php:454
+#: functions.inc.php:475
 msgid "Call Camp-On Services"
 msgstr "Servicios Devolución"
 
-#: functions.inc.php:446
+#: functions.inc.php:467
 msgid "Callback Alert-Info"
 msgstr "Alert-Info Devolución"
 
-#: functions.inc.php:447
+#: functions.inc.php:468
 msgid "Callback CID Prepend"
 msgstr "Prefijo CID Devolución"
 
-#: functions.inc.php:394
+#: functions.inc.php:413
 msgid "Callback Device Directly"
 msgstr "Devolución Directa"
 
-#: functions.inc.php:396
+#: functions.inc.php:415
 msgid "Callback Extension (no Follow-Me)"
 msgstr "Extensión Devolución (no Sígueme)"
 
-#: functions.inc.php:395
+#: functions.inc.php:414
 msgid "Callback Standard"
 msgstr "Devolución Estandar"
 
-#: functions.inc.php:448
+#: functions.inc.php:469
 msgid "Callee Alert-Info"
 msgstr "Alert-Info Llamado"
 
-#: functions.inc.php:449
+#: functions.inc.php:470
 msgid "Callee CID Prepend"
 msgstr "Prefijo CID Llamado"
 
-#: functions.inc.php:436
+#: functions.inc.php:457
 msgid "Callee Policy"
 msgstr "Política Llamado"
 
-#: campon.i18n.php:28
-msgid "Callee Policy Default"
-msgstr "Política Destino Por Defecto"
-
-#: functions.inc.php:443
+#: functions.inc.php:464
 msgid "Caller Callback Mode"
 msgstr "Modo Devolución Llamante"
 
-#: functions.inc.php:435
+#: functions.inc.php:456
 msgid "Caller Policy"
 msgstr "Política Llamante"
 
-#: campon.i18n.php:24
-msgid "Caller Policy Default"
-msgstr "Política Llamada Por Defecto"
-
-#: functions.inc.php:438
+#: functions.inc.php:459
 msgid "Caller Timeout to Request"
 msgstr "Tiempo Espera Solicitud por Defecto"
 
-#: campon.i18n.php:32
-msgid "Caller Timeout to Request Default"
-msgstr "Tiempo Espera Solicitud por Defecto"
-
-#: campon.i18n.php:4 install.php:6
+#: install.php:6
 msgid "Camp-On"
 msgstr "Devolución"
 
@@ -511,7 +344,7 @@ msgstr "Devolución"
 msgid "Camp-On Cancel"
 msgstr "Cancelar Devolución"
 
-#: campon.i18n.php:12
+#: install.php:45
 msgid "Camp-On Module"
 msgstr "Módulo Devolución"
 
@@ -523,144 +356,59 @@ msgstr "Enviar Devolución"
 msgid "Camp-On Toggle"
 msgstr "Switch Camp-on"
 
-#: campon.i18n.php:56
-msgid "Default Callback Alert-Info"
-msgstr "Alert-Info Devolución por Defecto"
-
-#: campon.i18n.php:60
-msgid "Default Callback CID Prepend"
-msgstr "Prefijo CID Devolución por Defecto"
-
-#: campon.i18n.php:68
-msgid "Default Callee Alert-Info"
-msgstr "Alert-Info por Defecto Llamada"
-
-#: campon.i18n.php:72
-msgid "Default Callee CID Prepend"
-msgstr "Prefijo Llamada CID por Defecto"
-
-#: campon.i18n.php:48
-msgid "Default Caller Callback Mode"
-msgstr "Modo Por Defecto Devolución"
-
-#: campon.i18n.php:52
-msgid "Default Max Camped-On Extensions"
-msgstr "Max Extensiones de Devolución"
-
-#: campon.i18n.php:76
-msgid "Default Max Queued Callers"
-msgstr "Max Cola de Llamadas por Defecto"
-
-#: campon.i18n.php:44
-msgid "Default Time to Ring Back Caller"
-msgstr "Tiempo por Defecto Sonar"
-
-#: functions.inc.php:338 functions.inc.php:399
+#: functions.inc.php:357 functions.inc.php:418
 msgid "Disable Camp-On"
 msgstr "Deshabilitar Devolución"
 
-#: functions.inc.php:457
+#: install.php:48
+msgid "Enable Camp-On functionality"
+msgstr ""
+
+#: functions.inc.php:478
 msgid "Forcing default settings"
 msgstr "Forzar Configuración Default"
 
-#: functions.inc.php:339 functions.inc.php:400
+#: functions.inc.php:358 functions.inc.php:419
 msgid "Generic Device"
 msgstr "Dispositivo Genérico"
 
-#: campon.i18n.php:18
-msgid ""
-"If this is set to 'generic' or 'always' then it will be possible to attempt "
-"call completion requests when dialing non-extensions such as ring groups and "
-"other possible destinations that could work with call completion. Setting "
-"this will bypass any Callee Policies and can result in inconsistent "
-"behavior. If set, 'generic' is the most common, 'always' will attempt to use "
-"technology specific capabilities if the called extension uses a channel that "
-"supports that."
-msgstr ""
-"Se establece en 'genérico' o 'siempre', entonces será posible intentar las "
-"solicitudes de terminación de llamadas al marcar las extensiones que no son "
-"grupos de llamada y otros posibles destinos que podrían trabajar con la "
-"devolución de llamadas. Al establecer esto se anulan todas las políticas "
-"callee y puede resultar en un comportamiento incoherente. Si se establece en "
-"'genérico' es el más común, 'siempre' intentará utilizar las capacidades "
-"tecnológicas específicas, si la extensión llamada utiliza un canal que apoya "
-"a esto."
-
-#: functions.inc.php:439
+#: functions.inc.php:460
 msgid "Max Camp-On Life Busy"
 msgstr "Max Devolución Ocupado Por Defecto"
 
-#: campon.i18n.php:36
-msgid "Max Camp-On Life Busy Default"
-msgstr "Max Devolución Ocupado Por Defecto"
-
-#: functions.inc.php:440
+#: functions.inc.php:461
 msgid "Max Camp-On Life No Answer"
 msgstr "Max Devolución No Contesta Por Defecto"
 
-#: campon.i18n.php:40
-msgid "Max Camp-On Life No Answer Default"
-msgstr "Max Devolución No Contesta Por Defecto"
-
-#: functions.inc.php:442
+#: functions.inc.php:463
 msgid "Max Camped-On Extensions"
 msgstr "Max Extensiones Devolución"
 
-#: functions.inc.php:444
+#: functions.inc.php:465
 msgid "Max Queued Callers"
 msgstr "Max Cola de Llamadas"
 
-#: campon.i18n.php:10
-msgid "Maximum Active Camp-On Requests"
-msgstr "Máxino Número de Solicitudes"
-
-#: functions.inc.php:340 functions.inc.php:401
+#: functions.inc.php:359 functions.inc.php:420
 msgid "Native Technology Support"
 msgstr "Tecnología Soporte Nativo"
 
-#: functions.inc.php:402
+#: functions.inc.php:421
 msgid "Native Where Available"
 msgstr "Nativo Cuando Disponible"
 
-#: campon.i18n.php:16
-msgid "Non Extensions Callee Policy"
-msgstr "Política Llamada No Extensiones"
-
-#: campon.i18n.php:20
-msgid "Only Use Default Camp-On Settings"
-msgstr "Sólo utilizar Configuraciones por Defecto"
-
-#: functions.inc.php:511
+#: functions.inc.php:532
 msgid "Please enter a valid Alert-Info"
 msgstr "Por favor entre un Alert-Info valido"
 
-#: functions.inc.php:512
+#: functions.inc.php:533
 msgid "Please enter a valid CID Prefix"
 msgstr "Por favor entre un prefijo CID valido"
 
-#: campon.i18n.php:6
-msgid "Settings"
-msgstr "Configuraciones"
-
-#: functions.inc.php:406
+#: functions.inc.php:425
 msgid "Silent"
 msgstr "Silencio"
 
-#: campon.i18n.php:14
-msgid ""
-"System wide maximum number of outstanding Camp-On requests that can be "
-"active. This limit is useful on a system that may have memory constraints "
-"since the internal state machine takes up system resources relative to the "
-"number of active requests it has to track. Restart Asterisk for changes to "
-"take effect."
-msgstr ""
-"El número máximo, de solicitudes pendientes del sistema que pueden estar "
-"activos. Este límite es muy útil en un sistema que puede tener restricciones "
-"de memoria desde la máquina de estado interno o tiene los recursos del "
-"sistema limitados en relación con el número de solicitudes activas que tiene "
-"que seguir. Reiniciar Asterisk para que los cambios surtan efecto."
-
-#: functions.inc.php:458
+#: functions.inc.php:479
 msgid ""
 "The following settings are being used for all extensions. To configure "
 "individually set 'Only Use Default Camp-On Settings' to false on the "
@@ -671,68 +419,11 @@ msgstr ""
 "Defecto Devolución'  en falso en la página Configuraciones Avanzadas. La "
 "configuración Activa es:"
 
-#: campon.i18n.php:82
-msgid ""
-"This is the state that will be set for BLF subscriptions after attempting a "
-"call while it is still possible to Camp-On to the last called number, prior "
-"to the offer_timer expiring. Restart Asterisk for changes to take effect."
-msgstr ""
-"Este es el estado que se establecerá para las suscripciones de BLF después "
-"de intentar una llamada mientras todavía es posible para poner en espera al "
-"último número llamado, antes de expirar offer_timer. Reinicie Asterisk para "
-"que los cambios surtan efecto."
-
-#: campon.i18n.php:90
-msgid ""
-"This is the state that will be set for BLF subscriptions once the callee "
-"becomes available if the caller is not busy. Restart Asterisk for changes to "
-"take effect."
-msgstr ""
-"Este es el estado que se establecerá para las suscripciones una vez que el "
-"destinatario de la llamada BLF está disponible si la persona que llama no "
-"está ocupado. Reinicie Asterisk para que los cambios surtan efecto."
-
-#: campon.i18n.php:86
-msgid ""
-"This is the state that will be set for BLF subscriptions upon a successful "
-"Camp-On request, pending a callback when the party becomes available. "
-"Restart Asterisk for changes to take effect."
-msgstr ""
-"Este es el estado que se establecerá para las suscripciones de BLF en una "
-"solicitud de Devolución cuando esté disponible.Reinicie Asterisk para que "
-"los cambios surtan efecto."
-
-#: campon.i18n.php:8
-msgid ""
-"This module implements the Call Completion Supplemental Services (CCSS) "
-"often referred to as Call Camping or Camp-On. It allows a caller to request "
-"the system call them back when a busy or non-responding extension becomes "
-"available. Requires Asterisk 1.8 or higher."
-msgstr ""
-"Este módulo implementa la devolución de llamada Servicios Suplementarios "
-"(CCSS) se refiere a aparcar la llamada y puesta en espera. Permite que una "
-"persona que llama pueda solicitar la llamada al sistema de nuevo cuando una "
-"extensión ha estado ocupada o no responde y vuelva a estar disponible. "
-"Requiere Asterisk 1.8 o superior."
-
-#: functions.inc.php:441
+#: functions.inc.php:462
 msgid "Time to Ring Back Caller"
 msgstr "Tiempo por Defecto Sonar"
 
-#: campon.i18n.php:66
-msgid ""
-"When set to true the target extension being called will be announced upone "
-"answering the Callback prior to ringing the extension. Setting this to false "
-"will go directly to ringing the extension, the CID information will still "
-"reflect who is being called back."
-msgstr ""
-"Cuando se establece en verdadero la extensión de destino que se llama se "
-"dará a conocer al responder a la devolución de llamada antes de que llama a "
-"la extensión. Si se establece en falso va directamente la llama a la "
-"extensión, la información CID seguirá reflejando que se está llamando de "
-"vuelta."
-
-#: functions.inc.php:504
+#: functions.inc.php:525
 msgid ""
 "Whether or not to announce the extension that is being called back when the "
 "phone is picked up."
@@ -740,22 +431,307 @@ msgstr ""
 "Sea o no para anunciar la extensión que se está llamando de nuevo cuando el "
 "teléfono está descolgado."
 
-#: campon.i18n.php:22
+#: install.php:49
 msgid ""
-"You can force all extensions on a system to only used the default Camp-On "
-"settings. When in this mode, the individual settings will not be shown on "
-"the extension page. If there were unique settings previously configured, the "
-"data will be retained but not used unless you switch this back to false. "
-"With this set, the Caller Policy (cc_agent_policy) and Callee Policy "
-"(cc_monitor_policy) settings will still be configurable for each user so you "
-"can still enable/disable Call Camping ability on select extensions."
+"With this set to no, none of the hints or dialplan will generate for Camp-On"
 msgstr ""
-"Usted puede obligar a todas las extensiones de un sistema a que sólo se "
-"utilice el valor por defecto de la configuración de Devolución. En este "
-"modo, los valores individuales no se mostrarán en la página de extensión. Si "
-"hubiera una configuración única configurada previamente, los datos se "
-"mantienen, pero no se utilizan a menos que cambie esto a falso. Con este "
-"conjunto, la política de llamadas (cc_agent_policy) y Política Callee "
-"(cc_monitor_policy) se pueden configurar para cada usuario por lo que aún se "
-"puede activar/desactivar la capacidad de devolución de llamada en las "
-"extensiones seleccionadas."
+
+#~ msgid ""
+#~ "Affects Asterisk: cc_agent_dialstring. If not set a callback request will "
+#~ "be dialed straight to the speciifc device that made the call. If using "
+#~ "'native' technology support this may be the peferred mode. The "
+#~ "'internal' (Callback Standard) option will intiate a call back to the "
+#~ "caller just as if someone else on the system placed the call, which means "
+#~ "the call can pursue Follow-Me. To avoid Follow-Me setting, choose "
+#~ "'extension' (Callback Extension)."
+#~ msgstr ""
+#~ "Afecta a Asterisk: cc_agent_dialstring. Si no se establece una solicitud "
+#~ "de devolución de llamada se marcará directamente al dispositivo que hizo "
+#~ "la llamada. Si se utiliza tecnología 'nativo' esto puede ser el modo "
+#~ "predeterminado. La opción 'internal' (Devolución de llamada estándar) "
+#~ "inicia una llamada a la persona que llama como si alguien más en el "
+#~ "sistema hizo la llamada, lo que significa que la llamada puede perseguir "
+#~ "a un Sígueme. Para evitar configuraciones Sígueme, seleccione "
+#~ "'extensión' (extensión de devolución de llamada)."
+
+#~ msgid ""
+#~ "An optional Alert-Info setting that can be used when initiating a "
+#~ "callback. Only valid when 'Caller Policy' is set to 'generic' device'"
+#~ msgstr ""
+#~ "Una opción Alerta-Info que se puede utilizar cuando se inicia una "
+#~ "devolución de llamada. Sólo es válido cuando la Política de la persona "
+#~ "que llama está establecida en dispositivo 'genérico'"
+
+#~ msgid ""
+#~ "An optional CID Prepend setting that can be used to send to the extension "
+#~ "being called back.'"
+#~ msgstr ""
+#~ "Una configuración opcional Prefijo CID que se puede utilizar para enviar "
+#~ "a la extensión que se llamó de nuevo"
+
+#~ msgid ""
+#~ "An optional CID Prepend setting that can be used when initiating a "
+#~ "callback. Only valid when 'Caller Policy' is set to a 'generic' device'"
+#~ msgstr ""
+#~ "Una configuración opcional Prefijo CID que se puede utilizar cuando se "
+#~ "inicia una devolución de llamada.Sólo es válido cuando la Política de la "
+#~ "persona que llama se establece en dispositivo 'genérico'"
+
+#~ msgid "Announce the Callee Extension"
+#~ msgstr "Anuncio la Extensión llamada"
+
+#~ msgid ""
+#~ "Asteirsk: ccbs_available_timer. How long a call completion request will "
+#~ "remain active, in seconds, before expiring if the phone rang busy when "
+#~ "first attempting the call."
+#~ msgstr ""
+#~ "Asterisk: ccbs_available_timer. Por cuánto tiempo una solicitud de "
+#~ "devolución de llamada permanecerá activa, en segundos, antes de expirar "
+#~ "si el teléfono sonó ocupado la primera vez que intentó la llamada."
+
+#~ msgid ""
+#~ "Asteirsk: ccnr_available_timer. How long a call completion request will "
+#~ "remain active, in seconds, before expiring if the phone was simply "
+#~ "unanswered when first attempting the call."
+#~ msgstr ""
+#~ "Asteirsk: ccnr_available_timer. Por cuánto tiempo una solicitud de "
+#~ "devolución de llamada permanecerá activa, en segundos, antes de expirar "
+#~ "si en el teléfono era simplemente la primera vez que intentaba contestar "
+#~ "la llamada."
+
+#~ msgid ""
+#~ "Asterisk: cc_agent_policy. Used to enable Camp-On for a user and set the "
+#~ "Technology Mode that will be used when engaging the feature. In most "
+#~ "cases 'generic' should be chosen unless you have phones designed to work "
+#~ "with channel specific capabilities."
+#~ msgstr ""
+#~ "Asterisk: cc_agent_policy. Se utiliza para habilitar la Camp-on para un "
+#~ "usuario y establecer el modo de la tecnología que se utiliza. En la "
+#~ "mayoría de los casos 'genérico' debe ser elegido a menos que tenga los "
+#~ "teléfonos diseñados para trabajar con capacidades específicas de los "
+#~ "canales."
+
+#~ msgid ""
+#~ "Asterisk: cc_max_agents. Only valid for when using 'native' technology "
+#~ "support for Caller Policy. This is the number of outstanding Call "
+#~ "Completion requests that can be pending to different extensions. With "
+#~ "'generic' device mode you can only have a single request outstanding and "
+#~ "this will be ignored."
+#~ msgstr ""
+#~ "Asterisk: cc_max_agents. Sólo válido para cuando se utiliza tecnología "
+#~ "'nativo'. Este es el número de solicitudes pendientes de devolución de "
+#~ "llamadas que pueden estar pendientes de diferentes extensiones. Con el "
+#~ "modo dispositivo 'genérico' sólo puede tener una sola solicitud pendiente "
+#~ "y esta será ignorada."
+
+#~ msgid ""
+#~ "Asterisk: cc_monitor_policy. Used to control if other phones are allowed "
+#~ "to Camp On to an extension. If so, it sets the technology mode used to "
+#~ "monitor the availability of the extension. If no specific technology "
+#~ "support is available then it should be set to a 'generic'. In this mode, "
+#~ "a callback will be initiated to the extension when it changes from an "
+#~ "InUse state to NotInUse. If it was busy when first attempted, this will "
+#~ "be when the current call has eneded. If it simply did not answer, then "
+#~ "this will be the next time this phone is used to make or answer a call "
+#~ "and then hangs up. It is possible to set this to take advantage of "
+#~ "'native' technology support if available and automatically fallback to "
+#~ "'generic' whe not by setting it to 'always'."
+#~ msgstr ""
+#~ "Asterisk: cc_monitor_policy. Se utiliza para controlar si otros teléfonos "
+#~ "pueden devolver a una extensión. Si es así, ajusta el modo de la "
+#~ "tecnología utilizada para monitorear la disponibilidad de la extensión. "
+#~ "Si no hay apoyo tecnológico específico disponible, entonces se debe "
+#~ "establecer en 'genérico'. En este modo, una devolución de llamada se "
+#~ "pondrá en marcha a la extensión cuando se cambia de un estado de InUse a "
+#~ "NotInUse. Si estaba ocupado cuando se intentó por primera vez, esto "
+#~ "generará la llamada en curso. Si simplemente no obtuvo respuesta, "
+#~ "entonces esto será la próxima vez que se usa este teléfono para llamar o "
+#~ "contestar una llamada y luego cuelga. Es posible establecer que se trata "
+#~ "de aprovechar el soporte 'nativo' de tecnología si está disponible y "
+#~ "automáticamente se reserva para 'genérico' cuando no se establece en "
+#~ "'siempre'."
+
+#~ msgid ""
+#~ "Asterisk: cc_offer_timer. How many seconds after dialing an extenion a "
+#~ "user has to make a call completion request."
+#~ msgstr ""
+#~ "Asterisk: cc_offer_timer. ¿Cuántos segundos después de marcar un "
+#~ "extensión un usuario tiene que hacer una solicitud de devolución de "
+#~ "llamadas."
+
+#~ msgid ""
+#~ "Asterisk: cc_recall_timer. How long in seconds to ring back a caller "
+#~ "who's Caller Policy is set to 'Generic Device'. This has no affect if set "
+#~ "to any other setting."
+#~ msgstr ""
+#~ "Asterisk: cc_recall_timer. ¿Cuánto tiempo en segundos para llamar a un "
+#~ "interlocutor que está directiva establece en 'Dispositivo genérico'. Esto "
+#~ "no tiene ningún efecto si se establece en cualquier otro entorno."
+
+#~ msgid "BLF Camp-On Available State"
+#~ msgstr "Estado Disponible BLF Devolución"
+
+#~ msgid "BLF Camp-On Busy Caller State"
+#~ msgstr "Estado Ocupado BLF Devolución"
+
+#~ msgid "BLF Camp-On Pending State"
+#~ msgstr "Estado Pendiente BLF Devolución"
+
+#~ msgid "BLF Camp-On Recalling State"
+#~ msgstr "Estado Rellamada BLF Devolución"
+
+#~ msgid "Callee Policy Default"
+#~ msgstr "Política Destino Por Defecto"
+
+#~ msgid "Caller Policy Default"
+#~ msgstr "Política Llamada Por Defecto"
+
+#~ msgid "Caller Timeout to Request Default"
+#~ msgstr "Tiempo Espera Solicitud por Defecto"
+
+#~ msgid "Default Callback Alert-Info"
+#~ msgstr "Alert-Info Devolución por Defecto"
+
+#~ msgid "Default Callback CID Prepend"
+#~ msgstr "Prefijo CID Devolución por Defecto"
+
+#~ msgid "Default Callee Alert-Info"
+#~ msgstr "Alert-Info por Defecto Llamada"
+
+#~ msgid "Default Callee CID Prepend"
+#~ msgstr "Prefijo Llamada CID por Defecto"
+
+#~ msgid "Default Caller Callback Mode"
+#~ msgstr "Modo Por Defecto Devolución"
+
+#~ msgid "Default Max Camped-On Extensions"
+#~ msgstr "Max Extensiones de Devolución"
+
+#~ msgid "Default Max Queued Callers"
+#~ msgstr "Max Cola de Llamadas por Defecto"
+
+#~ msgid "Default Time to Ring Back Caller"
+#~ msgstr "Tiempo por Defecto Sonar"
+
+#~ msgid ""
+#~ "If this is set to 'generic' or 'always' then it will be possible to "
+#~ "attempt call completion requests when dialing non-extensions such as ring "
+#~ "groups and other possible destinations that could work with call "
+#~ "completion. Setting this will bypass any Callee Policies and can result "
+#~ "in inconsistent behavior. If set, 'generic' is the most common, 'always' "
+#~ "will attempt to use technology specific capabilities if the called "
+#~ "extension uses a channel that supports that."
+#~ msgstr ""
+#~ "Se establece en 'genérico' o 'siempre', entonces será posible intentar "
+#~ "las solicitudes de terminación de llamadas al marcar las extensiones que "
+#~ "no son grupos de llamada y otros posibles destinos que podrían trabajar "
+#~ "con la devolución de llamadas. Al establecer esto se anulan todas las "
+#~ "políticas callee y puede resultar en un comportamiento incoherente. Si se "
+#~ "establece en 'genérico' es el más común, 'siempre' intentará utilizar las "
+#~ "capacidades tecnológicas específicas, si la extensión llamada utiliza un "
+#~ "canal que apoya a esto."
+
+#~ msgid "Max Camp-On Life Busy Default"
+#~ msgstr "Max Devolución Ocupado Por Defecto"
+
+#~ msgid "Max Camp-On Life No Answer Default"
+#~ msgstr "Max Devolución No Contesta Por Defecto"
+
+#~ msgid "Maximum Active Camp-On Requests"
+#~ msgstr "Máxino Número de Solicitudes"
+
+#~ msgid "Non Extensions Callee Policy"
+#~ msgstr "Política Llamada No Extensiones"
+
+#~ msgid "Only Use Default Camp-On Settings"
+#~ msgstr "Sólo utilizar Configuraciones por Defecto"
+
+#~ msgid "Settings"
+#~ msgstr "Configuraciones"
+
+#~ msgid ""
+#~ "System wide maximum number of outstanding Camp-On requests that can be "
+#~ "active. This limit is useful on a system that may have memory constraints "
+#~ "since the internal state machine takes up system resources relative to "
+#~ "the number of active requests it has to track. Restart Asterisk for "
+#~ "changes to take effect."
+#~ msgstr ""
+#~ "El número máximo, de solicitudes pendientes del sistema que pueden estar "
+#~ "activos. Este límite es muy útil en un sistema que puede tener "
+#~ "restricciones de memoria desde la máquina de estado interno o tiene los "
+#~ "recursos del sistema limitados en relación con el número de solicitudes "
+#~ "activas que tiene que seguir. Reiniciar Asterisk para que los cambios "
+#~ "surtan efecto."
+
+#~ msgid ""
+#~ "This is the state that will be set for BLF subscriptions after attempting "
+#~ "a call while it is still possible to Camp-On to the last called number, "
+#~ "prior to the offer_timer expiring. Restart Asterisk for changes to take "
+#~ "effect."
+#~ msgstr ""
+#~ "Este es el estado que se establecerá para las suscripciones de BLF "
+#~ "después de intentar una llamada mientras todavía es posible para poner en "
+#~ "espera al último número llamado, antes de expirar offer_timer. Reinicie "
+#~ "Asterisk para que los cambios surtan efecto."
+
+#~ msgid ""
+#~ "This is the state that will be set for BLF subscriptions once the callee "
+#~ "becomes available if the caller is not busy. Restart Asterisk for changes "
+#~ "to take effect."
+#~ msgstr ""
+#~ "Este es el estado que se establecerá para las suscripciones una vez que "
+#~ "el destinatario de la llamada BLF está disponible si la persona que llama "
+#~ "no está ocupado. Reinicie Asterisk para que los cambios surtan efecto."
+
+#~ msgid ""
+#~ "This is the state that will be set for BLF subscriptions upon a "
+#~ "successful Camp-On request, pending a callback when the party becomes "
+#~ "available. Restart Asterisk for changes to take effect."
+#~ msgstr ""
+#~ "Este es el estado que se establecerá para las suscripciones de BLF en una "
+#~ "solicitud de Devolución cuando esté disponible.Reinicie Asterisk para que "
+#~ "los cambios surtan efecto."
+
+#~ msgid ""
+#~ "This module implements the Call Completion Supplemental Services (CCSS) "
+#~ "often referred to as Call Camping or Camp-On. It allows a caller to "
+#~ "request the system call them back when a busy or non-responding extension "
+#~ "becomes available. Requires Asterisk 1.8 or higher."
+#~ msgstr ""
+#~ "Este módulo implementa la devolución de llamada Servicios Suplementarios "
+#~ "(CCSS) se refiere a aparcar la llamada y puesta en espera. Permite que "
+#~ "una persona que llama pueda solicitar la llamada al sistema de nuevo "
+#~ "cuando una extensión ha estado ocupada o no responde y vuelva a estar "
+#~ "disponible. Requiere Asterisk 1.8 o superior."
+
+#~ msgid ""
+#~ "When set to true the target extension being called will be announced "
+#~ "upone answering the Callback prior to ringing the extension. Setting this "
+#~ "to false will go directly to ringing the extension, the CID information "
+#~ "will still reflect who is being called back."
+#~ msgstr ""
+#~ "Cuando se establece en verdadero la extensión de destino que se llama se "
+#~ "dará a conocer al responder a la devolución de llamada antes de que llama "
+#~ "a la extensión. Si se establece en falso va directamente la llama a la "
+#~ "extensión, la información CID seguirá reflejando que se está llamando de "
+#~ "vuelta."
+
+#~ msgid ""
+#~ "You can force all extensions on a system to only used the default Camp-On "
+#~ "settings. When in this mode, the individual settings will not be shown on "
+#~ "the extension page. If there were unique settings previously configured, "
+#~ "the data will be retained but not used unless you switch this back to "
+#~ "false. With this set, the Caller Policy (cc_agent_policy) and Callee "
+#~ "Policy (cc_monitor_policy) settings will still be configurable for each "
+#~ "user so you can still enable/disable Call Camping ability on select "
+#~ "extensions."
+#~ msgstr ""
+#~ "Usted puede obligar a todas las extensiones de un sistema a que sólo se "
+#~ "utilice el valor por defecto de la configuración de Devolución. En este "
+#~ "modo, los valores individuales no se mostrarán en la página de extensión. "
+#~ "Si hubiera una configuración única configurada previamente, los datos se "
+#~ "mantienen, pero no se utilizan a menos que cambie esto a falso. Con este "
+#~ "conjunto, la política de llamadas (cc_agent_policy) y Política Callee "
+#~ "(cc_monitor_policy) se pueden configurar para cada usuario por lo que aún "
+#~ "se puede activar/desactivar la capacidad de devolución de llamada en las "
+#~ "extensiones seleccionadas."
