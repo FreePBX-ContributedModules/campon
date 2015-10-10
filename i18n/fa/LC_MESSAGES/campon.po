@@ -1,0 +1,369 @@
+# This file is part of FreePBX.
+#
+# For licensing information, please see the file named LICENSE located in the module directory
+#
+# FreePBX language template for campon
+# Copyright (C) 2008-2015 Sangoma, Inc.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-09-29 12:34-0700\n"
+"PO-Revision-Date: 2015-09-29 12:34-0700\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: none\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: functions.inc.php:429
+#, php-format
+msgid "%s Incoming Requests"
+msgstr ""
+
+#: functions.inc.php:409
+#, php-format
+msgid "%s Outgoing Requests"
+msgstr ""
+
+#: functions.inc.php:404
+#, php-format
+msgid "%s sec"
+msgstr ""
+
+#: functions.inc.php:365
+msgid "1 min"
+msgstr ""
+
+#: functions.inc.php:370
+msgid "10 min"
+msgstr ""
+
+#: functions.inc.php:377 functions.inc.php:392
+msgid "100 min"
+msgstr ""
+
+#: functions.inc.php:378 functions.inc.php:393
+msgid "2 hrs"
+msgstr ""
+
+#: functions.inc.php:366
+msgid "2 min"
+msgstr ""
+
+#: functions.inc.php:373 functions.inc.php:388
+msgid "20 min"
+msgstr ""
+
+#: functions.inc.php:362
+msgid "20 sec"
+msgstr ""
+
+#: functions.inc.php:379 functions.inc.php:394
+msgid "3 hrs"
+msgstr ""
+
+#: functions.inc.php:367
+msgid "3 min"
+msgstr ""
+
+#: functions.inc.php:363
+msgid "30 sec"
+msgstr ""
+
+#: functions.inc.php:380 functions.inc.php:395
+msgid "4 hrs"
+msgstr ""
+
+#: functions.inc.php:368
+msgid "4 min"
+msgstr ""
+
+#: functions.inc.php:374 functions.inc.php:389
+msgid "40 min"
+msgstr ""
+
+#: functions.inc.php:364
+msgid "45 sec"
+msgstr ""
+
+#: functions.inc.php:381 functions.inc.php:382 functions.inc.php:396
+#: functions.inc.php:397
+msgid "5 hrs"
+msgstr ""
+
+#: functions.inc.php:369
+msgid "5 min"
+msgstr ""
+
+#: functions.inc.php:383 functions.inc.php:398
+msgid "6 hrs"
+msgstr ""
+
+#: functions.inc.php:375 functions.inc.php:390
+msgid "60 min"
+msgstr ""
+
+#: functions.inc.php:384 functions.inc.php:399
+msgid "7 hrs"
+msgstr ""
+
+#: functions.inc.php:385 functions.inc.php:400
+msgid "8 hrs"
+msgstr ""
+
+#: functions.inc.php:376 functions.inc.php:391
+msgid "80 min"
+msgstr ""
+
+#: functions.inc.php:521
+msgid ""
+"Affects Asterisk: cc_agent_dialstring. With 'Callback Device Directly' a "
+"callback request will be dialed straight to the specific device that made "
+"the call. If using 'Native Technology Support' this may be the preferred "
+"mode. The 'Callback Standard' option will initiate a call back to the caller "
+"just as if someone else on the system placed the call, which means the call "
+"can pursue Follow-Me. To avoid Follow-Me setting, choose 'Callback "
+"Extension'."
+msgstr ""
+
+#: functions.inc.php:529
+msgid ""
+"An optional Alert-Info setting that can be used to send to the extension "
+"being called back."
+msgstr ""
+
+#: functions.inc.php:526
+msgid ""
+"An optional Alert-Info setting that can be used when initiating a callback. "
+"Only valid when 'Caller Policy' is set to a 'Generic Device' and 'Caller "
+"Callback Mode' is not set to 'Callback Device Directly'."
+msgstr ""
+
+#: functions.inc.php:530
+msgid ""
+"An optional CID Prepend setting that can be used to send to the extension "
+"being called back."
+msgstr ""
+
+#: functions.inc.php:527
+msgid ""
+"An optional CID Prepend setting that can be used when initiating a callback. "
+"Only valid when 'Caller Policy' is set to a 'Generic Device' and 'Caller "
+"Callback Mode' is not set to 'Callback Device Directly'."
+msgstr ""
+
+#: functions.inc.php:424
+msgid "Announce"
+msgstr ""
+
+#: functions.inc.php:466
+msgid "Announce Callback Extension"
+msgstr ""
+
+#: functions.inc.php:472
+msgid ""
+"Asterisk: cc_agent_policy. Used to enable Camp-On for this user and set the "
+"Technology Mode that will be used when engaging the feature. In most cases "
+"'Generic Device' should be chosen unless you have phones designed to work "
+"with channel specific capabilities."
+msgstr ""
+
+#: functions.inc.php:520
+msgid ""
+"Asterisk: cc_max_agents. Only valid for when using 'Native Technology "
+"Support' for Caller Policy. This is the number of outstanding Call "
+"Completion requests that can be pending to different extensions. With "
+"'Generic Device' mode you can only have a single request outstanding and "
+"this will be ignored."
+msgstr ""
+
+#: functions.inc.php:523
+msgid ""
+"Asterisk: cc_max_monitors. This is the maximum number of callers that are "
+"allowed to queue up call completion requests against this extension."
+msgstr ""
+
+#: functions.inc.php:473
+msgid ""
+"Asterisk: cc_monitor_policy. Used to control if other phones are allowed to "
+"Camp On to this extension. If so, it sets the technology mode used to "
+"monitor the availability of the extension. If no specific technology support "
+"is available then it should be set to a 'Generic Device'. In this mode, a "
+"callback will be initiated to this extension when it changes from an InUse "
+"state to NotInUse. If it was busy when first attempted, this will be when "
+"the current call has ended. If it simply did not answer, then this will be "
+"the next time this phone is used to make or answer a call and then hangs up. "
+"It is possible to set this to take advantage of 'Native Technology Support' "
+"if available and automatically fallback to the 'Generic Mode' when not."
+msgstr ""
+
+#: functions.inc.php:516
+msgid ""
+"Asterisk: cc_offer_timer. How long after dialing an extension a user has to "
+"make a call completion request."
+msgstr ""
+
+#: functions.inc.php:519
+msgid ""
+"Asterisk: cc_recall_timer. How long to ring back a caller who's Caller "
+"Policy is set to 'Generic Device'. This has no affect if to any other "
+"setting."
+msgstr ""
+
+#: functions.inc.php:517
+msgid ""
+"Asterisk: ccbs_available_timer. How long a call completion request will "
+"remain active before expiring if the phone rang busy when first attempting "
+"the call."
+msgstr ""
+
+#: functions.inc.php:518
+msgid ""
+"Asterisk: ccnr_available_timer. How long a call completion request will "
+"remain active before expiring if the phone was simply unanswered when first "
+"attempting the call."
+msgstr ""
+
+#: functions.inc.php:475
+msgid "Call Camp-On Services"
+msgstr ""
+
+#: functions.inc.php:467
+msgid "Callback Alert-Info"
+msgstr ""
+
+#: functions.inc.php:468
+msgid "Callback CID Prepend"
+msgstr ""
+
+#: functions.inc.php:413
+msgid "Callback Device Directly"
+msgstr ""
+
+#: functions.inc.php:415
+msgid "Callback Extension (no Follow-Me)"
+msgstr ""
+
+#: functions.inc.php:414
+msgid "Callback Standard"
+msgstr ""
+
+#: functions.inc.php:469
+msgid "Callee Alert-Info"
+msgstr ""
+
+#: functions.inc.php:470
+msgid "Callee CID Prepend"
+msgstr ""
+
+#: functions.inc.php:457
+msgid "Callee Policy"
+msgstr ""
+
+#: functions.inc.php:464
+msgid "Caller Callback Mode"
+msgstr ""
+
+#: functions.inc.php:456
+msgid "Caller Policy"
+msgstr ""
+
+#: functions.inc.php:459
+msgid "Caller Timeout to Request"
+msgstr ""
+
+#: install.php:6
+msgid "Camp-On"
+msgstr ""
+
+#: install.php:8
+msgid "Camp-On Cancel"
+msgstr ""
+
+#: install.php:45
+msgid "Camp-On Module"
+msgstr ""
+
+#: install.php:7
+msgid "Camp-On Request"
+msgstr ""
+
+#: install.php:9
+msgid "Camp-On Toggle"
+msgstr ""
+
+#: functions.inc.php:357 functions.inc.php:418
+msgid "Disable Camp-On"
+msgstr ""
+
+#: install.php:48
+msgid "Enable Camp-On functionality"
+msgstr ""
+
+#: functions.inc.php:478
+msgid "Forcing default settings"
+msgstr ""
+
+#: functions.inc.php:358 functions.inc.php:419
+msgid "Generic Device"
+msgstr ""
+
+#: functions.inc.php:460
+msgid "Max Camp-On Life Busy"
+msgstr ""
+
+#: functions.inc.php:461
+msgid "Max Camp-On Life No Answer"
+msgstr ""
+
+#: functions.inc.php:463
+msgid "Max Camped-On Extensions"
+msgstr ""
+
+#: functions.inc.php:465
+msgid "Max Queued Callers"
+msgstr ""
+
+#: functions.inc.php:359 functions.inc.php:420
+msgid "Native Technology Support"
+msgstr ""
+
+#: functions.inc.php:421
+msgid "Native Where Available"
+msgstr ""
+
+#: functions.inc.php:532
+msgid "Please enter a valid Alert-Info"
+msgstr ""
+
+#: functions.inc.php:533
+msgid "Please enter a valid CID Prefix"
+msgstr ""
+
+#: functions.inc.php:425
+msgid "Silent"
+msgstr ""
+
+#: functions.inc.php:479
+msgid ""
+"The following settings are being used for all extensions. To configure "
+"individually set 'Only Use Default Camp-On Settings' to false on the "
+"Advanced Settings page. Active settings:"
+msgstr ""
+
+#: functions.inc.php:462
+msgid "Time to Ring Back Caller"
+msgstr ""
+
+#: functions.inc.php:525
+msgid ""
+"Whether or not to announce the extension that is being called back when the "
+"phone is picked up."
+msgstr ""
+
+#: install.php:49
+msgid ""
+"With this set to no, none of the hints or dialplan will generate for Camp-On"
+msgstr ""
