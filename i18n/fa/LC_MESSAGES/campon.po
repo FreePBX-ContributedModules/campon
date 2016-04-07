@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-09-29 12:34-0700\n"
-"PO-Revision-Date: 2016-04-06 22:25+0200\n"
+"PO-Revision-Date: 2016-04-07 04:02+0200\n"
 "Last-Translator: Media <mousavi.media@gmail.com>\n"
 "Language-Team: Persian "
 "<http://weblate.freepbx.org/projects/freepbx/campon/fa/>\n"
@@ -328,9 +328,8 @@ msgid "Caller Timeout to Request"
 msgstr "وقفه درخواستی تماس گیرنده"
 
 #: install.php:6
-#, fuzzy
 msgid "Camp-On"
-msgstr "Camp-On"
+msgstr "Camp -On"
 
 #: install.php:8
 msgid "Camp-On Cancel"
