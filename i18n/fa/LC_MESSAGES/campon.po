@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-09-29 12:34-0700\n"
-"PO-Revision-Date: 2015-10-10 15:03+0200\n"
+"PO-Revision-Date: 2016-04-06 22:25+0200\n"
 "Last-Translator: Media <mousavi.media@gmail.com>\n"
 "Language-Team: Persian "
 "<http://weblate.freepbx.org/projects/freepbx/campon/fa/>\n"
@@ -19,7 +19,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 2.2-dev\n"
+"X-Generator: Weblate 2.4\n"
 
 #: functions.inc.php:429
 #, php-format
@@ -131,12 +131,21 @@ msgid ""
 "can pursue Follow-Me. To avoid Follow-Me setting, choose 'Callback "
 "Extension'."
 msgstr ""
+"Affects Asterisk: cc_agent_dialstring. With 'Callback Device Directly' a "
+"callback  request will be dialed straight to the specific device that made "
+"the call. If using 'Native Technology Support' this may be the preferred "
+"mode. The 'Callback Standard' option will initiate a call back to the caller "
+"just as if someone else on the system placed the call, which means the call "
+"can pursue Follow-Me. To avoid Follow-Me setting, choose 'Callback "
+"Extension'."
 
 #: functions.inc.php:529
 msgid ""
 "An optional Alert-Info setting that can be used to send to the extension "
 "being called back."
 msgstr ""
+"An optional  Alert-Info setting that can be used to send to the extension "
+"being called back."
 
 #: functions.inc.php:526
 msgid ""
@@ -144,12 +153,17 @@ msgid ""
 "Only valid when 'Caller Policy' is set to a 'Generic Device' and 'Caller "
 "Callback Mode' is not set to 'Callback Device Directly'."
 msgstr ""
+"An optional Alert-Info setting that can be used when initiating a  callback. "
+"Only valid when 'Caller Policy' is set to a 'Generic Device' and 'Caller "
+"Callback Mode' is not set to 'Callback Device Directly'."
 
 #: functions.inc.php:530
 msgid ""
 "An optional CID Prepend setting that can be used to send to the extension "
 "being called back."
 msgstr ""
+"An  optional CID Prepend setting that can be used to send to the extension "
+"being called back."
 
 #: functions.inc.php:527
 msgid ""
@@ -157,6 +171,9 @@ msgid ""
 "Only valid when 'Caller Policy' is set to a 'Generic Device' and 'Caller "
 "Callback Mode' is not set to 'Callback Device Directly'."
 msgstr ""
+"An optional CID Prepend setting that can be  used when initiating a "
+"callback. Only valid when 'Caller Policy' is set to a 'Generic Device' and "
+"'Caller Callback Mode' is not set to 'Callback Device Directly'."
 
 #: functions.inc.php:424
 msgid "Announce"
@@ -173,6 +190,10 @@ msgid ""
 "'Generic Device' should be chosen unless you have phones designed to work "
 "with channel specific capabilities."
 msgstr ""
+"Asterisk: cc_agent_policy. Used to enable  Camp-On for this user and set the "
+"Technology Mode that will be used when engaging the feature. In most cases "
+"'Generic Device' should be chosen unless you have phones designed to work "
+"with channel specific capabilities."
 
 #: functions.inc.php:520
 msgid ""
@@ -182,12 +203,19 @@ msgid ""
 "'Generic Device' mode you can only have a single request outstanding and "
 "this will be ignored."
 msgstr ""
+"Asterisk: cc_max_agents. Only valid  for when using 'Native Technology "
+"Support' for Caller Policy. This is the number of outstanding Call "
+"Completion requests that can be pending to different extensions. With "
+"'Generic Device' mode you can only have a single request outstanding and "
+"this will be ignored."
 
 #: functions.inc.php:523
 msgid ""
 "Asterisk: cc_max_monitors. This is the maximum number of callers that are "
 "allowed to queue up call completion requests against this extension."
 msgstr ""
+"Asterisk: cc_max_monitors. This is the maximum number  of callers that are "
+"allowed to queue up call completion requests against this extension."
 
 #: functions.inc.php:473
 msgid ""
@@ -202,12 +230,24 @@ msgid ""
 "It is possible to set this to take advantage of 'Native Technology Support' "
 "if available and automatically fallback to the 'Generic Mode' when not."
 msgstr ""
+"Asterisk: cc_monitor_policy. Used to control if other phones are  allowed to "
+"Camp On to this extension. If so, it sets the technology mode used to "
+"monitor the availability of the extension. If no specific technology support "
+"is available then it should be set to a 'Generic Device'. In this mode, a "
+"callback will be initiated to this extension when it changes from an InUse "
+"state to NotInUse. If it was busy when first attempted, this will be when "
+"the current call has ended. If it simply did not answer, then this will be "
+"the next time this phone is used to make or answer a call and then hangs up. "
+"It is possible to set this to take advantage of 'Native Technology Support' "
+"if available and automatically fallback to the 'Generic Mode' when not."
 
 #: functions.inc.php:516
 msgid ""
 "Asterisk: cc_offer_timer. How long after dialing an extension a user has to "
 "make a call completion request."
 msgstr ""
+"Asterisk: cc_offer_timer. How long  after dialing an extension a user has to "
+"make a call completion request."
 
 #: functions.inc.php:519
 msgid ""
@@ -215,6 +255,9 @@ msgid ""
 "Policy is set to 'Generic Device'. This has no affect if to any other "
 "setting."
 msgstr ""
+"Asterisk: cc_recall_timer. How long to ring back a caller who's Caller "
+"Policy is  set to 'Generic Device'. This has no affect if to any other "
+"setting."
 
 #: functions.inc.php:517
 msgid ""
@@ -222,6 +265,9 @@ msgid ""
 "remain active before expiring if the phone rang busy when first attempting "
 "the call."
 msgstr ""
+"Asterisk: ccbs_available_timer. How long a call  completion request will "
+"remain active before expiring if the phone rang busy when first attempting "
+"the call."
 
 #: functions.inc.php:518
 msgid ""
@@ -229,26 +275,29 @@ msgid ""
 "remain active before expiring if the phone was simply unanswered when first "
 "attempting the call."
 msgstr ""
+"Asterisk: ccnr_available_timer. How long a call completion  request will "
+"remain active before expiring if the phone was simply unanswered when first "
+"attempting the call."
 
 #: functions.inc.php:475
 msgid "Call Camp-On Services"
-msgstr ""
+msgstr "تماس سرویس های Camp-On"
 
 #: functions.inc.php:467
 msgid "Callback Alert-Info"
-msgstr ""
+msgstr "اطلاعات هشدار تماس بازگشتی"
 
 #: functions.inc.php:468
 msgid "Callback CID Prepend"
-msgstr ""
+msgstr "افزودن CID تماس بازگشتی"
 
 #: functions.inc.php:413
 msgid "Callback Device Directly"
-msgstr ""
+msgstr "وسیله مستقیم تماس بازگشتی"
 
 #: functions.inc.php:415
 msgid "Callback Extension (no Follow-Me)"
-msgstr ""
+msgstr "داخلی تماس بازگشتی (بدون مرا دنبال کن)"
 
 #: functions.inc.php:414
 msgid "Callback Standard"
@@ -256,11 +305,11 @@ msgstr "استاندارد تماس بازگشتی"
 
 #: functions.inc.php:469
 msgid "Callee Alert-Info"
-msgstr ""
+msgstr "اطلاعات هشدار برقرارکننده تماس"
 
 #: functions.inc.php:470
 msgid "Callee CID Prepend"
-msgstr ""
+msgstr "افزودن CID برقرارکننده تماس"
 
 #: functions.inc.php:457
 msgid "Callee Policy"
@@ -276,79 +325,80 @@ msgstr "سیاست تماس گیرنده"
 
 #: functions.inc.php:459
 msgid "Caller Timeout to Request"
-msgstr ""
+msgstr "وقفه درخواستی تماس گیرنده"
 
 #: install.php:6
+#, fuzzy
 msgid "Camp-On"
-msgstr ""
+msgstr "Camp-On"
 
 #: install.php:8
 msgid "Camp-On Cancel"
-msgstr ""
+msgstr "لغو Camp-On"
 
 #: install.php:45
 msgid "Camp-On Module"
-msgstr ""
+msgstr "ماژول Camp-On"
 
 #: install.php:7
 msgid "Camp-On Request"
-msgstr ""
+msgstr "درخواست Camp-On"
 
 #: install.php:9
 msgid "Camp-On Toggle"
-msgstr ""
+msgstr "تغییروضعیت Camp-On"
 
 #: functions.inc.php:357 functions.inc.php:418
 msgid "Disable Camp-On"
-msgstr ""
+msgstr "غیرفعال کردن Camp-On"
 
 #: install.php:48
 msgid "Enable Camp-On functionality"
-msgstr ""
+msgstr "فعال کردن عملکرد Camp-On"
 
 #: functions.inc.php:478
 msgid "Forcing default settings"
-msgstr ""
+msgstr "تنظیمات پیشفرض اجباری"
 
 #: functions.inc.php:358 functions.inc.php:419
 msgid "Generic Device"
-msgstr ""
+msgstr "وسایل عمومی"
 
 #: functions.inc.php:460
 msgid "Max Camp-On Life Busy"
-msgstr ""
+msgstr "بیشترین زمان اشغالی Camp-On"
 
 #: functions.inc.php:461
 msgid "Max Camp-On Life No Answer"
-msgstr ""
+msgstr "بیشترین زمان بدون پاسخ Camp-On"
 
 #: functions.inc.php:463
 msgid "Max Camped-On Extensions"
-msgstr ""
+msgstr "بیشترین داخلی های Camp-On"
 
 #: functions.inc.php:465
 msgid "Max Queued Callers"
-msgstr ""
+msgstr "بیشترین تماس گیرنده های به صف شده"
 
 #: functions.inc.php:359 functions.inc.php:420
 msgid "Native Technology Support"
-msgstr ""
+msgstr "پشتیبانی فن آوری محلی"
 
 #: functions.inc.php:421
 msgid "Native Where Available"
-msgstr ""
+msgstr "محلی در دسترس"
 
 #: functions.inc.php:532
 msgid "Please enter a valid Alert-Info"
-msgstr ""
+msgstr "لطفا اطلاعات هشدار معتبر وارد کنید"
 
 #: functions.inc.php:533
 msgid "Please enter a valid CID Prefix"
-msgstr ""
+msgstr "لطفا پیش شماره CID معتبر وارد کنید"
 
 #: functions.inc.php:425
 msgid "Silent"
-msgstr ""
+msgstr "بی صدا"
 
 #: functions.inc.php:479
 msgid ""
@@ -356,18 +406,21 @@ msgid ""
 "individually set 'Only Use Default Camp-On Settings' to false on the "
 "Advanced Settings page. Active settings:"
 msgstr ""
+"این تنظیمات برای تمام داخلی ها استفاده میشود. برای تنظیمات جداگانه 'فقط برای "
+"تنظیمات Camp-On پیشفرض' در صفحه تنظیمات پیشرفته به غلط تغییر دهید. تنظیمات "
+"فعال:"
 
 #: functions.inc.php:462
 msgid "Time to Ring Back Caller"
-msgstr ""
+msgstr "زمان زنگ بازگشتی تماس گیرنده"
 
 #: functions.inc.php:525
 msgid ""
 "Whether or not to announce the extension that is being called back when the "
 "phone is picked up."
-msgstr ""
+msgstr "هشدار دادن یا ندادن تماس بازگشتی به داخلی وقتی تلفن برداشته شده است."
 
 #: install.php:49
 msgid ""
 "With this set to no, none of the hints or dialplan will generate for Camp-On"
-msgstr ""
+msgstr "با تنظیم روی خیر، هیچ نقشه تماسی برای Camp-On ایجاد نمیشود"
