@@ -10,11 +10,11 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-09-29 12:34-0700\n"
-"PO-Revision-Date: 2016-04-07 04:02+0200\n"
-"Last-Translator: Media <mousavi.media@gmail.com>\n"
-"Language-Team: Persian "
-"<http://weblate.freepbx.org/projects/freepbx/campon/fa/>\n"
-"Language: fa\n"
+"PO-Revision-Date: 2016-08-06 12:21+0200\n"
+"Last-Translator: psdk <hyavari26@gmail.com>\n"
+"Language-Team: Persian (Iran) "
+"<http://weblate.freepbx.org/projects/freepbx/campon/fa_IR/>\n"
+"Language: fa_IR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -38,88 +38,88 @@ msgstr "%s ثانیه"
 
 #: functions.inc.php:365
 msgid "1 min"
-msgstr "۱دقیقه"
+msgstr "1 دقیقه"
 
 #: functions.inc.php:370
 msgid "10 min"
-msgstr "۱۰دقیقه"
+msgstr "10 دقیقه"
 
 #: functions.inc.php:377 functions.inc.php:392
 msgid "100 min"
-msgstr "۱۰۰دقیقه"
+msgstr "100 دقیقه"
 
 #: functions.inc.php:378 functions.inc.php:393
 msgid "2 hrs"
-msgstr "۲ساعت"
+msgstr "2 ساعت"
 
 #: functions.inc.php:366
 msgid "2 min"
-msgstr "۲دقیقه"
+msgstr "2 دقیقه"
 
 #: functions.inc.php:373 functions.inc.php:388
 msgid "20 min"
-msgstr "۲۰دقیقه"
+msgstr "20 دقیقه"
 
 #: functions.inc.php:362
 msgid "20 sec"
-msgstr "۲۰ثانیه"
+msgstr "20 ثانیه"
 
 #: functions.inc.php:379 functions.inc.php:394
 msgid "3 hrs"
-msgstr "۳ساعت"
+msgstr "3 ساعت"
 
 #: functions.inc.php:367
 msgid "3 min"
-msgstr "۳دقیقه"
+msgstr "3 دقیقه"
 
 #: functions.inc.php:363
 msgid "30 sec"
-msgstr "۳۰ثانیه"
+msgstr "30 ثانیه"
 
 #: functions.inc.php:380 functions.inc.php:395
 msgid "4 hrs"
-msgstr "۴ساعت"
+msgstr "4 ساعت"
 
 #: functions.inc.php:368
 msgid "4 min"
-msgstr "۴دقیقه"
+msgstr "4 دقیقه"
 
 #: functions.inc.php:374 functions.inc.php:389
 msgid "40 min"
-msgstr "۴۰دقیقه"
+msgstr "40 دقیقه"
 
 #: functions.inc.php:364
 msgid "45 sec"
-msgstr "۴۵ثانیه"
+msgstr "45 ثانیه"
 
 #: functions.inc.php:381 functions.inc.php:382 functions.inc.php:396
 #: functions.inc.php:397
 msgid "5 hrs"
-msgstr "۵ساعت"
+msgstr "5 ساعت"
 
 #: functions.inc.php:369
 msgid "5 min"
-msgstr "۵دقیقه"
+msgstr "5 دقیقه"
 
 #: functions.inc.php:383 functions.inc.php:398
 msgid "6 hrs"
-msgstr "۶ساعت"
+msgstr "6 ساعت"
 
 #: functions.inc.php:375 functions.inc.php:390
 msgid "60 min"
-msgstr "۶۰دقیقه"
+msgstr "60 دقیقه"
 
 #: functions.inc.php:384 functions.inc.php:399
 msgid "7 hrs"
-msgstr "۷ساعت"
+msgstr "7 ساعت"
 
 #: functions.inc.php:385 functions.inc.php:400
 msgid "8 hrs"
-msgstr "۸ساع"
+msgstr "8 ساعت"
 
 #: functions.inc.php:376 functions.inc.php:391
 msgid "80 min"
-msgstr "۸۰دقیقه"
+msgstr "80 دقیقه"
 
 #: functions.inc.php:521
 msgid ""
@@ -131,39 +131,32 @@ msgid ""
 "can pursue Follow-Me. To avoid Follow-Me setting, choose 'Callback "
 "Extension'."
 msgstr ""
-"Affects Asterisk: cc_agent_dialstring. With 'Callback Device Directly' a "
-"callback  request will be dialed straight to the specific device that made "
-"the call. If using 'Native Technology Support' this may be the preferred "
-"mode. The 'Callback Standard' option will initiate a call back to the caller "
-"just as if someone else on the system placed the call, which means the call "
-"can pursue Follow-Me. To avoid Follow-Me setting, choose 'Callback "
-"Extension'."
+"تاثیرات استریسک: cc_agent_dialstring. قابلیت Callback Device Directly یک "
+"درخواست callback به صورت مستقیم به دستگاهی که مکالمه را ایجاد کرده، ارسال می "
+"گردد."
 
 #: functions.inc.php:529
 msgid ""
 "An optional Alert-Info setting that can be used to send to the extension "
 "being called back."
 msgstr ""
-"An optional  Alert-Info setting that can be used to send to the extension "
-"being called back."
+"یک تنظیم دلخواه Alert-info که برای داخلی که قرار است call back برای آن ارسال "
+"شود، استفاده می گردد."
 
 #: functions.inc.php:526
 msgid ""
 "An optional Alert-Info setting that can be used when initiating a callback. "
 "Only valid when 'Caller Policy' is set to a 'Generic Device' and 'Caller "
 "Callback Mode' is not set to 'Callback Device Directly'."
-msgstr ""
-"An optional Alert-Info setting that can be used when initiating a  callback. "
-"Only valid when 'Caller Policy' is set to a 'Generic Device' and 'Caller "
-"Callback Mode' is not set to 'Callback Device Directly'."
+msgstr "یک تنظیم دلخواه Alert-info که در زمان آغاز call back استفاده می شود."
 
 #: functions.inc.php:530
 msgid ""
 "An optional CID Prepend setting that can be used to send to the extension "
 "being called back."
 msgstr ""
-"An  optional CID Prepend setting that can be used to send to the extension "
-"being called back."
+"یک تنظیم دلخواه برای پیشوند CID که برای داخلی که قرار است call back برای آن "
+"ارسال شود، استفاده می گردد."
 
 #: functions.inc.php:527
 msgid ""
@@ -171,17 +164,15 @@ msgid ""
 "Only valid when 'Caller Policy' is set to a 'Generic Device' and 'Caller "
 "Callback Mode' is not set to 'Callback Device Directly'."
 msgstr ""
-"An optional CID Prepend setting that can be  used when initiating a "
-"callback. Only valid when 'Caller Policy' is set to a 'Generic Device' and "
-"'Caller Callback Mode' is not set to 'Callback Device Directly'."
+"یک تنظیم دلخواه برای پیشوند CID که در زمان آغاز call back استفاده می شود."
 
 #: functions.inc.php:424
 msgid "Announce"
-msgstr "اعلام"
+msgstr "اعلان"
 
 #: functions.inc.php:466
 msgid "Announce Callback Extension"
-msgstr "اعلام داخلی تماس بازگشتی"
+msgstr "اعلان داخلی تماس بازگشتی"
 
 #: functions.inc.php:472
 msgid ""
@@ -190,10 +181,8 @@ msgid ""
 "'Generic Device' should be chosen unless you have phones designed to work "
 "with channel specific capabilities."
 msgstr ""
-"Asterisk: cc_agent_policy. Used to enable  Camp-On for this user and set the "
-"Technology Mode that will be used when engaging the feature. In most cases "
-"'Generic Device' should be chosen unless you have phones designed to work "
-"with channel specific capabilities."
+"استریسک: cc_agent_policy. جهت فعال سازی Camp-On برای کاربر مورد استفاده قرار "
+"می گیرد."
 
 #: functions.inc.php:520
 msgid ""
@@ -281,7 +270,7 @@ msgstr ""
 
 #: functions.inc.php:475
 msgid "Call Camp-On Services"
-msgstr "تماس سرویس های Camp-On"
+msgstr "فراخوانی سرویس های Camp-On"
 
 #: functions.inc.php:467
 msgid "Callback Alert-Info"
@@ -289,11 +278,11 @@ msgstr "اطلاعات هشدار تماس بازگشتی"
 
 #: functions.inc.php:468
 msgid "Callback CID Prepend"
-msgstr "افزودن CID تماس بازگشتی"
+msgstr "پیشوند CID تماس بازگشتی"
 
 #: functions.inc.php:413
 msgid "Callback Device Directly"
-msgstr "وسیله مستقیم تماس بازگشتی"
+msgstr "تماس بازگشتی مستقیم دستگاه"
 
 #: functions.inc.php:415
 msgid "Callback Extension (no Follow-Me)"
@@ -305,19 +294,19 @@ msgstr "استاندارد تماس بازگشتی"
 
 #: functions.inc.php:469
 msgid "Callee Alert-Info"
-msgstr "اطلاعات هشدار برقرارکننده تماس"
+msgstr "اطلاعات هشدار دریافت کننده تماس"
 
 #: functions.inc.php:470
 msgid "Callee CID Prepend"
-msgstr "افزودن CID برقرارکننده تماس"
+msgstr "پیشوند CID دریافت کننده تماس"
 
 #: functions.inc.php:457
 msgid "Callee Policy"
-msgstr "سیاست تماس"
+msgstr "سیاست دریافت کننده تماس"
 
 #: functions.inc.php:464
 msgid "Caller Callback Mode"
-msgstr "حالت تماس بازگشتی"
+msgstr "حالت تماس بازگشتی تماس گیرنده"
 
 #: functions.inc.php:456
 msgid "Caller Policy"
@@ -357,11 +346,11 @@ msgstr "فعال کردن عملکرد Camp-On"
 
 #: functions.inc.php:478
 msgid "Forcing default settings"
-msgstr "تنظیمات پیشفرض اجباری"
+msgstr "اعمال تنظیمات پیش فرض"
 
 #: functions.inc.php:358 functions.inc.php:419
 msgid "Generic Device"
-msgstr "وسایل عمومی"
+msgstr "دستگاه عمومی"
 
 #: functions.inc.php:460
 msgid "Max Camp-On Life Busy"
@@ -377,15 +366,15 @@ msgstr "بیشترین داخلی های Camp-On"
 
 #: functions.inc.php:465
 msgid "Max Queued Callers"
-msgstr "بیشترین تماس گیرنده های به صف شده"
+msgstr "بیشترین تماس گیرنده های در صف"
 
 #: functions.inc.php:359 functions.inc.php:420
 msgid "Native Technology Support"
-msgstr "پشتیبانی فن آوری محلی"
+msgstr "پشتیبانی از تکنولوژی بومی"
 
 #: functions.inc.php:421
 msgid "Native Where Available"
-msgstr "محلی در دسترس"
+msgstr "بومی در دسترس"
 
 #: functions.inc.php:532
 msgid "Please enter a valid Alert-Info"
@@ -405,13 +394,13 @@ msgid ""
 "individually set 'Only Use Default Camp-On Settings' to false on the "
 "Advanced Settings page. Active settings:"
 msgstr ""
-"این تنظیمات برای تمام داخلی ها استفاده میشود. برای تنظیمات جداگانه 'فقط برای "
-"تنظیمات Camp-On پیشفرض' در صفحه تنظیمات پیشرفته به غلط تغییر دهید. تنظیمات "
-"فعال:"
+"این تنظیمات برای تمام داخلی ها استفاده می شود. برای تنظیمات جداگانه 'استفاده "
+"از تنظیمات پیش فرض Camp-On ' در صفحه تنظیمات پیشرفته را ویرایش نمایید. "
+"تنظیمات فعال:"
 
 #: functions.inc.php:462
 msgid "Time to Ring Back Caller"
-msgstr "زمان زنگ بازگشتی تماس گیرنده"
+msgstr "زمان زنگ بازگشتی به تماس گیرنده"
 
 #: functions.inc.php:525
 msgid ""
@@ -422,4 +411,4 @@ msgstr "هشدار دادن یا ندادن تماس بازگشتی به داخ�
 #: install.php:49
 msgid ""
 "With this set to no, none of the hints or dialplan will generate for Camp-On"
-msgstr "با تنظیم روی خیر، هیچ نقشه تماسی برای Camp-On ایجاد نمیشود"
+msgstr "با تنظیم روی گزینه خیر، dialplan برای Camp-On ایجاد نمی شود"
