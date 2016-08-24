@@ -22,7 +22,7 @@ class Campon implements \BMO {
 	public function doConfigPageInit($page) {}
   public function genConfig() {
     if($this->ampconf->get('CC_ENABLE') === 0){
-      return false;
+      return array('ccss_general_additional.conf' => ";campon disabled in advanced settings");
     }
     $conf['cc_max_requests'] = $this->ampconf->get('CC_MAX_REQUESTS_GLOBAL');
     $conf['cc_available_devstate'] = $this->ampconf->get('CC_BLF_OFFERED');
