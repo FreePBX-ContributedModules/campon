@@ -3,31 +3,12 @@ if (!defined('FREEPBX_IS_AUTH')) { die('No direct script access allowed'); }
 //	License for all code of this FreePBX module can be found in the license file inside the module directory
 //	Copyright 2013 Schmooze Com Inc.
 //
-class campon_conf {
-	// return the filename to write
-	function get_filename() {
-		return "ccss_general_additional.conf";
-	}
-  function addGeneralSetting($setting, $value) {
-    $this->_ccss_general[$setting] = $value;
-	}
-	// return the output that goes in the file
-	function generateConf() {
-		$output = "";
-		if (isset($this->_ccss_general) && is_array($this->_ccss_general)) {
-			foreach ($this->_ccss_general as $setting => $value) {
-				$output .= "$setting = $value\n";
-			}
-		}
-		return $output;
-	}
-}
 
 function campon_hookGet_config($engine) {
   global $ext;
   global $version;
   global $amp_conf;
-  if(!$amp_conf['CC_ENABLE']){
+  if($amp_conf['CC_ENABLE'] === 0){
     return true;
   }
   switch($engine) {
@@ -44,23 +25,11 @@ function campon_get_config($engine) {
 	// This generates the dialplan
 	global $ext;
 	global $amp_conf;
-	global $campon_conf;
-  if(!$amp_conf['CC_ENABLE']){
+  if($amp_conf['CC_ENABLE'] === 0){
     return true;
   }
 	switch($engine) {
 		case "asterisk":
-
-      $campon_conf->addGeneralSetting('cc_max_requests',$amp_conf['CC_MAX_REQUESTS_GLOBAL']);
-
-      $campon_conf->addGeneralSetting('cc_available_devstate',$amp_conf['CC_BLF_OFFERED']);
-      $campon_conf->addGeneralSetting('cc_offered_devstate',$amp_conf['CC_BLF_OFFERED']);
-      $campon_conf->addGeneralSetting('cc_caller_requested_devstate',$amp_conf['CC_BLF_OFFERED']);
-      $campon_conf->addGeneralSetting('cc_active_devstate',$amp_conf['CC_BLF_PENDING']);
-      $campon_conf->addGeneralSetting('cc_callee_ready_devstate',$amp_conf['CC_BLF_PENDING']);
-      $campon_conf->addGeneralSetting('cc_caller_busy_devstate',$amp_conf['CC_BLF_CALLER_BUSY']);
-      $campon_conf->addGeneralSetting('cc_recalling_devstate',$amp_conf['CC_BLF_RECALL']);
-
 			if (is_array($featurelist = featurecodes_getModuleFeatures($modulename))) {
 				foreach($featurelist as $item) {
 					$featurename = $item['featurename'];
@@ -252,7 +221,7 @@ function campon_get_config($engine) {
 function campon_request($c) {
 	global $ext;
   global $amp_conf;
-    if(!$amp_conf['CC_ENABLE']){
+    if($amp_conf['CC_ENABLE'] === 0){
       return true;
     }
 	$id = "app-campon-request"; // The context to be included
@@ -270,7 +239,7 @@ function campon_request($c) {
 function campon_cancel($c) {
 	global $ext;
   global $amp_conf;
-  if(!$amp_conf['CC_ENABLE']){
+  if($amp_conf['CC_ENABLE'] === 0){
     return true;
   }
 	$id = "app-campon-cancel"; // The context to be included
@@ -287,7 +256,7 @@ function campon_cancel($c) {
 function campon_toggle($c) {
 	global $ext;
   global $amp_conf;
-  if(!$amp_conf['CC_ENABLE']){
+  if($amp_conf['CC_ENABLE'] === 0){
     return true;
   }
 	$id = "app-campon-toggle"; // The context to be included
@@ -323,7 +292,7 @@ function campon_toggle($c) {
 function campon_configpageinit($pagename) {
 	global $currentcomponent;
   global $amp_conf;
-  if(!$amp_conf['CC_ENABLE']){
+  if($amp_conf['CC_ENABLE'] === 0){
     return true;
   }
 	$action = isset($_REQUEST['action'])?$_REQUEST['action']:null;
@@ -351,7 +320,7 @@ function campon_configpageinit($pagename) {
 function campon_applyhooks() {
 	global $currentcomponent;
   global $amp_conf;
-  if(!$amp_conf['CC_ENABLE']){
+  if($amp_conf['CC_ENABLE'] === 0){
     return true;
   }
 	$currentcomponent->addoptlistitem('cc_agent_policy', 'never', _('Disable Camp-On'));
@@ -439,7 +408,7 @@ function campon_applyhooks() {
 function campon_configpageload() {
   global $amp_conf;
 	global $currentcomponent;
-  if(!$amp_conf['CC_ENABLE']){
+  if($amp_conf['CC_ENABLE'] === 0){
     return true;
   }
 	// Init vars from $_REQUEST[]
@@ -554,7 +523,7 @@ function campon_configpageload() {
 
 function campon_configprocess() {
   global $amp_conf;
-  if(!$amp_conf['CC_ENABLE']){
+  if($amp_conf['CC_ENABLE'] === 0){
     return true;
   }
 	$action = isset($_REQUEST['action'])?$_REQUEST['action']:null;
