@@ -32,13 +32,7 @@ class Campon implements \BMO {
     $conf['cc_callee_ready_devstate'] = $this->ampconf->get('CC_BLF_PENDING');
     $conf['cc_caller_busy_devstate'] = $this->ampconf->get('CC_BLF_CALLER_BUSY');
     $conf['cc_recalling_devstate'] = $this->ampconf->get('CC_BLF_RECALL');
-    $config = array();
-    foreach ($conf as $key => $value) {
-      if(!empty($key) && !empty($value)){
-        $config[] = $key .' = '. $value;
-      }
-    }
-    return array('ccss_general_additional.conf' => implode(PHP_EOL,$config));
+    return array('ccss_general_additional.conf' => $conf);
   }
   public function writeConfig($config) { $this->FreePBX->WriteConfig($config); }
 }
