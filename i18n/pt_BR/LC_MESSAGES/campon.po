@@ -21,7 +21,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-09-16 16:47-0700\n"
-"PO-Revision-Date: 2016-12-09 02:02+0200\n"
+"PO-Revision-Date: 2016-12-09 06:59+0200\n"
 "Last-Translator: Alexander <alexander.schley@paranagua.pr.gov.br>\n"
 "Language-Team: Portuguese (Brazil) "
 "<http://weblate.freepbx.org/projects/freepbx/campon/pt_BR/>\n"
@@ -145,8 +145,8 @@ msgstr ""
 "chamada de retorno será discado diretamente ao dispositivo que fez a "
 "chamada. Se estiver usando suporte de tecnologia 'nativa', esse pode ser o "
 "modo preferencial. A opção \"interna\" (chamada de retorno padrão) inicia "
-"uma chamada para o interlocutor como se alguém no sistema tivesse feito a "
-"chamada, o que significa que a chamada pode prosseguir com o Siga-me. Para "
+"uma chamada para o usuário chamador como se alguém no sistema tivesse feito "
+"a chamada, o que significa que a chamada pode prosseguir com o Siga-me. Para "
 "evitar configurações Siga-me, selecione \"ramal\" (ramal de chamada de "
 "retorno)."
 
@@ -165,9 +165,9 @@ msgstr ""
 "discada diretamente para o dispositivo específico que fez a chamada. Se "
 "estiver usando 'Suporte à Tecnologia Nativa', este pode ser o modo "
 "preferencial. A opção 'Chamada de Retorno Padrão' inicia uma chamada para o "
-"interlocutor como se alguém no sistema tivesse realizado, o que significa "
-"que a chamada pode prosseguir com o Siga-me. Para evitar configurações Siga-"
-"me, selecione 'Ramal de Chamada de Retorno'."
+"usuário chamador como se alguém no sistema tivesse realizado, o que "
+"significa que a chamada pode prosseguir com o Siga-me. Para evitar "
+"configurações Siga-me, selecione 'Ramal de Chamada de Retorno'."
 
 #: campon.i18n.php:104 functions.inc.php:498
 msgid ""
@@ -195,8 +195,8 @@ msgstr ""
 "Uma configuração de Informação de Alerta opcional que pode ser utilizada ao "
 "iniciar uma chamada de retorno. Apenas válida quando a opção da 'Política de "
 "Chamadas' for definida como um 'Dispositivo Genérico' e o 'Modo de Chamada "
-"de Retorno ao Interlocutor' não estiver definido como 'Chamada de Retorno "
-"Diretamente ao Dispositivo'."
+"de Retorno ao Usuário Chamador' não estiver definido como 'Chamada de "
+"Retorno Diretamente ao Dispositivo'."
 
 #: functions.inc.php:499
 msgid ""
@@ -223,8 +223,8 @@ msgstr ""
 "Uma configuração opcional de Prefixo CID que pode ser usada ao iniciar uma "
 "chamada de retorno. Apenas válido quando a opção 'Política de Chamadas' for "
 "definida como um 'Dispositivo Genérico' e o 'Modo de Chamada de Retorno ao "
-"Interlocutor' não estiver definido como 'Chamada de Retorno Diretamente ao "
-"Dispositivo'."
+"Usuário Chamador' não estiver definido como 'Chamada de Retorno Diretamente "
+"ao Dispositivo'."
 
 #: campon.i18n.php:92
 msgid ""
@@ -245,7 +245,7 @@ msgstr "Anúncio de Ramal de Chamada de Retorno"
 
 #: campon.i18n.php:94
 msgid "Announce the Callee Extension"
-msgstr "Anuncie o Ramal Callee"
+msgstr "Anuncie o Ramal do Usuário Chamado"
 
 #: campon.i18n.php:56
 msgid ""
@@ -401,6 +401,10 @@ msgid ""
 "Caller Policy is set to 'Generic Device'. This has no affect if set to any "
 "other setting."
 msgstr ""
+"Asterisk: cc_recall_timer. Quanto tempo, em segundos, para ligar de volta a "
+"um interlocutor cuja \"Política de Chamadas\" esteja definida como \""
+"Dispositivo genérico\". Isto não tem efeito sobre qualquer outra "
+"configuração."
 
 #: functions.inc.php:488
 msgid ""
@@ -408,6 +412,10 @@ msgid ""
 "Policy is set to 'Generic Device'. This has no affect if to any other "
 "setting."
 msgstr ""
+"Asterisk: cc_recall_timer. Quanto tempo para ligar de volta a um "
+"interlocutor cuja \"Política de Chamadas\" esteja definida como \""
+"Dispositivo genérico\". Isto não tem efeito sobre qualquer outra "
+"configuração."
 
 #: functions.inc.php:486
 msgid ""
@@ -415,6 +423,9 @@ msgid ""
 "remain active before expiring if the phone rang busy when first attempting "
 "the call."
 msgstr ""
+"Asterisk: ccbs_available_timer. Por quanto tempo uma solicitação de "
+"conclusão de chamada permanecerá ativa antes de expirar caso o telefone "
+"fique ocupado quando tentar realizar pela primeira vez a chamada."
 
 #: functions.inc.php:487
 msgid ""
@@ -422,82 +433,85 @@ msgid ""
 "remain active before expiring if the phone was simply unanswered when first "
 "attempting the call."
 msgstr ""
+"Asterisk: ccnr_available_timer. Por quanto tempo uma solicitação de "
+"conclusão de chamada permanecerá ativa antes de expirar caso o telefone não "
+"responda quando houver a primeira tentativa de chamada."
 
 #: campon.i18n.php:118
 msgid "BLF Camp-On Available State"
-msgstr ""
+msgstr "Estado Disponível BLF Chamada em Espera(Camp-On)"
 
 #: campon.i18n.php:130
 msgid "BLF Camp-On Busy Caller State"
-msgstr ""
+msgstr "Estado Ocupado BLF Chamada em Espera(Camp-On)"
 
 #: campon.i18n.php:124
 msgid "BLF Camp-On Pending State"
-msgstr ""
+msgstr "Estado Pendente BLF Chamada em Espera(Camp-On)"
 
 #: campon.i18n.php:136
 msgid "BLF Camp-On Recalling State"
-msgstr ""
+msgstr "Estado Rechamada BLF Chamada em Espera(Camp-On)"
 
 #: functions.inc.php:444
 msgid "Call Camp-On Services"
-msgstr ""
+msgstr "Serviços Chamada em Espera(Camp-On)"
 
 #: functions.inc.php:436
 msgid "Callback Alert-Info"
-msgstr ""
+msgstr "Chamada de Retorno Informação de Alerta"
 
 #: functions.inc.php:437
 msgid "Callback CID Prepend"
-msgstr ""
+msgstr "Chamada de Retorno Prefixo CID"
 
 #: functions.inc.php:382
 msgid "Callback Device Directly"
-msgstr ""
+msgstr "Chamada de Retorno Diretamente ao Dispositivo"
 
 #: functions.inc.php:384
 msgid "Callback Extension (no Follow-Me)"
-msgstr ""
+msgstr "Ramal de Chamada de Retorno(não Siga-me)"
 
 #: functions.inc.php:383
 msgid "Callback Standard"
-msgstr ""
+msgstr "Chamada de Retorno Padrão"
 
 #: functions.inc.php:438
 msgid "Callee Alert-Info"
-msgstr ""
+msgstr "Informação de Alerta Usuário Chamado"
 
 #: functions.inc.php:439
 msgid "Callee CID Prepend"
-msgstr ""
+msgstr "Prefixo CID Chamado"
 
 #: functions.inc.php:426
 msgid "Callee Policy"
-msgstr ""
+msgstr "Política Usuário Chamado"
 
 #: campon.i18n.php:40
 msgid "Callee Policy Default"
-msgstr ""
+msgstr "Política Usuário Chamado Padrão"
 
 #: functions.inc.php:433
 msgid "Caller Callback Mode"
-msgstr ""
+msgstr "Modo de Chamada de Retorno Usuário Chamador"
 
 #: functions.inc.php:425
 msgid "Caller Policy"
-msgstr ""
+msgstr "Política do Usuário Chamador"
 
 #: campon.i18n.php:34
 msgid "Caller Policy Default"
-msgstr ""
+msgstr "Política Usuário Chamador Padrão"
 
 #: functions.inc.php:428
 msgid "Caller Timeout to Request"
-msgstr ""
+msgstr "Tempo Limite do Pedido do Usuário Chamador"
 
 #: campon.i18n.php:46
 msgid "Caller Timeout to Request Default"
-msgstr ""
+msgstr "Padrão Tempo Limite do Pedido do Usuário Chamador"
 
 #: campon.i18n.php:4 install.php:6
 msgid "Camp-On"
