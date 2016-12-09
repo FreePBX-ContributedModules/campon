@@ -21,16 +21,16 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-09-16 16:47-0700\n"
-"PO-Revision-Date: 2015-02-04 00:39+0200\n"
-"Last-Translator: Rafael <rafael@ibinetwork.com.br>\n"
-"Language-Team: Portuguese (Brazil) <http://git.freepbx.org/projects/freepbx/"
-"campon/pt_BR/>\n"
+"PO-Revision-Date: 2016-12-09 00:56+0200\n"
+"Last-Translator: Alexander <alexander.schley@paranagua.pr.gov.br>\n"
+"Language-Team: Portuguese (Brazil) "
+"<http://weblate.freepbx.org/projects/freepbx/campon/pt_BR/>\n"
+"Language: pt_BR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: pt_BR\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 1.10-dev\n"
+"X-Generator: Weblate 2.4\n"
 
 #: functions.inc.php:398
 #, php-format
@@ -141,6 +141,14 @@ msgid ""
 "else on the system placed the call, which means the call can pursue Follow-"
 "Me. To avoid Follow-Me setting, choose 'extension' (Callback Extension)."
 msgstr ""
+"Ela afeta o Asterisk: cc_agent_dialstring. Se não for definido,um pedido de "
+"chamada de retorno será discado diretamente ao dispositivo que fez a "
+"chamada. Se estiver usando suporte de tecnologia 'nativa', esse pode ser o "
+"modo preferencial. A opção \"interna\" (chamada de retorno padrão) inicia "
+"uma chamada para o interlocutor como se alguém no sistema tivesse feito a "
+"chamada, o que significa que a chamada pode prosseguir com o Siga-me. Para "
+"evitar configurações Siga-me, selecione \"ramal\" (ramal de chamada de "
+"retorno)."
 
 #: functions.inc.php:490
 msgid ""
@@ -152,18 +160,31 @@ msgid ""
 "can pursue Follow-Me. To avoid Follow-Me setting, choose 'Callback "
 "Extension'."
 msgstr ""
+"Ela afeta o Asterisk: cc_agent_dialstring. Com a 'Chamada de Retorno "
+"Diretamente ao Dispositivo', significa que uma chamada de retorno será "
+"discada diretamente para o dispositivo específico que fez a chamada. Se "
+"estiver usando 'Suporte à Tecnologia Nativa', este pode ser o modo "
+"preferencial. A opção 'Chamada de Retorno Padrão' inicia uma chamada para o "
+"interlocutor como se alguém no sistema tivesse realizado, o que significa "
+"que a chamada pode prosseguir com o Siga-me. Para evitar configurações Siga-"
+"me, selecione 'Ramal de Chamada de Retorno'."
 
 #: campon.i18n.php:104 functions.inc.php:498
 msgid ""
 "An optional Alert-Info setting that can be used to send to the extension "
 "being called back."
 msgstr ""
+"Uma configuração de Informação de Alerta opcional que pode ser usada para "
+"enviar para o ramal que está recebendo a chamada de retorno."
 
 #: campon.i18n.php:86
 msgid ""
 "An optional Alert-Info setting that can be used when initiating a callback. "
 "Only valid when 'Caller Policy' is set to 'generic' device'"
 msgstr ""
+"Uma configuração de Informação de Alerta opcional que pode ser usada ao "
+"iniciar uma chamada de retorno. Apenas válida quando a 'Política de "
+"Chamadas' for definida como dispositivo 'genérico'"
 
 #: functions.inc.php:495
 msgid ""
@@ -171,18 +192,27 @@ msgid ""
 "Only valid when 'Caller Policy' is set to a 'Generic Device' and 'Caller "
 "Callback Mode' is not set to 'Callback Device Directly'."
 msgstr ""
+"Uma configuração de Informação de Alerta opcional que pode ser utilizada ao "
+"iniciar uma chamada de retorno. Apenas válida quando a opção da 'Política de "
+"Chamadas' for definida como um 'Dispositivo Genérico' e o 'Modo de Chamada "
+"de Retorno ao Interlocutor' não estiver definido como 'Chamada de Retorno "
+"Diretamente ao Dispositivo'."
 
 #: functions.inc.php:499
 msgid ""
 "An optional CID Prepend setting that can be used to send to the extension "
 "being called back."
 msgstr ""
+"Uma configuração opcional de Prefixo CID que pode ser usada para enviar ao "
+"ramal a ser chamado."
 
 #: campon.i18n.php:110
 msgid ""
 "An optional CID Prepend setting that can be used to send to the extension "
 "being called back.'"
 msgstr ""
+"Uma configuração opcional de Prefixo CID que pode ser usada para enviar ao "
+"ramal a ser chamado.'"
 
 #: functions.inc.php:496
 msgid ""
@@ -190,24 +220,32 @@ msgid ""
 "Only valid when 'Caller Policy' is set to a 'Generic Device' and 'Caller "
 "Callback Mode' is not set to 'Callback Device Directly'."
 msgstr ""
+"Uma configuração opcional de Prefixo CID que pode ser usada ao iniciar uma "
+"chamada de retorno. Apenas válido quando a opção 'Política de Chamadas' for "
+"definida como um 'Dispositivo Genérico' e o 'Modo de Chamada de Retorno ao "
+"Interlocutor' não estiver definido como 'Chamada de Retorno Diretamente ao "
+"Dispositivo'."
 
 #: campon.i18n.php:92
 msgid ""
 "An optional CID Prepend setting that can be used when initiating a callback. "
 "Only valid when 'Caller Policy' is set to a 'generic' device'"
 msgstr ""
+"Uma configuração opcional de Prefixo CID que pode ser usada ao iniciar uma "
+"chamada de retorno. Apenas válida quando a 'Política de Chamadas' for "
+"definida como um 'dispositivo genérico'"
 
 #: functions.inc.php:393
 msgid "Announce"
-msgstr ""
+msgstr "Anúncio"
 
 #: functions.inc.php:435
 msgid "Announce Callback Extension"
-msgstr ""
+msgstr "Anúncio de Ramal de Chamada de Retorno"
 
 #: campon.i18n.php:94
 msgid "Announce the Callee Extension"
-msgstr ""
+msgstr "Anuncie o Ramal Callee"
 
 #: campon.i18n.php:56
 msgid ""
@@ -215,6 +253,9 @@ msgid ""
 "remain active, in seconds, before expiring if the phone rang busy when first "
 "attempting the call."
 msgstr ""
+"Asterisk: ccbs_available_timer. Por quanto tempo uma solicitação de retorno "
+"permanecerá ativa, em segundos, antes de expirar, se o telefone respondeu "
+"ocupado ao tentar pela primeira vez a chamada."
 
 #: campon.i18n.php:62
 msgid ""
@@ -222,6 +263,9 @@ msgid ""
 "remain active, in seconds, before expiring if the phone was simply "
 "unanswered when first attempting the call."
 msgstr ""
+"Asteirsk: ccnr_available_timer. Por quanto tempo uma solicitação de chamada "
+"de retorno permanecerá ativa, em segundos, antes de expirar, se o telefone "
+"ficou sem resposta ao tentar pela primeira vez a chamada."
 
 #: campon.i18n.php:38
 msgid ""
@@ -230,6 +274,10 @@ msgid ""
 "'generic' should be chosen unless you have phones designed to work with "
 "channel specific capabilities."
 msgstr ""
+"Asterisk: cc_agent_policy. Ele é usado para ativar a chamada em espera (Camp-"
+"On) para um usuário e definir o Modo de Tecnologia utilizada. Na maioria dos "
+"casos você deve escolher \"genérico\" a menos que você tenha telefones "
+"projetados para trabalhar com recursos específicos do canal."
 
 #: functions.inc.php:441
 msgid ""
@@ -238,6 +286,10 @@ msgid ""
 "'Generic Device' should be chosen unless you have phones designed to work "
 "with channel specific capabilities."
 msgstr ""
+"Asterisk: cc_agent_policy. Ele é usado para ativar a chamada em espera (Camp-"
+"On) para este usuário e definir o Modo de Tecnologia utilizada. Na maioria "
+"dos casos você deve escolher \"Dispositivo Genérico\" a menos que você tenha "
+"telefones projetados para trabalhar com recursos específicos do canal."
 
 #: functions.inc.php:489
 msgid ""
