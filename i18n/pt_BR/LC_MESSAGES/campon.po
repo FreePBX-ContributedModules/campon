@@ -21,7 +21,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-09-16 16:47-0700\n"
-"PO-Revision-Date: 2016-12-09 06:59+0200\n"
+"PO-Revision-Date: 2016-12-09 09:34+0200\n"
 "Last-Translator: Alexander <alexander.schley@paranagua.pr.gov.br>\n"
 "Language-Team: Portuguese (Brazil) "
 "<http://weblate.freepbx.org/projects/freepbx/campon/pt_BR/>\n"
@@ -274,10 +274,10 @@ msgid ""
 "'generic' should be chosen unless you have phones designed to work with "
 "channel specific capabilities."
 msgstr ""
-"Asterisk: cc_agent_policy. Ele é usado para ativar a chamada em espera (Camp-"
-"On) para um usuário e definir o Modo de Tecnologia utilizada. Na maioria dos "
-"casos você deve escolher \"genérico\" a menos que você tenha telefones "
-"projetados para trabalhar com recursos específicos do canal."
+"Asterisk: cc_agent_policy. Ele é usado para ativar a chamada em espera para "
+"um usuário e definir o Modo de Tecnologia utilizada. Na maioria dos casos "
+"você deve escolher \"genérico\" a menos que você tenha telefones projetados "
+"para trabalhar com recursos específicos do canal."
 
 #: functions.inc.php:441
 msgid ""
@@ -286,10 +286,10 @@ msgid ""
 "'Generic Device' should be chosen unless you have phones designed to work "
 "with channel specific capabilities."
 msgstr ""
-"Asterisk: cc_agent_policy. Ele é usado para ativar a chamada em espera (Camp-"
-"On) para este usuário e definir o Modo de Tecnologia utilizada. Na maioria "
-"dos casos você deve escolher \"Dispositivo Genérico\" a menos que você tenha "
-"telefones projetados para trabalhar com recursos específicos do canal."
+"Asterisk: cc_agent_policy. Ele é usado para ativar a chamada em espera para "
+"este usuário e definir o Modo de Tecnologia utilizada. Na maioria dos casos "
+"você deve escolher \"Dispositivo Genérico\" a menos que você tenha telefones "
+"projetados para trabalhar com recursos específicos do canal."
 
 #: functions.inc.php:489
 msgid ""
@@ -341,17 +341,17 @@ msgid ""
 "'always'."
 msgstr ""
 "Asterisk: cc_monitor_policy. Ele é usado para controlar se outros telefones "
-"estão autorizados a realizar chamada em espera(Camp-On) em um ramal . Se "
-"assim for, define o modo da tecnologia utilizada para monitorar a "
-"disponibilidade do ramal. Se não houver suporte tecnológico específico "
-"disponível, então ele deve ser definido como \"genérico\". Neste modo, uma  "
-"chamada de retorno será lançada para o ramal quando se muda de um estado de "
-"InUse para NotInUse. Se esteve ocupado quando tentou pela primeira vez, isto "
-"irá gerar a chamada em andamento. Se não obteve resposta, então será na "
-"próxima vez que o telefone for usado para ligar ou atender uma chamada e, em "
-"seguida, desliga..É possível configurá-lo para aproveitar o suporte de "
-"tecnologia \"nativo\", se disponível, e voltar automaticamente para \""
-"genérico\" quando não estiver definido para \"sempre\"."
+"estão autorizados a realizar chamada em espera em um ramal . Se assim for, "
+"define o modo da tecnologia utilizada para monitorar a disponibilidade do "
+"ramal. Se não houver suporte tecnológico específico disponível, então ele "
+"deve ser definido como \"genérico\". Neste modo, uma  chamada de retorno "
+"será lançada para o ramal quando se muda de um estado de InUse para "
+"NotInUse. Se esteve ocupado quando tentou pela primeira vez, isto irá gerar "
+"a chamada em andamento. Se não obteve resposta, então será na próxima vez "
+"que o telefone for usado para ligar ou atender uma chamada e, em seguida, "
+"desliga..É possível configurá-lo para aproveitar o suporte de tecnologia \""
+"nativo\", se disponível, e voltar automaticamente para \"genérico\" quando "
+"não estiver definido para \"sempre\"."
 
 #: functions.inc.php:442
 msgid ""
@@ -367,17 +367,17 @@ msgid ""
 "if available and automatically fallback to the 'Generic Mode' when not."
 msgstr ""
 "Asterisk: cc_monitor_policy. Ele é usado para controlar se outros telefones "
-"estão autorizados a realizar chamada em espera(Camp-On) em um ramal . Se "
-"assim for, define o modo da tecnologia utilizada para monitorar a "
-"disponibilidade do ramal. Se não houver suporte tecnológico específico "
-"disponível, então ele deve ser definido como \"genérico\". Neste modo, uma  "
-"chamada de retorno será lançada para o ramal quando se muda de um estado de "
-"InUse para NotInUse. Se esteve ocupado quando tentou pela primeira vez, isto "
-"irá gerar a chamada em andamento. Se não obteve resposta, então será na "
-"próxima vez que o telefone for usado para ligar ou atender uma chamada e, em "
-"seguida, desliga..É possível configurá-lo para aproveitar o suporte de "
-"tecnologia \"nativo\", se disponível, e voltar automaticamente para \"Modo "
-"Genérico\" quando não estiver definido para \"sempre\"."
+"estão autorizados a realizar chamada em espera em um ramal . Se assim for, "
+"define o modo da tecnologia utilizada para monitorar a disponibilidade do "
+"ramal. Se não houver suporte tecnológico específico disponível, então ele "
+"deve ser definido como \"genérico\". Neste modo, uma  chamada de retorno "
+"será lançada para o ramal quando se muda de um estado de InUse para "
+"NotInUse. Se esteve ocupado quando tentou pela primeira vez, isto irá gerar "
+"a chamada em andamento. Se não obteve resposta, então será na próxima vez "
+"que o telefone for usado para ligar ou atender uma chamada e, em seguida, "
+"desliga..É possível configurá-lo para aproveitar o suporte de tecnologia \""
+"nativo\", se disponível, e voltar automaticamente para \"Modo Genérico\" "
+"quando não estiver definido para \"sempre\"."
 
 #: functions.inc.php:485
 msgid ""
@@ -439,23 +439,23 @@ msgstr ""
 
 #: campon.i18n.php:118
 msgid "BLF Camp-On Available State"
-msgstr "Estado Disponível BLF Chamada em Espera(Camp-On)"
+msgstr "Estado Disponível BLF Chamada em Espera"
 
 #: campon.i18n.php:130
 msgid "BLF Camp-On Busy Caller State"
-msgstr "Estado Ocupado BLF Chamada em Espera(Camp-On)"
+msgstr "Estado Usuário Chamador Ocupado BLF Chamada em Espera"
 
 #: campon.i18n.php:124
 msgid "BLF Camp-On Pending State"
-msgstr "Estado Pendente BLF Chamada em Espera(Camp-On)"
+msgstr "Estado Pendente BLF Chamada em Espera"
 
 #: campon.i18n.php:136
 msgid "BLF Camp-On Recalling State"
-msgstr "Estado Rechamada BLF Chamada em Espera(Camp-On)"
+msgstr "Estado Rechamada BLF Chamada em Espera"
 
 #: functions.inc.php:444
 msgid "Call Camp-On Services"
-msgstr "Serviços Chamada em Espera(Camp-On)"
+msgstr "Serviços Chamada em Espera"
 
 #: functions.inc.php:436
 msgid "Callback Alert-Info"
@@ -475,7 +475,7 @@ msgstr "Ramal de Chamada de Retorno(não Siga-me)"
 
 #: functions.inc.php:383
 msgid "Callback Standard"
-msgstr "Chamada de Retorno Padrão"
+msgstr "Padrão Chamada de Retorno"
 
 #: functions.inc.php:438
 msgid "Callee Alert-Info"
@@ -491,7 +491,7 @@ msgstr "Política Usuário Chamado"
 
 #: campon.i18n.php:40
 msgid "Callee Policy Default"
-msgstr "Política Usuário Chamado Padrão"
+msgstr "Padrão Política Usuário Chamado"
 
 #: functions.inc.php:433
 msgid "Caller Callback Mode"
@@ -503,7 +503,7 @@ msgstr "Política do Usuário Chamador"
 
 #: campon.i18n.php:34
 msgid "Caller Policy Default"
-msgstr "Política Usuário Chamador Padrão"
+msgstr "Padrão Política Usuário Chamador"
 
 #: functions.inc.php:428
 msgid "Caller Timeout to Request"
@@ -515,11 +515,11 @@ msgstr "Padrão Tempo Limite do Pedido do Usuário Chamador"
 
 #: campon.i18n.php:4 install.php:6
 msgid "Camp-On"
-msgstr ""
+msgstr "Chamada em Espera"
 
 #: install.php:8
 msgid "Camp-On Cancel"
-msgstr ""
+msgstr "Cancelar Chamada em Espera"
 
 #: campon.i18n.php:12 campon.i18n.php:18 campon.i18n.php:24 campon.i18n.php:30
 #: campon.i18n.php:36 campon.i18n.php:42 campon.i18n.php:48 campon.i18n.php:54
@@ -529,63 +529,63 @@ msgstr ""
 #: campon.i18n.php:120 campon.i18n.php:126 campon.i18n.php:132
 #: campon.i18n.php:138 install.php:45
 msgid "Camp-On Module"
-msgstr ""
+msgstr "Módulo Chamada em Espera"
 
 #: install.php:7
 msgid "Camp-On Request"
-msgstr ""
+msgstr "Solicitar Chamada em Espera"
 
 #: install.php:9
 msgid "Camp-On Toggle"
-msgstr ""
+msgstr "Alternar Chamada em Espera"
 
 #: campon.i18n.php:82
 msgid "Default Callback Alert-Info"
-msgstr ""
+msgstr "Padrão Chamada de Retorno Informação de Alerta"
 
 #: campon.i18n.php:88
 msgid "Default Callback CID Prepend"
-msgstr ""
+msgstr "Padrão Chamada de Retorno Prefixo CID"
 
 #: campon.i18n.php:100
 msgid "Default Callee Alert-Info"
-msgstr ""
+msgstr "Padrão Informação de Alerta Usuário Chamado"
 
 #: campon.i18n.php:106
 msgid "Default Callee CID Prepend"
-msgstr ""
+msgstr "Padrão Prefixo CID Usuário Chamado"
 
 #: campon.i18n.php:70
 msgid "Default Caller Callback Mode"
-msgstr ""
+msgstr "Modo Padrão Retorno de Chamada Usuário Chamador"
 
 #: campon.i18n.php:76
 msgid "Default Max Camped-On Extensions"
-msgstr ""
+msgstr "Padrão Máximo Ramais em Chamada em Espera"
 
 #: campon.i18n.php:112
 msgid "Default Max Queued Callers"
-msgstr ""
+msgstr "Padrão Máximo Usuários Chamadores em Fila"
 
 #: campon.i18n.php:64
 msgid "Default Time to Ring Back Caller"
-msgstr ""
+msgstr "Padrão Tempo para Ligar para o Usuário Chamador"
 
 #: functions.inc.php:326 functions.inc.php:387
 msgid "Disable Camp-On"
-msgstr ""
+msgstr "Desabilitar Chamada em Espera"
 
 #: campon.i18n.php:10 install.php:48
 msgid "Enable Camp-On functionality"
-msgstr ""
+msgstr "Habilitar funcionalidade Chamadas em Espera"
 
 #: functions.inc.php:447
 msgid "Forcing default settings"
-msgstr ""
+msgstr "Forçar configurações padrão"
 
 #: functions.inc.php:327 functions.inc.php:388
 msgid "Generic Device"
-msgstr ""
+msgstr "Dispositivo Genérico"
 
 #: campon.i18n.php:26
 msgid ""
@@ -597,58 +597,65 @@ msgid ""
 "technology specific capabilities if the called extension uses a channel that "
 "supports that."
 msgstr ""
+"Se estiver definido como 'genérico' ou 'sempre', será possível tentar "
+"solicitações de conclusão de chamada ao efetuar discagens que não sejam "
+"ramais, como grupos de toque e outros destinos possíveis que possam "
+"funcionar com a conclusão de chamada. Definir isso ignorará quaisquer "
+"Políticas do Usuário Chamado e pode resultar em comportamento inconsistente. "
+"Definir como 'genérico' é o mais comum, 'sempre' tentará usar recursos "
+"tecnológicos específicos se o ramal chamado usar um canal que suporte isso."
 
 #: functions.inc.php:429
 msgid "Max Camp-On Life Busy"
-msgstr ""
+msgstr "Máximo de Tempo de Vida de Chamadas em Espera Ocupadas"
 
 #: campon.i18n.php:52
 msgid "Max Camp-On Life Busy Default"
-msgstr ""
+msgstr "Padrão Máximo de Tempo de Vida de Chamadas em Espera Ocupadas"
 
 #: functions.inc.php:430
 msgid "Max Camp-On Life No Answer"
-msgstr ""
+msgstr "Máximo de Tempo de Vida de Chamadas em Espera Sem Resposta"
 
 #: campon.i18n.php:58
 msgid "Max Camp-On Life No Answer Default"
-msgstr ""
+msgstr "Padrão Máximo de Tempo de Vida de Chamadas Sem Resposta"
 
 #: functions.inc.php:432
 msgid "Max Camped-On Extensions"
-msgstr ""
+msgstr "Máximo de Ramais em Chamadas em Espera"
 
 #: functions.inc.php:434
 msgid "Max Queued Callers"
-msgstr ""
+msgstr "Máximo de Usuários Chamadores na Fila"
 
 #: campon.i18n.php:16
 msgid "Maximum Active Camp-On Requests"
-msgstr ""
+msgstr "Máximo de Solicitações de Chamadas em Espera Ativas"
 
 #: functions.inc.php:328 functions.inc.php:389
 msgid "Native Technology Support"
-msgstr ""
+msgstr "Tecnologia de Suporte Nativo"
 
 #: functions.inc.php:390
 msgid "Native Where Available"
-msgstr ""
+msgstr "Nativo Quando Disponível"
 
 #: campon.i18n.php:22
 msgid "Non Extensions Callee Policy"
-msgstr ""
+msgstr "Política de Usuários Chamados Sem Ramais"
 
 #: campon.i18n.php:28
 msgid "Only Use Default Camp-On Settings"
-msgstr ""
+msgstr "Somente Usar Configurações de Chamadas em Espera Padrão"
 
 #: functions.inc.php:501
 msgid "Please enter a valid Alert-Info"
-msgstr ""
+msgstr "Por favor, insira uma Informação de Alerta válida"
 
 #: functions.inc.php:502
 msgid "Please enter a valid CID Prefix"
-msgstr ""
+msgstr "Por favor, insira um Prefixo CID válido"
 
 #: campon.i18n.php:6
 msgid "Settings"
@@ -656,7 +663,7 @@ msgstr "Configurações"
 
 #: functions.inc.php:394
 msgid "Silent"
-msgstr ""
+msgstr "Silencioso"
 
 #: campon.i18n.php:20
 msgid ""
@@ -666,6 +673,11 @@ msgid ""
 "number of active requests it has to track. Restart Asterisk for changes to "
 "take effect."
 msgstr ""
+"Número máximo de pedidos pendentes da Chamada em Espera que podem ser "
+"ativados. Esse limite é útil em um sistema que possui  restrições de "
+"memória, caso a máquina tenha os recursos do sistema limitados em relação ao "
+"número de solicitações ativas que ele precisa controlar. Reinicie o Asterisk "
+"para que as alterações entrem em vigor."
 
 #: functions.inc.php:448
 msgid ""
@@ -673,6 +685,10 @@ msgid ""
 "individually set 'Only Use Default Camp-On Settings' to false on the "
 "Advanced Settings page. Active settings:"
 msgstr ""
+"As seguintes configurações estão sendo usadas para todos os ramais. Para "
+"configurar individualmente, defina  'Somente Usar as Configurações Padrão da "
+"Chamada em Espera' para falso na página Configurações Avançadas. "
+"Configurações ativas:"
 
 #: campon.i18n.php:122
 msgid ""
@@ -680,6 +696,10 @@ msgid ""
 "call while it is still possible to Camp-On to the last called number, prior "
 "to the offer_timer expiring. Restart Asterisk for changes to take effect."
 msgstr ""
+"Este é o estado que será definido para as assinaturas BLF depois de tentar "
+"uma chamada enquanto ainda é possível colocar em espera o último número "
+"chamado, antes de expirar o offer_timer. Reinicie o Asterisk para que as "
+"alterações entrem em vigor."
 
 #: campon.i18n.php:134 campon.i18n.php:140
 msgid ""
@@ -687,6 +707,9 @@ msgid ""
 "becomes available if the caller is not busy. Restart Asterisk for changes to "
 "take effect."
 msgstr ""
+"Este é o estado que será definido para as assinaturas BLF quando o usuário "
+"chamado estiver disponível se o usuário chamador não estiver ocupado. "
+"Reinicie o Asterisk para que as alterações entrem em vigor."
 
 #: campon.i18n.php:128
 msgid ""
@@ -694,6 +717,10 @@ msgid ""
 "Camp-On request, pending a callback when the party becomes available. "
 "Restart Asterisk for changes to take effect."
 msgstr ""
+"Este é o estado que será definido para as assinaturas BLF após uma "
+"solicitação de Chamada em Espera bem-sucedida, enquanto aguarda uma chamada "
+"de retorno quando a parte estiver disponível. Reinicie o Asterisk para que "
+"as alterações entrem em vigor."
 
 #: campon.i18n.php:8
 msgid ""
@@ -702,10 +729,14 @@ msgid ""
 "the system call them back when a busy or non-responding extension becomes "
 "available. Requires Asterisk 1.8 or higher."
 msgstr ""
+"Este módulo implementa o Call Completion Supplemental Services (CCSS), "
+"muitas vezes referido como Chamada em Espera. Ele permite que um usuário "
+"chamador solicite ao sistema a chamá-los novamente quando uma extensão "
+"estiver ocupada ou não estiver disponível. Requer Asterisk 1.8 ou superior."
 
 #: functions.inc.php:431
 msgid "Time to Ring Back Caller"
-msgstr ""
+msgstr "Tempo para ligar de volta ao usuário chamador"
 
 #: campon.i18n.php:98
 msgid ""
@@ -714,17 +745,25 @@ msgid ""
 "will go directly to ringing the extension, the CID information will still "
 "reflect who is being called back."
 msgstr ""
+"Quando definido como verdadeiro, o ramal de destino que está sendo chamado "
+"será anunciado ao atender a chamada de retorno antes de tocar o ramal. "
+"Definir isso como falso irá diretamente para o ramal que está tocando, a "
+"informação CID ainda irá refletir quem está sendo chamado de volta."
 
 #: functions.inc.php:494
 msgid ""
 "Whether or not to announce the extension that is being called back when the "
 "phone is picked up."
 msgstr ""
+"Se deve ou não anunciar o ramal que está sendo chamado de volta quando o "
+"telefone é tirado do gancho."
 
 #: campon.i18n.php:14 install.php:49
 msgid ""
 "With this set to no, none of the hints or dialplan will generate for Camp-On"
 msgstr ""
+"Com este conjunto definido para não, nenhuma das dicas ou plano de discagem "
+"será gerado para Chamada em Espera"
 
 #: campon.i18n.php:32
 msgid ""
@@ -736,3 +775,12 @@ msgid ""
 "(cc_monitor_policy) settings will still be configurable for each user so you "
 "can still enable/disable Call Camping ability on select extensions."
 msgstr ""
+"Você pode forçar todos os ramais de um sistema a usar apenas as "
+"configurações de Chamada em Espera padrão. Neste modo, as configurações "
+"individuais não serão mostradas na página de ramais. Se houver configurações "
+"exclusivas configuradas previamente, os dados serão mantidos, mas não serão "
+"usados, a menos que você alterne isso para falso. Com este conjunto, as "
+"configurações de Política de Usuário  Chamador (cc_agent_policy) e Política "
+"de Usuário Chamado (cc_monitor_policy) continuarão configuráveis para cada "
+"usuário, de modo que você ainda possa ativar/desativar as Chamadas em Espera "
+"em ramais selecionados."
