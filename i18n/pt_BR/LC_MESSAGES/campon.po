@@ -21,7 +21,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-09-16 16:47-0700\n"
-"PO-Revision-Date: 2016-12-11 03:59+0200\n"
+"PO-Revision-Date: 2016-12-11 04:20+0200\n"
 "Last-Translator: Alexander <alexander.schley@paranagua.pr.gov.br>\n"
 "Language-Team: Portuguese (Brazil) "
 "<http://weblate.freepbx.org/projects/freepbx/campon/pt_BR/>\n"
@@ -183,7 +183,7 @@ msgid ""
 "Only valid when 'Caller Policy' is set to 'generic' device'"
 msgstr ""
 "Uma configuração de Informação de Alerta opcional que pode ser usada ao "
-"iniciar uma chamada de retorno. Apenas válida quando a 'Política do "
+"iniciar uma chamada de retorno. Apenas válida quando a 'Política do Usuário "
 "Chamador' for definida como dispositivo 'genérico'"
 
 #: functions.inc.php:495
@@ -194,9 +194,9 @@ msgid ""
 msgstr ""
 "Uma configuração de Informação de Alerta opcional que pode ser utilizada ao "
 "iniciar uma chamada de retorno. Apenas válida quando a opção da 'Política do "
-"Chamador' for definida como um 'Dispositivo Genérico' e o 'Modo de Chamada "
-"de Retorno ao Chamador' não estiver definido como 'Chamada de Retorno "
-"Diretamente ao Dispositivo'."
+"Usuário Chamador' for definida como um 'Dispositivo Genérico' e o 'Modo de "
+"Chamada de Retorno ao Usuário Chamador' não estiver definido como 'Chamada "
+"de Retorno Diretamente ao Dispositivo'."
 
 #: functions.inc.php:499
 msgid ""
@@ -221,10 +221,10 @@ msgid ""
 "Callback Mode' is not set to 'Callback Device Directly'."
 msgstr ""
 "Uma configuração opcional de Prefixo CID que pode ser usada ao iniciar uma "
-"chamada de retorno. Apenas válido quando a opção 'Política do Chamador' for "
-"definida como um 'Dispositivo Genérico' e o 'Modo de Chamada de Retorno ao "
-"Chamador' não estiver definido como 'Chamada de Retorno Diretamente ao "
-"Dispositivo'."
+"chamada de retorno. Apenas válido quando a opção 'Política do Usuário "
+"Chamador' for definida como um 'Dispositivo Genérico' e o 'Modo de Chamada "
+"de Retorno ao Usuário Chamador' não estiver definido como 'Chamada de "
+"Retorno Diretamente ao Dispositivo'."
 
 #: campon.i18n.php:92
 msgid ""
@@ -232,8 +232,8 @@ msgid ""
 "Only valid when 'Caller Policy' is set to a 'generic' device'"
 msgstr ""
 "Uma configuração opcional de Prefixo CID que pode ser usada ao iniciar uma "
-"chamada de retorno. Apenas válida quando a 'Política do Chamador' for "
-"definida como um 'dispositivo genérico'"
+"chamada de retorno. Apenas válida quando a 'Política do Usuário Chamador' "
+"for definida como um 'dispositivo genérico'"
 
 #: functions.inc.php:393
 msgid "Announce"
@@ -245,7 +245,7 @@ msgstr "Anúncio de Ramal de Chamada de Retorno"
 
 #: campon.i18n.php:94
 msgid "Announce the Callee Extension"
-msgstr "Anuncie o Ramal do Usuário Chamado"
+msgstr "Anuncia o Ramal do Usuário Chamado"
 
 #: campon.i18n.php:56
 msgid ""
@@ -300,8 +300,8 @@ msgid ""
 "this will be ignored."
 msgstr ""
 "Asterisk: cc_max_agents. Apenas válido para usar o 'Suporte de Tecnologia "
-"Nativa' para a Política de Chamadas. Este é o número de solicitações de "
-"conclusão de chamada pendentes que podem estar aguardando por ramais "
+"Nativa' para a Política do Usuário Chamador. Este é o número de solicitações "
+"de conclusão de chamada pendentes que podem estar aguardando por ramais "
 "específicos. Com o modo \"Dispositivo genérico\", você só pode ter uma úncia "
 "solicitação pendente e isso será ignorado."
 
@@ -313,16 +313,17 @@ msgid ""
 "mode you can only have a single request outstanding and this will be ignored."
 msgstr ""
 "Asterisk: cc_max_agents. Só se aplica quando a tecnologia \"nativa\" é usada "
-"na Política de Chamadas. Este é o número de pedidos pendentes de chamadas de "
-"retorno que podem estar aguardando por ramais específicos. Com o modo de "
-"dispositivo \"genérico\" pode só ter um pedido pendente e isso será ignorado."
+"na Política do Usuário Chamador. Este é o número de pedidos pendentes de "
+"chamadas de retorno que podem estar aguardando por ramais específicos. Com o "
+"modo de dispositivo \"genérico\" pode só ter um pedido pendente e isso será "
+"ignorado."
 
 #: campon.i18n.php:116 functions.inc.php:492
 msgid ""
 "Asterisk: cc_max_monitors. This is the maximum number of callers that are "
 "allowed to queue up call completion requests against this extension."
 msgstr ""
-"Asterisk: cc_max_monitors. Este é o número máximo de interlocutores "
+"Asterisk: cc_max_monitors. Este é o número máximo de usuários chamadores "
 "permitidos para a fila solicitações de conclusão de chamadas sobre esta "
 "extensão."
 
@@ -402,8 +403,8 @@ msgid ""
 "other setting."
 msgstr ""
 "Asterisk: cc_recall_timer. Quanto tempo, em segundos, para ligar de volta a "
-"um interlocutor cuja \"Política de Chamadas\" esteja definida como \""
-"Dispositivo genérico\". Isto não tem efeito sobre qualquer outra "
+"um usuário chamador cuja \"Política do Usuário Chamador\" esteja definida "
+"como \"Dispositivo genérico\". Isto não tem efeito sobre qualquer outra "
 "configuração."
 
 #: functions.inc.php:488
@@ -412,8 +413,8 @@ msgid ""
 "Policy is set to 'Generic Device'. This has no affect if to any other "
 "setting."
 msgstr ""
-"Asterisk: cc_recall_timer. Quanto tempo para ligar de volta a um "
-"interlocutor cuja \"Política de Chamadas\" esteja definida como \""
+"Asterisk: cc_recall_timer. Quanto tempo para ligar de volta a um usuário "
+"chamador cuja \"Política do Usuário Chamador\" esteja definida como \""
 "Dispositivo genérico\". Isto não tem efeito sobre qualquer outra "
 "configuração."
 
@@ -483,19 +484,19 @@ msgstr "Informação de Alerta Usuário Chamado"
 
 #: functions.inc.php:439
 msgid "Callee CID Prepend"
-msgstr "Prefixo CID Chamado"
+msgstr "Prefixo CID Usuário Chamado"
 
 #: functions.inc.php:426
 msgid "Callee Policy"
-msgstr "Política Usuário Chamado"
+msgstr "Política do Usuário Chamado"
 
 #: campon.i18n.php:40
 msgid "Callee Policy Default"
-msgstr "Padrão Política Usuário Chamado"
+msgstr "Padrão Política do Usuário Chamado"
 
 #: functions.inc.php:433
 msgid "Caller Callback Mode"
-msgstr "Modo de Chamada de Retorno Usuário Chamador"
+msgstr "Modo de Chamada de Retorno ao Usuário Chamador"
 
 #: functions.inc.php:425
 msgid "Caller Policy"
@@ -503,7 +504,7 @@ msgstr "Política do Usuário Chamador"
 
 #: campon.i18n.php:34
 msgid "Caller Policy Default"
-msgstr "Padrão Política Usuário Chamador"
+msgstr "Padrão Política do Usuário Chamador"
 
 #: functions.inc.php:428
 msgid "Caller Timeout to Request"
@@ -549,15 +550,15 @@ msgstr "Padrão Chamada de Retorno Prefixo CID"
 
 #: campon.i18n.php:100
 msgid "Default Callee Alert-Info"
-msgstr "Padrão Informação de Alerta Usuário Chamado"
+msgstr "Padrão Informação de Alerta do Usuário Chamado"
 
 #: campon.i18n.php:106
 msgid "Default Callee CID Prepend"
-msgstr "Padrão Prefixo CID Usuário Chamado"
+msgstr "Padrão Prefixo CID do Usuário Chamado"
 
 #: campon.i18n.php:70
 msgid "Default Caller Callback Mode"
-msgstr "Modo Padrão Retorno de Chamada Usuário Chamador"
+msgstr "Modo Padrão Retorno de Chamada do Usuário Chamador"
 
 #: campon.i18n.php:76
 msgid "Default Max Camped-On Extensions"
@@ -565,7 +566,7 @@ msgstr "Padrão Máximo Ramais em Chamada em Espera"
 
 #: campon.i18n.php:112
 msgid "Default Max Queued Callers"
-msgstr "Padrão Máximo Usuários Chamadores em Fila"
+msgstr "Padrão Máximo de Usuários Chamadores em Fila"
 
 #: campon.i18n.php:64
 msgid "Default Time to Ring Back Caller"
@@ -780,7 +781,7 @@ msgstr ""
 "individuais não serão mostradas na página de ramais. Se houver configurações "
 "exclusivas configuradas previamente, os dados serão mantidos, mas não serão "
 "usados, a menos que você alterne isso para falso. Com este conjunto, as "
-"configurações de Política de Usuário  Chamador (cc_agent_policy) e Política "
-"de Usuário Chamado (cc_monitor_policy) continuarão configuráveis para cada "
+"configurações de Política do Usuário Chamador (cc_agent_policy) e Política "
+"do Usuário Chamado (cc_monitor_policy) continuarão configuráveis para cada "
 "usuário, de modo que você ainda possa ativar/desativar as Chamadas em Espera "
 "em ramais selecionados."
