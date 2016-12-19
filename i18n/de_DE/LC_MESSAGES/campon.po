@@ -10,113 +10,116 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-09-16 16:47-0700\n"
-"PO-Revision-Date: 2016-09-16 16:47-0700\n"
-"Last-Translator: Automatically generated\n"
-"Language-Team: none\n"
+"PO-Revision-Date: 2016-12-19 14:12+0200\n"
+"Last-Translator: Sven <spiderrs4@web.de>\n"
+"Language-Team: German "
+"<http://weblate.freepbx.org/projects/freepbx/campon/de_DE/>\n"
+"Language: de_DE\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 2.4\n"
 
 #: functions.inc.php:398
 #, php-format
 msgid "%s Incoming Requests"
-msgstr ""
+msgstr "%s eingehende Anforderung"
 
 #: functions.inc.php:378
 #, php-format
 msgid "%s Outgoing Requests"
-msgstr ""
+msgstr "%s ausgehende Anforderung"
 
 #: functions.inc.php:373
 #, php-format
 msgid "%s sec"
-msgstr ""
+msgstr "%s Sek"
 
 #: functions.inc.php:334
 msgid "1 min"
-msgstr ""
+msgstr "1 min"
 
 #: functions.inc.php:339
 msgid "10 min"
-msgstr ""
+msgstr "10 min"
 
 #: functions.inc.php:346 functions.inc.php:361
 msgid "100 min"
-msgstr ""
+msgstr "100 min"
 
 #: functions.inc.php:347 functions.inc.php:362
 msgid "2 hrs"
-msgstr ""
+msgstr "2 Std"
 
 #: functions.inc.php:335
 msgid "2 min"
-msgstr ""
+msgstr "2 min"
 
 #: functions.inc.php:342 functions.inc.php:357
 msgid "20 min"
-msgstr ""
+msgstr "20 min"
 
 #: functions.inc.php:331
 msgid "20 sec"
-msgstr ""
+msgstr "20 Sek"
 
 #: functions.inc.php:348 functions.inc.php:363
 msgid "3 hrs"
-msgstr ""
+msgstr "3 Std"
 
 #: functions.inc.php:336
 msgid "3 min"
-msgstr ""
+msgstr "3 min"
 
 #: functions.inc.php:332
 msgid "30 sec"
-msgstr ""
+msgstr "30 Sek"
 
 #: functions.inc.php:349 functions.inc.php:364
 msgid "4 hrs"
-msgstr ""
+msgstr "4 Std"
 
 #: functions.inc.php:337
 msgid "4 min"
-msgstr ""
+msgstr "4 min"
 
 #: functions.inc.php:343 functions.inc.php:358
 msgid "40 min"
-msgstr ""
+msgstr "40 min"
 
 #: functions.inc.php:333
 msgid "45 sec"
-msgstr ""
+msgstr "45 Sek"
 
 #: functions.inc.php:350 functions.inc.php:351 functions.inc.php:365
 #: functions.inc.php:366
 msgid "5 hrs"
-msgstr ""
+msgstr "5 Std"
 
 #: functions.inc.php:338
 msgid "5 min"
-msgstr ""
+msgstr "5 min"
 
 #: functions.inc.php:352 functions.inc.php:367
 msgid "6 hrs"
-msgstr ""
+msgstr "6 Std"
 
 #: functions.inc.php:344 functions.inc.php:359
 msgid "60 min"
-msgstr ""
+msgstr "60 min"
 
 #: functions.inc.php:353 functions.inc.php:368
 msgid "7 hrs"
-msgstr ""
+msgstr "7 Std"
 
 #: functions.inc.php:354 functions.inc.php:369
 msgid "8 hrs"
-msgstr ""
+msgstr "8 Std"
 
 #: functions.inc.php:345 functions.inc.php:360
 msgid "80 min"
-msgstr ""
+msgstr "80 min"
 
 #: campon.i18n.php:74
 msgid ""
@@ -185,7 +188,7 @@ msgstr ""
 
 #: functions.inc.php:393
 msgid "Announce"
-msgstr ""
+msgstr "Ansage"
 
 #: functions.inc.php:435
 msgid "Announce Callback Extension"
@@ -216,6 +219,11 @@ msgid ""
 "'generic' should be chosen unless you have phones designed to work with "
 "channel specific capabilities."
 msgstr ""
+"Asterisk: cc_agent_policy. Wird verwendet, um Camp-On für einen Benutzer zu "
+"aktivieren und den Technologiemodus festzulegen, der beim aktivieren der "
+"Funktion verwendet wird. In den meisten Fällen sollte 'Generic Device' "
+"gewählt werden, es sei denn, sie verfügen über Telefone, die für die Arbeit "
+"mit kanalspezifischen Funktionen ausgelegt sind."
 
 #: functions.inc.php:441
 msgid ""
@@ -224,6 +232,11 @@ msgid ""
 "'Generic Device' should be chosen unless you have phones designed to work "
 "with channel specific capabilities."
 msgstr ""
+"Asterisk: cc_agent_policy. Wird verwendet, um Camp-On für diesen Benutzer zu "
+"aktivieren und den Technologiemodus festzulegen, der beim aktivieren der "
+"Funktion verwendet wird. In den meisten Fällen sollte 'Generic Device' "
+"gewählt werden, es sei denn, sie verfügen über Telefone, die für die Arbeit "
+"mit kanalspezifischen Funktionen ausgelegt sind."
 
 #: functions.inc.php:489
 msgid ""
@@ -319,19 +332,19 @@ msgstr ""
 
 #: campon.i18n.php:118
 msgid "BLF Camp-On Available State"
-msgstr ""
+msgstr "BLF Camp-On Status Verfügbar"
 
 #: campon.i18n.php:130
 msgid "BLF Camp-On Busy Caller State"
-msgstr ""
+msgstr "BLF Camp-On Status Besetzt"
 
 #: campon.i18n.php:124
 msgid "BLF Camp-On Pending State"
-msgstr ""
+msgstr "BLF Camp-On Status Anstehend"
 
 #: campon.i18n.php:136
 msgid "BLF Camp-On Recalling State"
-msgstr ""
+msgstr "BLF Camp-On Status Rückruf"
 
 #: functions.inc.php:444
 msgid "Call Camp-On Services"
@@ -355,7 +368,7 @@ msgstr ""
 
 #: functions.inc.php:383
 msgid "Callback Standard"
-msgstr ""
+msgstr "Standardrückruf"
 
 #: functions.inc.php:438
 msgid "Callee Alert-Info"
@@ -399,7 +412,7 @@ msgstr ""
 
 #: install.php:8
 msgid "Camp-On Cancel"
-msgstr ""
+msgstr "Camp-On Abbrechen"
 
 #: campon.i18n.php:12 campon.i18n.php:18 campon.i18n.php:24 campon.i18n.php:30
 #: campon.i18n.php:36 campon.i18n.php:42 campon.i18n.php:48 campon.i18n.php:54
@@ -409,15 +422,15 @@ msgstr ""
 #: campon.i18n.php:120 campon.i18n.php:126 campon.i18n.php:132
 #: campon.i18n.php:138 install.php:45
 msgid "Camp-On Module"
-msgstr ""
+msgstr "Camp-On Modul"
 
 #: install.php:7
 msgid "Camp-On Request"
-msgstr ""
+msgstr "Camp-On Anfrage"
 
 #: install.php:9
 msgid "Camp-On Toggle"
-msgstr ""
+msgstr "Camp-On Umschalten"
 
 #: campon.i18n.php:82
 msgid "Default Callback Alert-Info"
@@ -453,15 +466,15 @@ msgstr ""
 
 #: functions.inc.php:326 functions.inc.php:387
 msgid "Disable Camp-On"
-msgstr ""
+msgstr "Camp-On deaktivieren"
 
 #: campon.i18n.php:10 install.php:48
 msgid "Enable Camp-On functionality"
-msgstr ""
+msgstr "Camp-On Funktionalität einschalten"
 
 #: functions.inc.php:447
 msgid "Forcing default settings"
-msgstr ""
+msgstr "Standardeinstellungen erzwingen"
 
 #: functions.inc.php:327 functions.inc.php:388
 msgid "Generic Device"
@@ -500,15 +513,15 @@ msgstr ""
 
 #: functions.inc.php:434
 msgid "Max Queued Callers"
-msgstr ""
+msgstr "Max. Anrufer-Warteschlange"
 
 #: campon.i18n.php:16
 msgid "Maximum Active Camp-On Requests"
-msgstr ""
+msgstr "Maximale aktive Camp-On Anfragen"
 
 #: functions.inc.php:328 functions.inc.php:389
 msgid "Native Technology Support"
-msgstr ""
+msgstr "Native Technologie-Unterstützung"
 
 #: functions.inc.php:390
 msgid "Native Where Available"
@@ -520,7 +533,7 @@ msgstr ""
 
 #: campon.i18n.php:28
 msgid "Only Use Default Camp-On Settings"
-msgstr ""
+msgstr "Verwenden Sie nur Standard-Camp-On-Einstellungen."
 
 #: functions.inc.php:501
 msgid "Please enter a valid Alert-Info"
@@ -532,11 +545,11 @@ msgstr ""
 
 #: campon.i18n.php:6
 msgid "Settings"
-msgstr ""
+msgstr "Einstellungen"
 
 #: functions.inc.php:394
 msgid "Silent"
-msgstr ""
+msgstr "Still"
 
 #: campon.i18n.php:20
 msgid ""
