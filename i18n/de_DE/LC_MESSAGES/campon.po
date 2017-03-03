@@ -10,8 +10,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-09-16 16:47-0700\n"
-"PO-Revision-Date: 2016-12-19 14:12+0200\n"
-"Last-Translator: Sven <spiderrs4@web.de>\n"
+"PO-Revision-Date: 2017-03-03 15:56+0200\n"
+"Last-Translator: hammer125 <auswertung@aon.at>\n"
 "Language-Team: German "
 "<http://weblate.freepbx.org/projects/freepbx/campon/de_DE/>\n"
 "Language: de_DE\n"
@@ -533,7 +533,7 @@ msgstr ""
 
 #: campon.i18n.php:28
 msgid "Only Use Default Camp-On Settings"
-msgstr "Verwenden Sie nur Standard-Camp-On-Einstellungen."
+msgstr "Verwenden Sie nur Standard-Camp-On-Einstellungen"
 
 #: functions.inc.php:501
 msgid "Please enter a valid Alert-Info"
