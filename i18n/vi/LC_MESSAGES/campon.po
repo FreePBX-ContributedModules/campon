@@ -10,113 +10,116 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-09-16 16:47-0700\n"
-"PO-Revision-Date: 2016-09-16 16:47-0700\n"
-"Last-Translator: Automatically generated\n"
-"Language-Team: none\n"
+"PO-Revision-Date: 2017-06-07 17:11+0200\n"
+"Last-Translator: Peter Trinh <ftek@ymail.com>\n"
+"Language-Team: Vietnamese "
+"<http://weblate.freepbx.org/projects/freepbx/campon/vi/>\n"
+"Language: vi\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Weblate 2.4\n"
 
 #: functions.inc.php:398
 #, php-format
 msgid "%s Incoming Requests"
-msgstr ""
+msgstr "%s các yêu cầu đến"
 
 #: functions.inc.php:378
 #, php-format
 msgid "%s Outgoing Requests"
-msgstr ""
+msgstr "%s các yêu cầu đi"
 
 #: functions.inc.php:373
 #, php-format
 msgid "%s sec"
-msgstr ""
+msgstr "%s giây"
 
 #: functions.inc.php:334
 msgid "1 min"
-msgstr ""
+msgstr "1 phút"
 
 #: functions.inc.php:339
 msgid "10 min"
-msgstr ""
+msgstr "10 phút"
 
 #: functions.inc.php:346 functions.inc.php:361
 msgid "100 min"
-msgstr ""
+msgstr "100 phút"
 
 #: functions.inc.php:347 functions.inc.php:362
 msgid "2 hrs"
-msgstr ""
+msgstr "2 giờ"
 
 #: functions.inc.php:335
 msgid "2 min"
-msgstr ""
+msgstr "2 phút"
 
 #: functions.inc.php:342 functions.inc.php:357
 msgid "20 min"
-msgstr ""
+msgstr "20 phút"
 
 #: functions.inc.php:331
 msgid "20 sec"
-msgstr ""
+msgstr "20 giây"
 
 #: functions.inc.php:348 functions.inc.php:363
 msgid "3 hrs"
-msgstr ""
+msgstr "3 giờ"
 
 #: functions.inc.php:336
 msgid "3 min"
-msgstr ""
+msgstr "3 phút"
 
 #: functions.inc.php:332
 msgid "30 sec"
-msgstr ""
+msgstr "30 giây"
 
 #: functions.inc.php:349 functions.inc.php:364
 msgid "4 hrs"
-msgstr ""
+msgstr "4 giờ"
 
 #: functions.inc.php:337
 msgid "4 min"
-msgstr ""
+msgstr "4 phút"
 
 #: functions.inc.php:343 functions.inc.php:358
 msgid "40 min"
-msgstr ""
+msgstr "40 phút"
 
 #: functions.inc.php:333
 msgid "45 sec"
-msgstr ""
+msgstr "45 giây"
 
 #: functions.inc.php:350 functions.inc.php:351 functions.inc.php:365
 #: functions.inc.php:366
 msgid "5 hrs"
-msgstr ""
+msgstr "5 giờ"
 
 #: functions.inc.php:338
 msgid "5 min"
-msgstr ""
+msgstr "5 phút"
 
 #: functions.inc.php:352 functions.inc.php:367
 msgid "6 hrs"
-msgstr ""
+msgstr "6 giờ"
 
 #: functions.inc.php:344 functions.inc.php:359
 msgid "60 min"
-msgstr ""
+msgstr "60 phút"
 
 #: functions.inc.php:353 functions.inc.php:368
 msgid "7 hrs"
-msgstr ""
+msgstr "7 giờ"
 
 #: functions.inc.php:354 functions.inc.php:369
 msgid "8 hrs"
-msgstr ""
+msgstr "8 giờ"
 
 #: functions.inc.php:345 functions.inc.php:360
 msgid "80 min"
-msgstr ""
+msgstr "80 phút"
 
 #: campon.i18n.php:74
 msgid ""
@@ -127,6 +130,13 @@ msgid ""
 "else on the system placed the call, which means the call can pursue Follow-"
 "Me. To avoid Follow-Me setting, choose 'extension' (Callback Extension)."
 msgstr ""
+"Ảnh hưởng đến Asterisk: cc_agent_dialstring. Nếu không cài đặt yêu cầu một "
+"cuộc gọi lại thì sẽ được quay thẳng đến thiết bị được xác định đã thực hiện "
+"cuộc gọi. Nếu sử dụng hỗ trợ công nghệ \"native\", đây có thể là chế độ được "
+"ưu tiên. Tùy chọn 'Internal' (Callback Standard) sẽ kích hoạt cuộc gọi lại "
+"đến người gọi giống như người khác trong hệ thống đã đặt cuộc gọi, có nghĩa "
+"là cuộc gọi có thể theo đuổi Follow-Me. Để tránh cài đặt Follow-Me, hãy chọn "
+"'extension' (Callback Extension)."
 
 #: functions.inc.php:490
 msgid ""
