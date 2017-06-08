@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-09-16 16:47-0700\n"
-"PO-Revision-Date: 2017-06-07 17:11+0200\n"
+"PO-Revision-Date: 2017-06-07 19:45+0200\n"
 "Last-Translator: Peter Trinh <ftek@ymail.com>\n"
 "Language-Team: Vietnamese "
 "<http://weblate.freepbx.org/projects/freepbx/campon/vi/>\n"
@@ -148,18 +148,30 @@ msgid ""
 "can pursue Follow-Me. To avoid Follow-Me setting, choose 'Callback "
 "Extension'."
 msgstr ""
+"Ảnh hưởng đến Asterisk: cc_agent_dialstring. Với 'Callback Device Directly' "
+"một yêu cầu gọi lại sẽc quay thẳng đến thiết bị được xác định đã thực hiện "
+"cuộc gọi. Nếu sử dụng 'Hỗ trợ công nghệ \"native\", đây có thể là chế độ "
+"được ưu tiên. Tùy chọn (Callback Standard) sẽ kích hoạt cuộc gọi lại đến "
+"người gọi giống như người khác trong hệ thống đã đặt cuộc gọi, có nghĩa là "
+"cuộc gọi có thể theo đuổi Follow-Me. Để tránh cài đặt Follow-Me, hãy chọn "
+"'Callback Extension'."
 
 #: campon.i18n.php:104 functions.inc.php:498
 msgid ""
 "An optional Alert-Info setting that can be used to send to the extension "
 "being called back."
 msgstr ""
+"Một cài đặt Thông tin cảnh bảo (Alert-Info) có thể được sử dụng để gửi tới "
+"thuê bao nội bộ ( extension) đang được gọi lại."
 
 #: campon.i18n.php:86
 msgid ""
 "An optional Alert-Info setting that can be used when initiating a callback. "
 "Only valid when 'Caller Policy' is set to 'generic' device'"
 msgstr ""
+"Một cài đặt lựa chọn Thông tin cảnh báo ( Alert- Infor) có thể được sử dụng "
+"khi kích hoạt một cuộc gọi lại. Chỉ hợp lệ khi \" Caller Policy\" được cài "
+"đặt 'generic device'"
 
 #: functions.inc.php:495
 msgid ""
@@ -167,18 +179,27 @@ msgid ""
 "Only valid when 'Caller Policy' is set to a 'Generic Device' and 'Caller "
 "Callback Mode' is not set to 'Callback Device Directly'."
 msgstr ""
+"Một cài đặt lựa chọn Thông tin cảnh báo ( Alert- Infor) có thể được sử dụng "
+"khi kích hoạt một cuộc gọi lại. Chỉ hợp lệ khi Caller Policy\" ( Chính sách "
+"người gọi) được cài đặt 'generic' device' ( thiết bị chung) và  \"Caller "
+"Callback Mode\" (\"Chế độ người gọi lại) không cài đặt \"'Callback Device "
+"Directly'."
 
 #: functions.inc.php:499
 msgid ""
 "An optional CID Prepend setting that can be used to send to the extension "
 "being called back."
 msgstr ""
+"Cài đặt CID Prepend có thể được sử dụng để gửi tới thuê bao nội bộ đang được "
+"gọi lại."
 
 #: campon.i18n.php:110
 msgid ""
 "An optional CID Prepend setting that can be used to send to the extension "
 "being called back.'"
 msgstr ""
+"Cài đặt CID Prepend có thể được sử dụng để gửi tới thuê bao nội bộ đang được "
+"gọi lại.'"
 
 #: functions.inc.php:496
 msgid ""
@@ -186,24 +207,31 @@ msgid ""
 "Only valid when 'Caller Policy' is set to a 'Generic Device' and 'Caller "
 "Callback Mode' is not set to 'Callback Device Directly'."
 msgstr ""
+"Cài đặt CID Prepend có thể được sử dụng khi kích hoạt một cuộc gọi lại. Chỉ "
+"hợp lệ khi 'Caller Policy ( Chính sách người goi) được cài đặt 'Generic "
+"Device' ( Thiết bị chung) và 'Caller Callback Mode' ( Chế độ người gọi lại) "
+"không được cài đặt là 'Callback Device Directly'."
 
 #: campon.i18n.php:92
 msgid ""
 "An optional CID Prepend setting that can be used when initiating a callback. "
 "Only valid when 'Caller Policy' is set to a 'generic' device'"
 msgstr ""
+"Cài đặt CID Prepend có thể được sử dụng khi kích hoạt một cuộc gọi lại. Chỉ "
+"hợp lệ khi 'Caller Policy ( Chính sách người goi) được cài đặt 'Generic' "
+"Device' ( Thiết bị chung)"
 
 #: functions.inc.php:393
 msgid "Announce"
-msgstr ""
+msgstr "Thông báo"
 
 #: functions.inc.php:435
 msgid "Announce Callback Extension"
-msgstr ""
+msgstr "Thông báo thuê bao nội bộ gọi lại"
 
 #: campon.i18n.php:94
 msgid "Announce the Callee Extension"
-msgstr ""
+msgstr "Thông báo thuê bao nội bộ của người gọi"
 
 #: campon.i18n.php:56
 msgid ""
@@ -211,6 +239,9 @@ msgid ""
 "remain active, in seconds, before expiring if the phone rang busy when first "
 "attempting the call."
 msgstr ""
+"Asteirsk: ccbs_available_timer. Yêu cầu hoàn tất cuộc gọi sẽ duy trì hoạt "
+"động bao lâu, trong vài giây, trước khi hết thời gian nếu điện thoại rung "
+"bận khi lần đầu tiên thực hiện cuộc gọi."
 
 #: campon.i18n.php:62
 msgid ""
@@ -218,6 +249,9 @@ msgid ""
 "remain active, in seconds, before expiring if the phone was simply "
 "unanswered when first attempting the call."
 msgstr ""
+"Asteirsk: ccbs_available_timer. Yêu cầu hoàn tất cuộc gọi sẽ duy trì hoạt "
+"động bao lâu, trong vài giây, trước khi hết thời gian nếu điện thoại không "
+"được trả lời khi lần đầu tiên thực hiện cuộc gọi."
 
 #: campon.i18n.php:38
 msgid ""
