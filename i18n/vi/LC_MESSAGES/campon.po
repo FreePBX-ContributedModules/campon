@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-09-16 16:47-0700\n"
-"PO-Revision-Date: 2017-06-14 11:01+0200\n"
+"PO-Revision-Date: 2017-06-14 15:59+0200\n"
 "Last-Translator: Peter Trinh <ftek@ymail.com>\n"
 "Language-Team: Vietnamese "
 "<http://weblate.freepbx.org/projects/freepbx/campon/vi/>\n"
@@ -149,7 +149,7 @@ msgid ""
 "Extension'."
 msgstr ""
 "Ảnh hưởng đến Asterisk: cc_agent_dialstring. Với 'Callback Device Directly' "
-"một yêu cầu gọi lại sẽc quay thẳng đến thiết bị được xác định đã thực hiện "
+"một yêu cầu gọi lại sẽ quay thẳng đến thiết bị được xác định đã thực hiện "
 "cuộc gọi. Nếu sử dụng 'Hỗ trợ công nghệ \"native\", đây có thể là chế độ "
 "được ưu tiên. Tùy chọn (Callback Standard) sẽ kích hoạt cuộc gọi lại đến "
 "người gọi giống như người khác trong hệ thống đã đặt cuộc gọi, có nghĩa là "
@@ -161,7 +161,7 @@ msgid ""
 "An optional Alert-Info setting that can be used to send to the extension "
 "being called back."
 msgstr ""
-"Một cài đặt Thông tin cảnh bảo (Alert-Info) có thể được sử dụng để gửi tới "
+"Một cài đặt Thông tin cảnh báo (Alert-Info) có thể được sử dụng để gửi tới "
 "thuê bao nội bộ ( extension) đang được gọi lại."
 
 #: campon.i18n.php:86
@@ -170,8 +170,8 @@ msgid ""
 "Only valid when 'Caller Policy' is set to 'generic' device'"
 msgstr ""
 "Một cài đặt lựa chọn Thông tin cảnh báo ( Alert- Infor) có thể được sử dụng "
-"khi kích hoạt một cuộc gọi lại. Chỉ hợp lệ khi \" Caller Policy\" được cài "
-"đặt 'generic device'"
+"khi kích hoạt một cuộc gọi lại. Chỉ hợp lệ khi \" Caller Policy\" ( Luật "
+"người gọi) được cài đặt là 'generic device'"
 
 #: functions.inc.php:495
 msgid ""
@@ -180,10 +180,9 @@ msgid ""
 "Callback Mode' is not set to 'Callback Device Directly'."
 msgstr ""
 "Một cài đặt lựa chọn Thông tin cảnh báo ( Alert- Infor) có thể được sử dụng "
-"khi kích hoạt một cuộc gọi lại. Chỉ hợp lệ khi Caller Policy\" ( Chính sách "
-"người gọi) được cài đặt 'generic' device' ( thiết bị chung) và  \"Caller "
-"Callback Mode\" (\"Chế độ người gọi lại) không cài đặt \"'Callback Device "
-"Directly'."
+"khi kích hoạt một cuộc gọi lại. Chỉ hợp lệ khi Caller Policy\" ( Luật người "
+"gọi) được cài đặt 'generic' device' ( thiết bị chung) và  \"Caller Callback "
+"Mode\" (\"Chế độ người gọi lại) không cài đặt \"'Callback Device Directly'."
 
 #: functions.inc.php:499
 msgid ""
@@ -208,9 +207,9 @@ msgid ""
 "Callback Mode' is not set to 'Callback Device Directly'."
 msgstr ""
 "Cài đặt CID Prepend có thể được sử dụng khi kích hoạt một cuộc gọi lại. Chỉ "
-"hợp lệ khi 'Caller Policy ( Chính sách người goi) được cài đặt 'Generic "
-"Device' ( Thiết bị chung) và 'Caller Callback Mode' ( Chế độ người gọi lại) "
-"không được cài đặt là 'Callback Device Directly'."
+"hợp lệ khi 'Caller Policy ( Luật người goi) được cài đặt 'Generic Device' ( "
+"Thiết bị chung) và 'Caller Callback Mode' ( Chế độ người gọi lại cho người "
+"gọi) không được cài đặt là 'Callback Device Directly'."
 
 #: campon.i18n.php:92
 msgid ""
@@ -218,7 +217,7 @@ msgid ""
 "Only valid when 'Caller Policy' is set to a 'generic' device'"
 msgstr ""
 "Cài đặt CID Prepend có thể được sử dụng khi kích hoạt một cuộc gọi lại. Chỉ "
-"hợp lệ khi 'Caller Policy ( Chính sách người goi) được cài đặt 'Generic' "
+"hợp lệ khi 'Caller Policy' ( Chính sách người goi) được cài đặt 'Generic' "
 "Device' ( Thiết bị chung)"
 
 #: functions.inc.php:393
@@ -231,7 +230,7 @@ msgstr "Thông báo thuê bao nội bộ gọi lại"
 
 #: campon.i18n.php:94
 msgid "Announce the Callee Extension"
-msgstr "Thông báo thuê bao nội bộ của người gọi"
+msgstr "Thông báo thuê bao nội bộ của người được gọi"
 
 #: campon.i18n.php:56
 msgid ""
@@ -290,10 +289,10 @@ msgid ""
 "this will be ignored."
 msgstr ""
 "Asterisk: cc_max_agents. Chỉ hợp lệ khi sử dụng  'Native Technology Support' "
-"cho chính sách người gọi. Đây là số yêu cầu Call Completion  ( hoàn thành "
-"cuộc gọi) chưa được giải quyết có thể đang đợi các cuộc gọi nội bộ khác "
-"nhau. Với chế độ 'Generic Device' bạn chỉ có thể có một yêu cầu đang đợi và "
-"điều này sẽ bị bỏ qua."
+"(Hỗ trợ kỹ thuật gốc) cho chính sách người gọi. Đây là số của các yêu cầu "
+"Call Completion (hoàn thành cuộc gọi) chưa được giải quyết có thể đang đợi "
+"các cuộc gọi nội bộ khác nhau. Với chế độ 'Generic Device' bạn chỉ có thể có "
+"một yêu cầu đang đợi và điều này sẽ bị bỏ qua."
 
 #: campon.i18n.php:80
 msgid ""
@@ -302,12 +301,19 @@ msgid ""
 "requests that can be pending to different extensions. With 'generic' device "
 "mode you can only have a single request outstanding and this will be ignored."
 msgstr ""
+"Asterisk: cc_max_agents. Chỉ hợp lệ khi sử dụng  'Native' technology support "
+"( Hỗ trợ kỹ thuật gốc) cho chính sách người gọi. Đây là số của các yêu cầu "
+"Call Completion (hoàn thành cuộc gọi) chưa được giải quyết có thể đang đợi "
+"các cuộc gọi nội bộ khác nhau. Với chế độ 'Generic Device' bạn chỉ có thể có "
+"một yêu cầu đang đợi và điều này sẽ bị bỏ qua."
 
 #: campon.i18n.php:116 functions.inc.php:492
 msgid ""
 "Asterisk: cc_max_monitors. This is the maximum number of callers that are "
 "allowed to queue up call completion requests against this extension."
 msgstr ""
+"Asterisk: cc_max_monitors. Đầy là số người gọi lớn nhất được phép xếp hàng "
+"đợi yêu cầu hoàn thành cuộc gọi tới số điện thoại nội bộ."
 
 #: campon.i18n.php:44
 msgid ""
@@ -323,6 +329,17 @@ msgid ""
 "available and automatically fallback to 'generic' whe not by setting it to "
 "'always'."
 msgstr ""
+"Asterisk: cc_monitor_policy. Dùng để điều khiển nếu điện thoại khác được cho "
+"phép Camp On đến một điện thoại nội bộ. Nếu thế, nó cài đặt chế độ kỹ thuật "
+"dùng để theo dõi tính khả dụng của điện thoại bộ. Nếu không có hỗ trợ kỹ "
+"thuật cụ thể nào khả dụng thì sau đó nó được cài đặt về \"generic'. Ở chế độ "
+"này, một cuộc gọi lại sẽ được kích hoạt tới điện thoại nội bộ khi nó thay "
+"đổi từ trạng thái Đang sử dụng ( Inuse) sang trạng thái Không sử dụng "
+"(Notinuse). Nếu điện thoại báo bận, đó là khi cuộc gọi hiện tại vừa kết "
+"thúc. Nếu nó không trả lời, sau đó lần kế tiếp điện thoại này được dùng để "
+"goi hoặc trả lời cuộc gọi và sau đó cúp máy. Có thể cài đặt như thế để tận "
+"dụng hỗ trợ kỹ thuật gốc nếu khả dụng và tự động trở về 'generic' khi không "
+"cài đặt là 'always'."
 
 #: functions.inc.php:442
 msgid ""
@@ -337,18 +354,33 @@ msgid ""
 "It is possible to set this to take advantage of 'Native Technology Support' "
 "if available and automatically fallback to the 'Generic Mode' when not."
 msgstr ""
+"Asterisk: cc_monitor_policy. Dùng để điều khiển nếu điện thoại khác được cho "
+"phép Camp On đến một điện thoại nội bộ. Nếu thế, nó cài đặt chế độ kỹ thuật "
+"dùng để theo dõi tính khả dụng của điện thoại bộ. Nếu không có hỗ trợ kỹ "
+"thuật cụ thể nào khả dụng thì sau đó nó được cài đặt về \"generic'. Ở chế độ "
+"này, một cuộc gọi lại sẽ được kích hoạt tới điện thoại nội bộ khi nó thay "
+"đổi từ trạng thái Đang sử dụng ( Inuse) sang trạng thái Không sử dụng "
+"(Notinuse). Nếu điện thoại báo bận, đó là khi cuộc gọi hiện tại vừa kết "
+"thúc. Nếu nó không trả lời, sau đó lần kế tiếp điện thoại này được dùng để "
+"goi hoặc trả lời cuộc gọi và sau đó cúp máy. Có thể cài đặt như thế để tận "
+"dụng hỗ trợ kỹ thuật gốc nếu khả dụng và tự động trở về 'Chế độ Generic' khi "
+"không cài đặt là 'always'."
 
 #: functions.inc.php:485
 msgid ""
 "Asterisk: cc_offer_timer. How long after dialing an extension a user has to "
 "make a call completion request."
 msgstr ""
+"Asterisk: cc_offer_timer.Sau khi quay số điện thoại nội bộ bao lâu thì người "
+"dùng phải thực hiện một yêu cầu hoàn thành cuộc gọi."
 
 #: campon.i18n.php:50
 msgid ""
 "Asterisk: cc_offer_timer. How many seconds after dialing an extenion a user "
 "has to make a call completion request."
 msgstr ""
+"Asterisk: cc_offer_timer. Sau khi quay số điện thoại nội bộ bao lâu thì "
+"người dùng phải thực hiện một yêu cầu hoàn thành cuộc gọi."
 
 #: campon.i18n.php:68
 msgid ""
@@ -356,6 +388,9 @@ msgid ""
 "Caller Policy is set to 'Generic Device'. This has no affect if set to any "
 "other setting."
 msgstr ""
+"Asterisk: cc_recall_timer. Bao nhiêu giây để gọi lại cho người gọi khi chính "
+"sách người gọi của họ được cài đặt về 'Generic Device'. Điều này không gây "
+"ảnh hưởng nếu cài đặt cho bất kỳ các thiết lập khác."
 
 #: functions.inc.php:488
 msgid ""
@@ -363,6 +398,9 @@ msgid ""
 "Policy is set to 'Generic Device'. This has no affect if to any other "
 "setting."
 msgstr ""
+"Asterisk: cc_recall_timer. Bao nhiêu giây để gọi lại cho người gọi khi chính "
+"sách người gọi của họ được cài đặt về 'Generic Device'. Điều này không gây "
+"ảnh hưởng nếu cài đặt cho bất kỳ các thiết lập khác."
 
 #: functions.inc.php:486
 msgid ""
@@ -370,6 +408,9 @@ msgid ""
 "remain active before expiring if the phone rang busy when first attempting "
 "the call."
 msgstr ""
+"Asterisk: ccbs_available_timer. Một yêu cầu hoàn thành cuộc sẽ duy trì trong "
+"bao lâu trước khi hết thời gian nếu máy điện thoại rung bận khi lần đầu tiên "
+"gọi thử."
 
 #: functions.inc.php:487
 msgid ""
@@ -377,90 +418,93 @@ msgid ""
 "remain active before expiring if the phone was simply unanswered when first "
 "attempting the call."
 msgstr ""
+"Asterisk: ccnr_available_timer. Một yêu cầu hoàn thành cuộc sẽ duy trì trong "
+"bao lâu trước khi hết thời gian nếu điện thoại không được trả lời khi lần "
+"đầu tiên gọi thử."
 
 #: campon.i18n.php:118
 msgid "BLF Camp-On Available State"
-msgstr ""
+msgstr "Trạng tháiBLF Camp-On khả dụng"
 
 #: campon.i18n.php:130
 msgid "BLF Camp-On Busy Caller State"
-msgstr ""
+msgstr "Trạng thái BLF người gọi bận"
 
 #: campon.i18n.php:124
 msgid "BLF Camp-On Pending State"
-msgstr ""
+msgstr "Trạng thái chờ của BLF Camp-On"
 
 #: campon.i18n.php:136
 msgid "BLF Camp-On Recalling State"
-msgstr ""
+msgstr "Trạng thái gọi lại BLF Camp-On"
 
 #: functions.inc.php:444
 msgid "Call Camp-On Services"
-msgstr ""
+msgstr "Dịch vụ gọi Camp-On"
 
 #: functions.inc.php:436
 msgid "Callback Alert-Info"
-msgstr ""
+msgstr "Thông tin cảnh báo gọi lại"
 
 #: functions.inc.php:437
 msgid "Callback CID Prepend"
-msgstr ""
+msgstr "CID Prepend Gọi lại"
 
 #: functions.inc.php:382
 msgid "Callback Device Directly"
-msgstr ""
+msgstr "Thiết bị gọi lại trực tiếp"
 
 #: functions.inc.php:384
 msgid "Callback Extension (no Follow-Me)"
-msgstr ""
+msgstr "Gọi lại điện thoại nội bộ ( Không Follow-Me)"
 
 #: functions.inc.php:383
 msgid "Callback Standard"
-msgstr ""
+msgstr "Tiêu chuẩn Gọi lại"
 
 #: functions.inc.php:438
 msgid "Callee Alert-Info"
-msgstr ""
+msgstr "Thông tin cảnh bảo người được gọi"
 
 #: functions.inc.php:439
 msgid "Callee CID Prepend"
-msgstr ""
+msgstr "CID Prepend người được gọi"
 
 #: functions.inc.php:426
 msgid "Callee Policy"
-msgstr ""
+msgstr "Luật người được gọi"
 
 #: campon.i18n.php:40
 msgid "Callee Policy Default"
-msgstr ""
+msgstr "Mặc định luật người được gọi"
 
 #: functions.inc.php:433
 msgid "Caller Callback Mode"
-msgstr ""
+msgstr "Chế độ gọi lại của người gọi"
 
 #: functions.inc.php:425
 msgid "Caller Policy"
-msgstr ""
+msgstr "Luật người gọi"
 
 #: campon.i18n.php:34
 msgid "Caller Policy Default"
-msgstr ""
+msgstr "Mặc định luật người gọi"
 
 #: functions.inc.php:428
 msgid "Caller Timeout to Request"
-msgstr ""
+msgstr "Thời gian chờ của người gọi để yêu cầu"
 
 #: campon.i18n.php:46
 msgid "Caller Timeout to Request Default"
-msgstr ""
+msgstr "Thời gian chờ của người gọi để mặc định yêu cầu"
 
 #: campon.i18n.php:4 install.php:6
 msgid "Camp-On"
-msgstr ""
+msgstr "Tính năng Camp-On"
 
 #: install.php:8
 msgid "Camp-On Cancel"
-msgstr ""
+msgstr "Hủy Camp-On"
 
 #: campon.i18n.php:12 campon.i18n.php:18 campon.i18n.php:24 campon.i18n.php:30
 #: campon.i18n.php:36 campon.i18n.php:42 campon.i18n.php:48 campon.i18n.php:54
@@ -470,63 +514,63 @@ msgstr ""
 #: campon.i18n.php:120 campon.i18n.php:126 campon.i18n.php:132
 #: campon.i18n.php:138 install.php:45
 msgid "Camp-On Module"
-msgstr ""
+msgstr "Mô đun Camp-On"
 
 #: install.php:7
 msgid "Camp-On Request"
-msgstr ""
+msgstr "Yêu cầu Camp-On"
 
 #: install.php:9
 msgid "Camp-On Toggle"
-msgstr ""
+msgstr "Chuyển chế độ Camp-On"
 
 #: campon.i18n.php:82
 msgid "Default Callback Alert-Info"
-msgstr ""
+msgstr "Mặc định Thông tin cảnh báo gọi lại"
 
 #: campon.i18n.php:88
 msgid "Default Callback CID Prepend"
-msgstr ""
+msgstr "Mặc định CID Prepend gọi lại"
 
 #: campon.i18n.php:100
 msgid "Default Callee Alert-Info"
-msgstr ""
+msgstr "Mặc định Thông tin cảnh báo người được gọi"
 
 #: campon.i18n.php:106
 msgid "Default Callee CID Prepend"
-msgstr ""
+msgstr "Mặc định CID Prepend người được gọi"
 
 #: campon.i18n.php:70
 msgid "Default Caller Callback Mode"
-msgstr ""
+msgstr "Mặc định chế độ gọi lại của người gọi"
 
 #: campon.i18n.php:76
 msgid "Default Max Camped-On Extensions"
-msgstr ""
+msgstr "Mặc định điện thoại nội bộ được Camped-On nhiều nhất"
 
 #: campon.i18n.php:112
 msgid "Default Max Queued Callers"
-msgstr ""
+msgstr "Mặc định những gọi đang đợi lớn nhất"
 
 #: campon.i18n.php:64
 msgid "Default Time to Ring Back Caller"
-msgstr ""
+msgstr "Mặc định thời gian để Người gọi gọi lại"
 
 #: functions.inc.php:326 functions.inc.php:387
 msgid "Disable Camp-On"
-msgstr ""
+msgstr "Tắt Camp-On"
 
 #: campon.i18n.php:10 install.php:48
 msgid "Enable Camp-On functionality"
-msgstr ""
+msgstr "Bật tính năng Camp-On"
 
 #: functions.inc.php:447
 msgid "Forcing default settings"
-msgstr ""
+msgstr "Các cài đặt mặc định bắt buộc"
 
 #: functions.inc.php:327 functions.inc.php:388
 msgid "Generic Device"
-msgstr ""
+msgstr "Thiết bị chung"
 
 #: campon.i18n.php:26
 msgid ""
@@ -538,66 +582,73 @@ msgid ""
 "technology specific capabilities if the called extension uses a channel that "
 "supports that."
 msgstr ""
+"Nếu cài đặt là 'generic' hoặc 'always' thì sau đó có thể cố thử các yêu cầu "
+"hoàn thành cuộc gọi khi đang quay số không phải là điện thoại nội bộ như các "
+"nhóm điện thoại hoặc các điểm đến có thể khác đang làm việc với hoàn thành "
+"cuộc gọi. Cài đặt này sẽ phân bổ bất cứ luật của người được gọi nào và có "
+"thể gây nên trạng thái việc không đồng nhất . Nếu cài đặt, 'generic' thường "
+"phổ biến nhất, còn 'always' sẽ thử sử dụng các khả năng kỹ thuật xác định "
+"nếu điện thoại nội bộ được gọi sử dụng một kênh được hỗ trợ điều này."
 
 #: functions.inc.php:429
 msgid "Max Camp-On Life Busy"
-msgstr ""
+msgstr "Thời gian bận Camp-On tối đa"
 
 #: campon.i18n.php:52
 msgid "Max Camp-On Life Busy Default"
-msgstr ""
+msgstr "Mặc định thời gian bận Camp-On tối đa"
 
 #: functions.inc.php:430
 msgid "Max Camp-On Life No Answer"
-msgstr ""
+msgstr "Thời gian không trả lời Cam-On tối đa"
 
 #: campon.i18n.php:58
 msgid "Max Camp-On Life No Answer Default"
-msgstr ""
+msgstr "Mặc định thời gian không trả lời Camp-On tối đa"
 
 #: functions.inc.php:432
 msgid "Max Camped-On Extensions"
-msgstr ""
+msgstr "Điện thoại nội bộ Camp-On tối đa"
 
 #: functions.inc.php:434
 msgid "Max Queued Callers"
-msgstr ""
+msgstr "Người gọi đang chờ tối đa"
 
 #: campon.i18n.php:16
 msgid "Maximum Active Camp-On Requests"
-msgstr ""
+msgstr "Các yêu cầu Camp-On kích hoạt tối đa"
 
 #: functions.inc.php:328 functions.inc.php:389
 msgid "Native Technology Support"
-msgstr ""
+msgstr "Hỗ trợ kỹ thuật gốc"
 
 #: functions.inc.php:390
 msgid "Native Where Available"
-msgstr ""
+msgstr "Gốc nơi khả dụng"
 
 #: campon.i18n.php:22
 msgid "Non Extensions Callee Policy"
-msgstr ""
+msgstr "Luật người được gọi đối với các điện thoại không nội bộ"
 
 #: campon.i18n.php:28
 msgid "Only Use Default Camp-On Settings"
-msgstr ""
+msgstr "Chỉ sử dụng các cài đặt Camp-On mặc định"
 
 #: functions.inc.php:501
 msgid "Please enter a valid Alert-Info"
-msgstr ""
+msgstr "Vung lòng nhập một thông tin cảnh báo hợp lệ"
 
 #: functions.inc.php:502
 msgid "Please enter a valid CID Prefix"
-msgstr ""
+msgstr "Vui lòng nhập một CID Prefix hợp lệ"
 
 #: campon.i18n.php:6
 msgid "Settings"
-msgstr ""
+msgstr "Các cài đặt"
 
 #: functions.inc.php:394
 msgid "Silent"
-msgstr ""
+msgstr "Im lặng"
 
 #: campon.i18n.php:20
 msgid ""
